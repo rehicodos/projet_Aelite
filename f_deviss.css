@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    /* background: #B37BC7; */
+    text-align: center;
+    /* border: 2px solid white; */
+    
+}
+.global {
+  background: #B37BC7;
+  /* margin-bottom: 15px; */
+  padding: 10px;
+  width: 97%;
+  margin: 15px auto;
+  border: 6px solid black;
+  border-radius: 5px;
+}
+/* h1{
+    font-size: 3.5em;
+    color: yellow;
+    margin-top: 10px;
+    text-shadow: 2px 0 0px #800040, 3px 2px 0px rgba(77,0,38,0.5), 3px 0 3px #FF002B, 5px 0 3px #800015, 6px 2px 3px rgba(77,0,13,0.5), 6px 0 9px #FF5500, 8px 0 9px #802A00, 9px 2px 9px rgba(77,25,0,0.5), 9px 0 18px #FFD500, 11px 0 18px #806A00, 12px 2px 18px rgba(77,66,0,0.5), 12px 0 30px #D4FF00, 14px 0 30px #6A8000, 15px 2px 30px rgba(64,77,0,0.5), 15px 0 45px #80FF00, 17px 0 45px #408000, 17px 2px 45px rgba(38,77,0,0.5);
+  } */
+  .entet_ttbt {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #12875A;
+    margin: 10px auto;
+    width: 98%;
+  }
+  .entet_ttbt .button_info {
+    color: white;
+    background: #87918C;
+    text-shadow: 4px 3px 0 #7A7A7A;
+    font-size: 2em;
+    margin-left: 5px;
+    width: 95%;
+    height: 50px;
+    border: none;
+    padding: 2px;
+    border-radius: 3px;
+  }
+  .entet_ttbt .button_info:hover {
+    background: royalblue;
+  }
+  /* .info_devis {
+    width: 10%;
+    height: 180px; */
+    /* border: 2px solid green; */
+    /* margin-left: 25px;
+    margin-top: 20px; */
+    /* background: #F51494;
+    margin: auto 5px;
+    align-items: center;
+    display: flex;
+    border: 5px solid white;
+    border-radius: 70px 0px 70px 0px;
+  } */
+  .conteneur_bt {
+    /* margin-top: 10px; */
+    /* margin: 10px 30px; */
+    border: 4px red solid;
+    background: #D6D8FF;
+    border-radius: 10px;
+    padding: 10px 5px;
+    margin: 0px auto;
+    width: 96%;
+  }
+  ul {
+    margin: 10px auto;
+    /* margin: 15px 55px; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 98%;
+    /* border: 2px solid red; */
+  }
+  .st {
+    /* border: 2px solid red; */
+    width: 25%;
+  }
+  li {
+    list-style-type: none;
+    margin: 0px 8px;
+    /* height: 15px; */
+    /* display: flex; */
+  }
+  .conteneur_bt .bt_li_a {
+    background: blue;
+    height: 50px;
+    color: white;
+    padding: 2px 2px;
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+  .bt_li_a:hover {
+    transition: 0.4s;
+    background: cyan;
+    color: #FF002B;
+  }
+  .bt_st, .lab_st {
+    margin-top: 6px;
+    /* margin-left: 20%; */
+    margin-bottom: 4px;
+  }
+  .lab_st {
+    margin-left: 3px;
+    font-size: 1.1em bold;
+    background: whitesmoke;
+    padding: 0px 3px;
+    width: 60%;
+  }
+  .bt_st {
+    border: none;
+    padding: 2px;
+    margin-left: 3px;
+    border-radius: 3px;
+    background: #473838;
+    color: yellow;
+    /* cursor: pointer; */
+    /* width: 45; */
+  }
+  
+  .sous_t {
+    /* border: 2px solid green; */
+    display: flex;
+    background: #FFBC70;
+    margin: 0px 2px;
+  }
+  .conteneur_tg {
+    border: 2px solid blue;
+    display: flex;
+    width: 70%;
+    margin: 0px auto;
+    background: #FFBC70;
+    align-items: center;
+    padding: 4px;
+    justify-content: space-evenly;
+  }
+  .cont_ht {
+    display: flex;
+    width: 29%;
+    /* margin-left: 60px; */
+    /* border: 2px solid red; */
+  }
+  .cont_ht p {
+    width: 35%;
+  }
+  .bt_tht:hover {
+    transition: 0.4s;
+    background: #473838;
+    color: yellow;
+  }
+  .bt_realiser {
+    margin: 5px 0px;
+  }
+  .lab_tva {
+    font-size: 1.1em;
+    margin-left: 3px;
+
+  }
+  .bt_realiser {
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    background: #473838;
+    color: white;
+    font-size: 1.4em;
+    cursor: pointer;
+    border: 2px solid white;
+    /* padding: 4px; */
+  }
+  .bt_realiser:hover {
+    transition: 0.4s;
+    background: red;
+  }
+  .conteneur_tg button {
+    border: none;
+    padding: 2px;
+    border-radius: 3px;
+    background: black;
+    color: white;
+    width: 72px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  #tva {
+    /* height: 15px; */
+    width: 65px;
+    margin-left: 3px;
+  }
+  .cont_ht p {
+    background: white;
+    margin-top: 1px;
+    margin-left: 2%;
+    padding: 2px;
+    width: 47%;
+  }
+  
+  .bt_act {
+    margin-top: 7px;
+    border: none;
+    padding: 4px;
+    border-radius: 3px;
+    background: darkblue;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  .bt_act:hover {
+    background: red;
+    transition: 0.4s;
+  }
+  /* ________les blocs cacher_____ */
+  .bloc1 {
+    display: none;
+  }
+  
+  
+  
+ 

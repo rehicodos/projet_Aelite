@@ -1,0 +1,32 @@
+.vrai_feuill_calcu {
+    width: 92%;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 15px auto;
+
+}
+.vrai_feuill_calcu table {
+    /* border: 1px solid black; */
+    width: 100%;
+    text-align: center;
+}
+.vrai_feuill_calcu h4 {
+    text-align: center;
+}
+.vrai_feuill_calcu table th {
+    background: #e668ba;
+}
+.vrai_feuill_calcu table input {
+    width: 100%;
+    text-align: center;
+}
+.separateur {
+    width: 100%;
+    height: 3px;
+    background: black;
+    margin: 10px 0px;
+}
+#id_terrassem {
+    background: #FFBFCA;
+}

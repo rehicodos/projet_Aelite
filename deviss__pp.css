@@ -1,0 +1,417 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #05D1F0;
+}
+.doc_devis {
+    border: 8px rgb(255, 0, 128) ridge;
+    background: gray;
+    width: 70%;
+    margin: 20px auto;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 3px;
+}
+.doc_devis button {
+    font-size: 2.2em;
+    padding: 12px;
+    background: cyan;
+    border-radius: 8px;
+    cursor: pointer;
+}
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    background: red;
+}
+.f_dos {
+    /* height: 20px; */
+    border: 7px solid white;
+    border-radius: 4px;
+    width: 94%;
+    margin: 5px auto;
+    padding: 10px;
+    background: rgb(7, 214, 152);
+    /* display: none; */
+    /* display: flex; */
+    justify-content: space-between;
+}
+
+.la_grosseur_th_tva_ttc {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.raccoucir li {
+    list-style-type: none;
+    /* border: 2px solid gray; */
+    text-align: center;
+}
+.raccoucir button {
+    font-size: 1.1em;
+    /* width: 15%; */
+    padding: 2px;
+    margin: 3px auto;
+}
+.resultat {
+    width: 75%;
+    height: 480px;
+    background: white;
+    margin: 5px auto;
+    padding: 15px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+
+}
+/* entete devis biblio client */
+.renseignement_inf_client {
+    width: 80%;
+    height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    margin: 5px auto;
+    padding-top: 20px;
+    /* border: 2px red solid; */
+    background: white;
+    display: none;
+}
+#bt_nouveau_client {
+    margin-left: 2px;
+}
+#clic_radio {
+    width: 60%;
+    height: 60%;
+}
+.recour_biblio h3 {
+    text-align: center;
+}
+
+#tabl_biblio td {
+    border-bottom: none;
+    cursor: pointer;
+}
+.trr3 {
+    display: none;
+}
+.trr2 {
+    display: none;
+}
+
+.coch_ok {
+    font-weight: bold;
+    width: 60px;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.coch_ok:hover {
+    background: #03FF03;
+    transition: 0.5s;
+}
+
+#tabl_biblio {
+    border: 2px solid black;
+    background: #D1DEE3;
+    width: 90%;
+    margin: 10px auto;
+    /* padding: 3px; */
+    border-radius: 6px;
+}
+
+#tabl_biblio th {
+    /* border-bottom: 2px solid white; */
+    background: #036897;
+    padding: 7px;
+}
+#tabl_biblio td {
+    padding: 3px;
+}
+#tabl_biblio .tr_survol:hover {
+    background: #FFBFCA;
+}
+.d1 table {
+    margin-left: 7%;
+}
+
+.d1 table input {
+    width: 90%;
+}
+
+.d1 {
+    border: 2px solid white;
+    width: 33.3%;
+    margin: 3px 3px;
+    padding: 3px;
+}
+.d1 input {
+    width: 50%;
+    margin: 3px 0px;
+}
+.d2 {
+    border: 2px solid white;
+    width: 33.3%;
+    margin: 3px 3px;
+    padding: 3px;
+    margin-left: 5%;
+}
+.d2 input {
+    width: 50%;
+    margin: 3px 0px;
+}
+.les_champ {
+    width: 95%;
+    display: flex;
+}
+.bt_info_aelite {
+    padding: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    /* display: block; */
+}
+.info_entrepise {
+    margin-top: 20px;
+}
+.info_entrepise button {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    /* margin-left: 20%; */
+}
+.mise_ajour_info_aelite {
+    /* border: 2px solid red; */
+    width: 80%;
+    margin: 15px auto;
+    display: none;
+    background: rgb(168, 93, 143);
+}
+#info_n {
+    width: 15%;
+}
+#info_p {
+    width: 17%;
+}
+#info_a {
+    width: 20%;
+}
+#info_t {
+    width: 10%;
+}
+#info_e {
+    width: 15%;
+}
+#info_l {
+    width: 23%;
+}
+.mise_ajour_info_aelite table {
+    border: 2px solid black;
+}
+.mise_ajour_info_aelite table th {
+    background: red;
+}
+.mise_ajour_info_aelite table input {
+    height: 35px;
+    /* border: 2px solid yellow; */
+
+}
+#bt_valider_la_modification_info_aelite {
+    font-size: 1.3em;
+    width: 30%;
+}
+
+
+.bt_f {
+    width: 93%;
+    background: plum;
+    display: flex;
+    margin: 4px auto;
+    padding: 3px 0px;
+}
+.eff {
+    margin-left: 27%;
+    font-size: 1.8em;
+    width: 20%;
+}
+.vali {
+    margin-left: 3%;
+    font-size: 1.8em;
+    width: 20%;
+}
+.div_val {
+    border-top: 4px solid rgb(255, 0, 128);
+    border-bottom: 4px solid rgb(255, 0, 128);
+    width: 30%;
+    margin: 10px auto;
+    /* border: rgb(255, 0, 128) ; */
+}
+.bouton_val {
+    padding: 4px 3px;
+    margin: 4px auto;
+    font-size: 1.6em;
+    width: 60%;
+    cursor: pointer;
+    border-radius: 15px;
+    background: #BDB1BD;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .bouton_val:hover {
+    color: white;
+    background: green;
+    transition: 0.8s;
+  }
+  /* .imp_enregistExcel {
+    margin-bottom: 15px;
+    width: 80%;
+  } */
+  .imp_enregistExcel button:hover {
+    transition: 0.7s;
+    background: white;
+    color: #473838;
+  }
+  .imp_enregistExcel {
+    width: 60%;
+    border: 2px solid red;
+    margin: 10px auto;
+    padding: 7px;
+    background: cyan;
+    border-radius: 5px;
+  }
+  .imp_enregistExcel button {
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    background: #473838;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    /* justify-content: end; */
+    margin: 0px 15px;
+  }
+  /* ___________div affiche tout resultat devis__________ */
+  .resultat table {
+    border: 2px solid black;
+    width: 98%;
+    margin: 5px auto;
+    text-align: center;
+}
+.resultat table th {
+    background: gray;
+    color: white;
+    /* width: 60%; */
+    height: 30px;
+}
+.resultat .td_design {
+    text-align: left;
+    padding-left: 10px;
+}
+.resultat table td {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.resultat table .un {
+    /* background: red; */
+    width: 55%;
+}
+.resultat table .deux {
+    /* background: red; */
+    width: 10%;
+}
+.resultat table .trois {
+    /* background: red; */
+    width: 10%;
+}
+.resultat table .quatre {
+    /* background: red; */
+    width: 10%;
+}
+.resultat table .cinq {
+    /* background: red; */
+    width: 15%;
+}
+.font_sous_total {
+    font-size: 1.2em;
+    background: #BDB1BD;
+}
+
+.resultat table h3 {
+    font-size: 1.3em;
+    margin-left: 20px;
+    text-align: left;
+}
+.td_design {
+    /* font-size: 1.3em; */
+    margin-left: 5px;
+    /* text-align: left; */
+}
+/* infoaelite et client */
+.info_aelite_client {
+    width: 98%;
+    /* height: 200px; */
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-between;
+    /* text-align: none; */
+}
+.info-aelite {
+    width: 40%;
+    /* display: none; */
+    /* height: 290px; */
+    /* border: 2px green solid; */
+    /* text-align: none; */
+}
+.client {
+    width: 30%;
+    margin-top: 20px;
+    /* margin-left: 40%; */
+    /* border: 2px solid blue; */
+    
+}
+
+.info-aelite img {
+    width: 90%;
+    height: 80px;
+    /* border: 2px green solid; */
+
+}
+.info-aelite p {
+    text-align: left;
+}
+.client p {
+    text-align: left;
+}
+.avance_p {
+    margin-left: 30px;
+}
+
+.date_numero_devis {
+    width: 98%;
+    margin-top: 20px;
+    /* height: 200px; */
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: space-between;
+
+}
+.numero_offr {
+    /* border: 2px red solid; */
+    width: 40%;
+}
+.numero_offr p {
+    text-align: left;
+    margin-left: 30px;
+}
+.date_devis {
+    /* border: 2px red solid; */
+    width: 30%;
+}
+.date_devis p {
+    text-align: left;
+}
+
+
+

@@ -1,0 +1,661 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #05DEFF;
+    /* background: black; */
+}
+h1 {
+    text-align: center;
+    margin: 17px 0px;
+    font-size: 2.6em;
+    background: red;
+    color: white;
+}
+#gt_rech {
+    /* border: 2px solid red; */
+    width: 75%;
+    margin: 2px auto;
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 13px;
+}
+/* _____partie calcul devis___ */
+#parti_calcul_devis {
+    background: rgb(252, 247, 247);
+    padding: 10px 5px;
+    margin-bottom: 15px;
+    width: 98%;
+    margin: auto;
+    /* display: none; */
+}
+.generalite {
+    margin-bottom: 10px;
+}
+.generalite table {
+    width: 92%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid black;
+}
+.generalite table th {
+    background: #e668ba;
+}
+.generalite table input {
+    width: 100%;
+}
+.generalite table .gene {
+    text-align: center;
+}
+.generalite table .genne {
+    text-align: center;
+}
+.generalite table .genera {
+    padding-left: 20px;
+}
+.sms_dosage {
+    padding-left: 20px;
+}
+.generalite table .gener {
+    padding-left: 10px;
+}
+.generalite table #tt_generalite {
+    text-align: center;
+}
+
+#checbox_ {
+    padding: 3px;
+}
+.gt_rech .saa {
+    height: 25px;
+    margin: auto 0px;
+}
+.gt_rech .gt_ {
+    width: 40%;
+}
+
+#rech {
+    width: 40%;
+    height: 25px;
+}
+#h3__ {
+    /* margin-left: 12%; */
+    font-size: 1.6em;
+    /* margin-top: 2px; */
+}
+
+.raccoucir {
+    width: 45%;
+    background: yellowgreen;
+    /* display: none; */
+    /* margin: 5px auto; */
+    padding: 6px;
+    display: flex;
+    /* border: 2px solid red; */
+}
+.recherche {
+    /* border: 2px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.raccoucir_B {
+    cursor: pointer;
+    width: 40%;
+    border-radius: 15px;
+    font-size: 1.2em;
+}
+.raccoucir_B:hover {
+    color: red;
+}
+
+.lab_rech {
+    /* margin-left: 5%; */
+    font-size: 1.3em;
+}
+
+.tout_saisir {
+    display: flex;
+    text-align: center;
+    margin: 10px auto;
+    width: 90%;
+    border: 2px solid white;
+    justify-content: space-evenly;
+    padding: 15px;
+    background: #FA00A2;
+}
+#ligne_cacher {
+    display: none;
+}
+.n_lign {
+    cursor: pointer;
+    
+}
+.tableau_tout_saisir_devis {
+    width: 90%;
+}
+.tableau_tout_saisir_devis td {
+    height: 30px;
+}
+.tableau_tout_saisir_devis input {
+    width: 98%;
+    height: 23px;
+    text-align: center;
+
+}
+.eff_excut {
+    height: 110px;
+    /* border: 2px solid red; */
+}
+.tout_saisir_form_calcul {
+    /* display: flex; */
+    text-align: center;
+    margin: 10px auto;
+    width: 40%;
+    border: 3px solid black;
+    border-radius: 6px;
+    justify-content: space-evenly;
+    padding: 10px;
+    background: #B8B8B8;
+    display: none;
+}
+.tout_saisir_form_calcul_pu {
+    /* display: flex; */
+    text-align: center;
+    margin: 10px auto;
+    width: 40%;
+    border: 3px solid black;
+    border-radius: 6px;
+    justify-content: space-evenly;
+    padding: 10px;
+    background: #B8B8B8;
+    display: none;
+}
+.cont_cal {
+    display: flex;
+    width: 100%;
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+}
+.detail {
+    /* border: 2px solid red; */
+    width: 20%;
+    margin: 0px 4px;
+    overflow: hidden;
+}
+.detail_form_calcul {
+    /* border: 2px solid red; */
+    width: 30%;
+    margin: 0px 4px;
+    overflow: hidden;
+}
+.detail select {
+    width: 100%;
+    height: 30px;
+}
+p {
+    /* border: 2px solid blue; */
+    background: #FFBFCA;
+    margin-bottom: 1px;
+    font-size: 1.5em;
+}
+.qt {
+    background: #FFBFCA;
+    margin-bottom: 1px;
+    font-size: 1.4em;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+}
+.qt:hover {
+    background: black;
+    color: yellow;
+    transition: 0.6s;
+    border-radius: 10px;  
+}
+.pu {
+    background: #FFBFCA;
+    margin-bottom: 1px;
+    font-size: 1.4em;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+}
+.pu:hover {
+    background: black;
+    color: yellow;
+    transition: 0.6s;
+    border-radius: 10px;  
+}
+.detail_form_calcul p {
+    font-size: 1.3em;
+}
+.chs {
+    height: 30px;
+    width: 100%;
+    /* font-size: 1.8em; */
+}
+.chs_form_calcul {
+    height: 25px;
+    width: 100%;
+    /* font-size: 1.8em; */
+}
+.bt_ef_ev {
+    font-size: 1.2em;
+    /* padding: 3px 5px; */
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+    height: 35px;
+    /* margin-top: 8px; */
+
+}
+.bt_ef_ev:hover {
+    background: #03FF03;
+    /* color: yellow; */
+    transition: 0.3s;
+}
+.bt_ef_ev_form_calcul {
+    font-size: 1.2em;
+    padding: 2px 3px;
+    cursor: pointer;
+    /* width: 25%; */
+    height: 30px;
+    /* margin-top: 8px; */
+
+}
+.bt_ef_ev_form_calcul:hover {
+    background: #03FF03;
+    /* color: yellow; */
+    transition: 0.3s;
+}
+
+.les_bt_form_calcul {
+    /* border: 2px solid red; */
+    width: 70%;
+    margin: 3px auto;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-evenly;
+    padding: 3px 5px;
+    background: #B8AB25;
+}
+
+.sms_resultat {
+    width: 55%;
+    margin: 20px auto;
+    padding: 5px;
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    margin-top: 30px;
+
+}
+h2 {
+    text-align: center;
+    font-size: 2.1em;
+}
+.tb_resltat {
+    background: white;
+    width: 80%;
+    height: 275px;
+    margin: 0px auto;
+    padding: 8px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.tb_resltat table {
+    border: 2px solid black;
+    width: 98%;
+    margin: 5px auto;
+    text-align: center;
+}
+.tire {
+    /* text-align: left; */
+    /* background: #03FF03; */
+    height: 35px;
+    padding: 3px;
+}
+.tire #p_tr {
+    font-size: 1.3em;
+    margin-left: 20px;
+    text-align: left;
+}
+.p_tr {
+    font-size: 1.3em;
+    margin-left: 20px;
+    text-align: left;
+}
+.tb_resltat h4 {
+    text-align: center;
+}
+.tb_resltat table th {
+    background: gray;
+    color: white;
+    /* width: 60%; */
+    height: 30px;
+}
+.tb_resltat table td {
+    border-bottom: 1px solid black;
+}
+.tb_resltat table .un {
+    /* background: red; */
+    width: 55%; 
+}
+.tb_resltat table .deux {
+    /* background: red; */
+    width: 10%;
+}
+.tb_resltat table .trois {
+    /* background: red; */
+    width: 10%;
+}
+.tb_resltat table .quatre {
+    /* background: red; */
+    width: 10%;
+}
+.tb_resltat table .cinq {
+    /* background: red; */
+    width: 15%;
+}
+.resultat_rech {
+    width: 80%;
+    padding: 8px;
+    background: white;
+    margin: 5px auto;
+}
+/* ________affichage de bibliotheque cacher_____ */
+.recour_biblio {
+    width: 80%;
+    height: 300px;
+    padding: 8px;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background: white;
+    margin: 5px auto;
+    display: none;
+}
+#rch_bilbioo {
+    width: 40%;
+    /* border: 2px red solid; */
+    background: #e668ba;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7px 0px;
+    text-align: center;
+}
+#rch_bilbioo h4 {
+    font-size: 1.2em;
+}
+#seach {
+    width: 70%;
+}
+#clic_radio {
+    width: 60%;
+    height: 60%;
+}
+.recour_biblio h3 {
+    text-align: center;
+}
+.resultat_rech h3 {
+    text-align: center;
+}
+.recour_biblio .coch_t {
+    border: 2px solid black;
+    background: #9348f5;
+    width: 93%;
+    margin: 10px auto;
+    /* padding: 3px; */
+    border-radius: 6px;
+}
+.recour_biblio .coch_t td {
+    border-bottom: none;
+}
+.coch_ok {
+    font-weight: bold;
+    width: 60px;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.coch_ok:hover {
+    background: #03FF03;
+    transition: 0.5s;
+}
+.recour_biblio .coch_t tr:hover {
+    background: none;
+}
+.recour_biblio table {
+    border: 2px solid black;
+    background: #D1DEE3;
+    width: 93%;
+    margin: 10px auto;
+    /* padding: 3px; */
+    border-radius: 6px;
+}
+.recour_biblio th,td {
+    border-bottom: 4px solid white;
+}
+.recour_biblio th {
+    /* border-bottom: 2px solid white; */
+    background: #036897;
+    padding: 7px;
+}
+.recour_biblio td {
+    padding: 3px;
+}
+.recour_biblio .tr_survol:hover {
+    background: #FFBFCA;
+}
+.depuis_biblio table {
+    /* background: #f14ece; */
+    width: 75%;
+    margin: 5px auto;
+}
+.depuis_biblio table th {
+    background: white;
+}
+.depuis_biblio table th,td {
+    border-bottom: none;
+}
+.tout_calcul_ {
+    border: 1px black solid;
+    width: 92%;
+    border-radius: 7px;
+    padding: 5px;
+    margin: auto;
+}
+.calcul_des_details_du_devi {
+    width: 100%;   
+}
+.calcul_des_details_du_devi th{
+    background: #e668ba;
+}
+.calcul_des_details_du_devi input{
+    width: 100%;
+    /* text-align: center; */
+}
+.calcul_des_details_du_devi .lign_c {
+    /* width: 100%; */
+    text-align: center;
+}
+.calcul_des_details_du_devi .lign_ {
+    /* width: 100%; */
+    text-align: center;
+}
+.unii {
+    text-align: center;
+}
+
+#gd_titre input {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: left;
+    padding: 3px 3px 3px 20px;
+    /* margin-left: 20px; */
+}
+#gde_titre input {
+    width: 100%;
+    font-weight: bold;
+    /* font-size: 1.2em; */
+    text-align: left;
+    padding: 3px 3px 3px 20px;
+    /* margin-left: 20px; */
+}
+.un_titre {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.sous_total {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.feuille_de_calcul {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.nvlle_lign {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.sup2_lign {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.un2_titre {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+.sous2_total {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 5px;   
+}
+#okay_calcul {
+    cursor: pointer;
+    /* width: 30%; */
+    padding: 3px;
+    border-radius: 5px;   
+}
+.titre_defo_calcul {
+    padding-left: 15px;
+}
+.titre_defo_calcull {
+    padding-left: 5px;
+}
+.s_t_calcul {
+    background: #B8B8B8;
+}
+#s_t_calcull {
+    text-align: center;
+}
+.ajout_sup_execut {
+    /* border: red solid 2px; */
+    width: 70%;
+    margin: 0px auto;
+    background: #a7a4a6;
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+.ajout_sup_executt {
+    /* border: red solid 2px; */
+    width: 70%;
+    margin: 4px auto;
+    background: #e4e1e3;
+    border-radius: 10px;
+    padding: 3px 0px;
+}
+#sms_feuille_calcul {
+    background: #fcc8ea;
+}
+#m2_m3 {
+    /* border: 2px solid red; */
+    display: flex;
+    margin: 10px 0px;
+}
+.m2 {
+    /* border: 2px red solid; */
+    margin-bottom: 5px;
+    border-right: 2px black solid;
+    width: 45%;
+    padding-right: 5px;
+}
+.m2 .text {
+    border-bottom: 2px black solid;
+    width: 38%;
+    margin-left: 6%;
+    margin-bottom: 7px;
+}
+.m2 .text h2 {
+    font-size: 1.8em;
+}
+.m2 table {
+    width: 100%; 
+}
+.m2 table input {
+    width: 100%;
+    padding: 0px 4px; 
+    text-align: center;
+}
+.m3 {
+    /* border: 2px red solid; */
+    margin-bottom: 5px;
+    border-left: 2px black solid;
+    /* padding-left: 3px; */
+    margin-left: 2px;
+    /* width: 70%; */
+}
+.m3 .text {
+    border-bottom: 2px black solid;
+    width: 35%;
+    margin-left: 6%;
+    margin-bottom: 7px;
+}
+.m3 .text h2 {
+    font-size: 1.8em;
+}
+.m3 table {
+    width: 97%;
+    margin: auto; 
+}
+.m3 table input {
+    width: 100%;
+    padding: 0px 4px;
+    text-align: center; 
+}
+#table_resultat_calcul {
+    width: 92%; 
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 15px auto;  
+}
+#table_resultat_calcul table {
+    width: 100%;
+    /* margin: auto; */
+}
+#table_resultat_calcul table th {
+    background: #e668ba;
+}
+#table_resultat_calcul table input {
+    width: 100%;
+    text-align: center;
+    /* margin: auto; */
+}
+#table_resultat_calcul table .s_t_calcul {
+    /* width: 100%; */
+    text-align: center;
+    /* margin: auto; */
+}
