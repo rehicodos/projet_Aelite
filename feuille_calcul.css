@@ -30,3 +30,25 @@
 #id_terrassem {
     background: #FFBFCA;
 }
+.maconnerie {
+    width: 92%;
+    margin: auto;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid black;
+}
+.maconnerie table {
+    /* border: 1px solid black; */
+    width: 100%;
+    text-align: center;
+}
+.maconnerie h4 {
+    text-align: center;
+}
+.maconnerie table th {
+    background: #e668ba;
+}
+.maconnerie table input {
+    width: 100%;
+    text-align: center;
+}

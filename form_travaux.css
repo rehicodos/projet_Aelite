@@ -54,10 +54,16 @@ h1 {
     text-align: center;
 }
 .generalite table .genera {
-    padding-left: 20px;
+    /* padding-left: 20px; */
+    text-align: center;
 }
 .sms_dosage {
+    /* padding-left: 20px; */
+    text-align: center;
+}
+.sm_dosage {
     padding-left: 20px;
+    /* text-align: center; */
 }
 .generalite table .gener {
     padding-left: 10px;
@@ -463,12 +469,16 @@ h2 {
 .depuis_biblio table th,td {
     border-bottom: none;
 }
-.tout_calcul_ {
+.beton {
     border: 1px black solid;
     width: 92%;
+    padding: 3px;
     border-radius: 7px;
-    padding: 5px;
     margin: auto;
+}
+.tout_calcul_ {
+    /* border: 1px black solid; */
+    width: 100%;
 }
 .calcul_des_details_du_devi {
     width: 100%;   
@@ -478,7 +488,7 @@ h2 {
 }
 .calcul_des_details_du_devi input{
     width: 100%;
-    /* text-align: center; */
+    text-align: center;
 }
 .calcul_des_details_du_devi .lign_c {
     /* width: 100%; */

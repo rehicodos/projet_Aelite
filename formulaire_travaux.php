@@ -57,7 +57,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="form_travaux1_2.css">
+    <link rel="stylesheet" href="form_travaux.css">
     <link rel="stylesheet" href="factures__p.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Formulaire travaux</title>
@@ -368,187 +368,200 @@
                     </tr>
                 </table>
             </div>
-            <div class="tout_calcul_">          
-                <table class="calcul_des_details_du_devi" id="calcul_des_details_du_devis">
-                    <tr>
-                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                        <td colspan="8"><p class="sms_dosage">Dosage Béton</p></td>
-                    </tr>
-                    <tr>                                           
-                        <!-- <th width="5%"><input id="checkAl" class="formcontrol" type="checkbox"></th>                                   -->
-                        <th width="24%">Désignation</th>                                   
-                        <th width="10%">Unité</th>                                   
-                        <th width="13%">Quantité</th>                                    
-                        <th width="11%">Ciment</th>                                   
-                        <th width="11%">Sable</th>                                   
-                        <th width="10%">Gravier</th>                                   
-                        <th width="11%">Coffrage</th>                                   
-                        <th width="10%">Acier</th>                                   
-                    </tr>
-                    <tr>
-                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                        <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 150kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                        <td><input class="lign_c" id="quantity__1" type="number" name="quantite_[]" autocomplete="off" ></td>
-                        <td><input class="lign_" id="ciment_1" type="number" name="prix_u[]" autocomplete="off"></td>
-                        <td><input class="lign_c" id="sable_1" type="number" name="prix_u[]" autocomplete="off"></td>
-                        <td><input class="lign_c" id="gravier_1" type="number" name="prix_u[]" autocomplete="off"></td>
-                        <td><input class="lign_c" id="coffrage_1" type="number" name="prix_u[]" autocomplete="off"></td>
-                        <td><input class="lign_c" id="acier_1" type="number" name="prix_u[]" autocomplete="off"></td>
-                    </tr>
-                                <tr>
-                                    <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                    <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 200kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                                    <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                                    <td><input class="lign_c" id="quantity__2" type="number" name="quantite_[]" autocomplete="off" ></td>
-                                    <td><input class="lign_" id="ciment_2" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="sable_2" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="gravier_2" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="coffrage_2" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="acier_2" type="number" name="prix_u[]" autocomplete="off"></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                    <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 250kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                                    <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                                    <td><input class="lign_c" id="quantity__3" type="number" name="quantite_[]" autocomplete="off" ></td>
-                                    <td><input class="lign_" id="ciment_3" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="sable_3" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="gravier_3" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="coffrage_3" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="acier_3" type="number" name="prix_u[]" autocomplete="off"></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                    <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 350kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                                    <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                                    <td><input class="lign_c" id="quantity__4" type="number" name="quantite_[]" autocomplete="off" ></td>
-                                    <td><input class="lign_" id="ciment_4" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="sable_4" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="gravier_4" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="coffrage_4" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="acier_4" type="number" name="prix_u[]" autocomplete="off"></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                    <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 400kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                                    <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                                    <td><input class="lign_c" id="quantity__5" type="number" name="quantite_[]" autocomplete="off" ></td>
-                                    <td><input class="lign_" id="ciment_5" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="sable_5" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="gravier_5" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="coffrage_5" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="acier_5" type="number" name="prix_u[]" autocomplete="off"></td>
-                                </tr>
-                                <tr>
-                                    <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                    <td><input class="titre_defo_calcull" value="Béton de propreté dosé à 450kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
-                                    <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
-                                    <td><input class="lign_c" id="quantity__6" type="number" name="quantite_[]" autocomplete="off" ></td>
-                                    <td><input class="lign_" id="ciment_6" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="sable_6" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="gravier_6" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="coffrage_6" type="number" name="prix_u[]" autocomplete="off"></td>
-                                    <td><input class="lign_c" id="acier_6" type="number" name="prix_u[]" autocomplete="off"></td>
-                                </tr>
-                                
-                                <tbody>
-                                </tbody>
-                                <tr>
-                                   <td colspan="3"><h4 id="s_t_calcull" class="s_t_calcul"><strong>Total</strong></h4></td>
-                                   <td><input class="lign_c" type="text" name="" id="tt_ciment"></td>
-                                   <td><input class="lign_c" type="number" name="" id="tt_sable"></td>
-                                   <td><input class="lign_c" type="number" name="" id="tt_gravier"></td>
-                                   <td><input class="lign_c" type="number" name="" id="tt_coffrage"></td>
-                                   <td><input class="lign_c" type="number" name="" id="tt_acier"></td>
-                                </tr> 
-                </table>  
-            </div>
-            <!-- <div class="ajout_sup_executt">
-                <div class="eff_execut">
-                    <button type="button" class="nvlle_lign">Nouvelle ligne +</button>
-                    <button type="button" class="sup2_lign">Supprimer ligne -</button>
-                    <button type="button" class="un2_titre">Un titre</button>
-                    <button id="okay_calcul" type="button">Okay</button>
-                </div>                 
-            </div> -->
-            <div id="table_resultat_calcul">
-                <table>
-                    <tr>
-                        <th>Désignation</th>
-                        <th>Unité</th>
-                        <th>Quantité</th>
-                        <th>Prix_U</th>
-                        <th>Prix_T</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Ciment" name="" id=""></td>
-                        <td><input type="text" value="t" name="" id=""></td>
-                        <td><input type="number" name="" id="cimen"></td>
-                        <td><input type="text" value="80000" name="" id="tt1"></td>
-                        <td><input type="text" name="" id="pt_ciment"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Sable" name="" id=""></td>
-                        <td><input type="text" value="v" name="" id=""></td>
-                        <td><input type="number" name="" id="sabl"></td>
-                        <td><input type="text" value="85000" name="" id="tt2"></td>
-                        <td><input type="text" name="" id="pt_sable"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Gravier" name="" id=""></td>
-                        <td><input type="text" value="t" name="" id=""></td>
-                        <td><input type="number" name="" id="gravie"></td>
-                        <td><input type="text" value="10000" name="" id="tt3"></td>
-                        <td><input type="text" name="" id="pt_gravier"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Transport gravier" name="" id=""></td>
-                        <td><input type="text" value="v" name="" id=""></td>
-                        <td><input type="number" name="" id="t_g"></td>
-                        <td><input type="text" value="150000" name="" id="tt4"></td>
-                        <td><input type="text" name="" id="pt_coffrage"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Eau" name="" id=""></td>
-                        <td><input type="text" value="L" name="" id=""></td>
-                        <td><input type="number" name="" id=""></td>
-                        <td><input type="text" value="1 500" name="" id=""></td>
-                        <td><input type="number" name="" ></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Acier" name="" id=""></td>
-                        <td><input type="text" value="b" name="" id=""></td>
-                        <td><input type="number" name="" id="aci____er"></td>
-                        <td><input type="number" value="59322" name="" id="tt5"></td>
-                        <td><input type="number" name="" id="pt_acier"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" value="Coffrage" name="" id=""></td>
-                        <td><input type="text" value="m²" name="" id=""></td>
-                        <td><input type="number" name="" id="coff"></td>
-                        <td><input type="number" value="3750" name="" id="tt6"></td>
-                        <td><input type="number" name="" id="pt_cof_2"></td>
-                    </tr>
-                    <!-- <footer> -->
+            <div class="beton">
+                <div class="tout_calcul_">          
+                    <table class="calcul_des_details_du_devi" id="calcul_des_details_du_devis">
                         <tr>
-                            <td colspan="4"><h4  class="s_t_calcul"><strong>TOTAL DEBOURSE SEC HT DOSAGE</strong></h4></td>
-                            <td><input type="number" name="" id="debour_ht"></td>
+                            <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                            <td colspan="8"><p class="sms_dosage">Dosage Béton</p></td>
+                        </tr>
+                        <tr>                                           
+                            <!-- <th width="5%"><input id="checkAl" class="formcontrol" type="checkbox"></th>                                   -->
+                            <th width="24%">Désignation</th>                                   
+                            <th width="10%">Unité</th>                                   
+                            <th width="13%">Quantité</th>                                    
+                            <th width="11%">Ciment</th>                                   
+                            <th width="11%">Sable</th>                                   
+                            <th width="10%">Gravier</th>                                   
+                            <th width="11%">Coffrage</th>                                   
+                            <th width="10%">Acier</th>                                   
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                            <td colspan="8"><p class="sm_dosage">Béton Propreté Dosé à :</p></td>
+                        </tr>
+                        <tr>
+                            <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                            <td><input class="titre_defo_calcull" value="150kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                            <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                            <td><input class="lign_c" id="quantity__1" type="number" name="quantite_[]" autocomplete="off" ></td>
+                            <td><input class="lign_" id="ciment_1" type="number" name="prix_u[]" autocomplete="off"></td>
+                            <td><input class="lign_c" id="sable_1" type="number" name="prix_u[]" autocomplete="off"></td>
+                            <td><input class="lign_c" id="gravier_1" type="number" name="prix_u[]" autocomplete="off"></td>
+                            <td><input class="lign_c" id="coffrage_1" type="number" name="prix_u[]" autocomplete="off"></td>
+                            <td><input class="lign_c" id="acier_1" type="number" name="prix_u[]" autocomplete="off"></td>
+                        </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td><input class="titre_defo_calcull" value="200kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                                        <td><input class="lign_c" id="quantity__2" type="number" name="quantite_[]" autocomplete="off" ></td>
+                                        <td><input class="lign_" id="ciment_2" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="sable_2" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="gravier_2" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="coffrage_2" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="acier_2" type="number" name="prix_u[]" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td><input class="titre_defo_calcull" value="250kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                                        <td><input class="lign_c" id="quantity__3" type="number" name="quantite_[]" autocomplete="off" ></td>
+                                        <td><input class="lign_" id="ciment_3" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="sable_3" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="gravier_3" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="coffrage_3" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="acier_3" type="number" name="prix_u[]" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td colspan="8"><p class="sm_dosage">Béton Armé Dosé à :</p></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td><input class="titre_defo_calcull" value="Béton dosé à 350kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                                        <td><input class="lign_c" id="quantity__4" type="number" name="quantite_[]" autocomplete="off" ></td>
+                                        <td><input class="lign_" id="ciment_4" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="sable_4" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="gravier_4" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="coffrage_4" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="acier_4" type="number" name="prix_u[]" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td><input class="titre_defo_calcull" value="400kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                                        <td><input class="lign_c" id="quantity__5" type="number" name="quantite_[]" autocomplete="off" ></td>
+                                        <td><input class="lign_" id="ciment_5" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="sable_5" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="gravier_5" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="coffrage_5" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="acier_5" type="number" name="prix_u[]" autocomplete="off"></td>
+                                    </tr>
+                                    <tr>
+                                        <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
+                                        <td><input class="titre_defo_calcull" value="450kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                        <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
+                                        <td><input class="lign_c" id="quantity__6" type="number" name="quantite_[]" autocomplete="off" ></td>
+                                        <td><input class="lign_" id="ciment_6" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="sable_6" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="gravier_6" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="coffrage_6" type="number" name="prix_u[]" autocomplete="off"></td>
+                                        <td><input class="lign_c" id="acier_6" type="number" name="prix_u[]" autocomplete="off"></td>
+                                    </tr>
+                                    
+                                    <tbody>
+                                    </tbody>
+                                    <tr>
+                                    <td colspan="3"><h4 id="s_t_calcull" class="s_t_calcul"><strong>Total</strong></h4></td>
+                                    <td><input class="lign_c" type="text" name="" id="tt_ciment"></td>
+                                    <td><input class="lign_c" type="number" name="" id="tt_sable"></td>
+                                    <td><input class="lign_c" type="number" name="" id="tt_gravier"></td>
+                                    <td><input class="lign_c" type="number" name="" id="tt_coffrage"></td>
+                                    <td><input class="lign_c" type="number" name="" id="tt_acier"></td>
+                                    </tr> 
+                    </table>  
+                </div>
+                <!-- <div class="ajout_sup_executt">
+                    <div class="eff_execut">
+                        <button type="button" class="nvlle_lign">Nouvelle ligne +</button>
+                        <button type="button" class="sup2_lign">Supprimer ligne -</button>
+                        <button type="button" class="un2_titre">Un titre</button>
+                        <button id="okay_calcul" type="button">Okay</button>
+                    </div>                 
+                </div> -->
+                <div id="table_resultat_calcul">
+                    <table>
+                        <tr>
+                            <td colspan="5"><p class="sms_dosage">Rendu en Détails</p></td>
+                        </tr>
+                        <tr>
+                            <th>Désignation</th>
+                            <th>Unité</th>
+                            <th>Quantité</th>
+                            <th>Prix_U</th>
+                            <th>Prix_T</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="Ciment" name="" id=""></td>
+                            <td><input type="text" value="t" name="" id=""></td>
+                            <td><input type="number" name="" id="cimen"></td>
+                            <td><input type="text" value="80000" name="" id="tt1"></td>
+                            <td><input type="text" name="" id="pt_ciment"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="Sable" name="" id=""></td>
+                            <td><input type="text" value="v" name="" id=""></td>
+                            <td><input type="number" name="" id="sabl"></td>
+                            <td><input type="text" value="85000" name="" id="tt2"></td>
+                            <td><input type="text" name="" id="pt_sable"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="Gravier" name="" id=""></td>
+                            <td><input type="text" value="t" name="" id=""></td>
+                            <td><input type="number" name="" id="gravie"></td>
+                            <td><input type="text" value="10000" name="" id="tt3"></td>
+                            <td><input type="text" name="" id="pt_gravier"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="Transport gravier" name="" id=""></td>
+                            <td><input type="text" value="v" name="" id=""></td>
+                            <td><input type="number" name="" id="t_g"></td>
+                            <td><input type="text" value="150000" name="" id="tt4"></td>
+                            <td><input type="text" name="" id="pt_coffrage"></td>
                         </tr>
                         <!-- <tr>
-                            <td colspan="4"><h4  class="s_t_calcul"><strong>MONTANT TOTAL TRAVAUX HT</strong></h4></td>
-                            <td><input type="number" name="" id="montant_travo"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"><h4  class="s_t_calcul"><strong>TOTAL MARGE HT</strong></h4></td>
-                            <td><input type="text" name="" id="marge_"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4"><h4  class="s_t_calcul"><strong>COEFFICIENT K</strong></h4></td>
-                            <td><input type="text" name="" id="coeff"></td>
+                            <td><input type="text" value="Eau" name="" id=""></td>
+                            <td><input type="text" value="L" name="" id=""></td>
+                            <td><input type="number" name="" id=""></td>
+                            <td><input type="text" value="1 500" name="" id=""></td>
+                            <td><input type="number" name="" ></td>
                         </tr> -->
-                    <!-- </footer> -->
-                </table>
+                        <tr>
+                            <td><input type="text" value="Acier" name="" id=""></td>
+                            <td><input type="text" value="b" name="" id=""></td>
+                            <td><input type="number" name="" id="aci____er"></td>
+                            <td><input type="text" value="59322" name="" id="tt5"></td>
+                            <td><input type="number" name="" id="pt_acier"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" value="Coffrage" name="" id=""></td>
+                            <td><input type="text" value="m²" name="" id=""></td>
+                            <td><input type="number" name="" id="coff"></td>
+                            <td><input type="text" value="3750" name="" id="tt6"></td>
+                            <td><input type="number" name="" id="pt_cof_2"></td>
+                        </tr>
+                        <!-- <footer> -->
+                            <tr>
+                                <td colspan="4"><h4  class="s_t_calcul"><strong>TOTAL DEBOURSE SEC HT DOSAGE</strong></h4></td>
+                                <td><input type="number" name="" id="debour_ht"></td>
+                            </tr>
+                            <!-- <tr>
+                                <td colspan="4"><h4  class="s_t_calcul"><strong>MONTANT TOTAL TRAVAUX HT</strong></h4></td>
+                                <td><input type="number" name="" id="montant_travo"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><h4  class="s_t_calcul"><strong>TOTAL MARGE HT</strong></h4></td>
+                                <td><input type="text" name="" id="marge_"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><h4  class="s_t_calcul"><strong>COEFFICIENT K</strong></h4></td>
+                                <td><input type="text" name="" id="coeff"></td>
+                            </tr> -->
+                        <!-- </footer> -->
+                    </table>
+                </div>
             </div>
             <?php
                 include_once('feuille_calcul.php');
