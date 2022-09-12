@@ -115,7 +115,7 @@ document.getElementById('nbre_brq').style.backgroundColor= "tomato";
 document.getElementById('prix_t_brq').style.backgroundColor= "tomato";
 document.getElementById('saisi_nbre_brq').style.backgroundColor= "tomato";
 document.getElementById('saisir_prix_t_brq').style.backgroundColor= "tomato";
-
+ 
 // _____________css tt , agglos et hourdis__________
 document.getElementById('debour_ht_aggol_hourdi').style.backgroundColor= "tomato";
 
@@ -229,5 +229,38 @@ $(".qt_pu_agglos_hourdis_7").keyup(function(){
     var tt7 = Number($("#tt_hourdi_20").val());
     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+});
+
+// __________peinture________
+// ______determination de la surface du mur______
+$("#lon_ , #lar_ , #haut_").keyup(function(){
+    var L = Number($("#lon_").val());
+    var l = Number($("#lar_").val());
+    var h = Number($("#haut_").val());
+    var p = ((L+l)*2);
+    var surf = p*h;
+    document.getElementById('surfac_a_peindr').innerHTML = surf;
+});
+// ________calcul de la quantité de peinture du mur______
+$(".qt_peinture_mur").keyup(function(){
+    var surfa = Number($("#surf_mur").val());
+    var nbre_couch = Number($("#nbre_couche_mur").val());
+    var rendement = Number($("#rendement_mur").val());
+    var p_u = Number($("#pu_peinture_mur").val());
+    var qt_peinture = ((surfa/rendement)*nbre_couch);
+    var p_t = p_u*qt_peinture;
+    document.getElementById('peinture_necessaire_mur').innerHTML = qt_peinture.toFixed(2);
+    document.getElementById('prix_peinture_mur').innerHTML = p_t.toFixed(2);
+});
+// ________calcul de la quantité de peinture du plafond______
+$(".qt_peinture_plafond").keyup(function(){
+    var surfa = Number($("#surf_plafond").val());
+    var nbre_couch = Number($("#nbre_couche_plafond").val());
+    var rendement = Number($("#rendement_plafond").val());
+    var p_u = Number($("#pu_plafond").val());
+    var qt_peinture = ((surfa/rendement)*nbre_couch);
+    var p_t = p_u*qt_peinture;
+    document.getElementById('peinture_necessaire_plafond').innerHTML = qt_peinture.toFixed(2);
+    document.getElementById('prix_peinture_plafond').innerHTML = p_t.toFixed(2);
 });
 

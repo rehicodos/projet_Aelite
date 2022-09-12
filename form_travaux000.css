@@ -474,7 +474,7 @@ h2 {
     width: 92%;
     padding: 3px;
     border-radius: 7px;
-    margin: auto;
+    margin: 10px auto;
 }
 .tout_calcul_ {
     /* border: 1px black solid; */
@@ -668,4 +668,7 @@ h2 {
     /* width: 100%; */
     text-align: center;
     /* margin: auto; */
+}
+#peint_cal {
+    text-align: center;
 }

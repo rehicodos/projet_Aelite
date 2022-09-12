@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="feuille_calcul12345.css">
+    <link rel="stylesheet" href="feuille_calcul.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Document</title>
 </head>
@@ -171,9 +171,72 @@
             </table>
         </div>
     </div>
+    <div id="table_resultat_calcul">
+        <p class="sms_dosage">Peinture</p>
+        <table>
+            <tr>
+                <td><p id="peint_cal">Calculer Surface Mur à Peindre</p></td>
+            </tr>
+            <tr>
+                <th colspan="2">Périmètre(m)</th>
+                <th>Hauteur</th>
+                <th>Surface à Peindre(m²)</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="lon_" placeholder="Longueur(m)"></td>
+                <td><input type="text" name="" id="lar_" placeholder="Largeur(m)"></td>
+                <td><input type="text" name="" id="haut_" placeholder="Hauteur(m)"></td>
+                <td><strong><h3 id="surfac_a_peindr">0.00</h3></strong></td>
+            </tr>
+        </table>
+        <div class="separateur"></div>
+        <table>
+            <tr>
+                <td colspan="2"><p id="peint_cal">Quantité de Peinture Nécessaire pour Mur</p></td>
+            </tr>
+            <tr>
+                <th>Surface Mur à Peindre(m²)</th>
+                <th>V_Rendement(m²)</th>
+                <th>Nbre de couche</th>
+                <th>Prix_U</th>
+                <th>Peinture Nécessaire(L)</th>
+                <th>Prix_T</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="surf_mur"></td>
+                <td><input type="text" name="" id="rendement_mur"></td>
+                <td><input class="qt_peinture_mur"  type="text" name="" id="nbre_couche_mur"></td>
+                <td><input class="qt_peinture_mur" type="text"  name="" id="pu_peinture_mur"></td>
+                <td><strong><h3 class="pass_partt" id="peinture_necessaire_mur">0.00</h3></strong></td>
+                <td><strong><h3 class="pass_partt" id="prix_peinture_mur">0.00</h3></strong></td>
+            </tr>
+        </table>
+        <div class="separateur"></div>
+        <table>
+            <tr>
+                <td colspan="2"><p id="peint_cal">Quantité de Peinture Nécessaire pour Plafond</p></td>
+            </tr>
+            <tr>
+                <th>Surface Plafond à Peindre(m²)</th>
+                <th>V_Rendement(m²)</th>
+                <th>Nbre de couche</th>
+                <th>Prix_U</th>
+                <th>Peinture Nécessaire(L)</th>
+                <th>Prix_T</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="surf_plafond" placeholder="S = L x l"></td>
+                <td><input type="text" name="" id="rendement_plafond"></td>
+                <td><input class="qt_peinture_plafond" type="text" name="" id="nbre_couche_plafond"></td>
+                <td><input class="qt_peinture_plafond" type="text"  name="" id="pu_plafond"></td>
+                <td><strong><h3 class="pass_partt" id="peinture_necessaire_plafond">0.00</h3></strong></td>
+                <td><strong><h3 class="pass_partt" id="prix_peinture_plafond">0.00</h3></strong></td>
+            </tr>
+        </table>
+    </div>
+    
 
 
-
-    <script src="feuille_call_000.js"></script>
+    <script src="feuille_call.js"></script>
 </body>
 </html>

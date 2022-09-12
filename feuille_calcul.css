@@ -56,3 +56,19 @@
     width: 100%;
     text-align: center;
 }
+#peinture_necessaire, #prix_peinture {
+    text-align: center;
+}
+#peint_cal {
+    text-align: center;
+}
+#surfac_a_peindr {
+    text-align: center;
+    background: tomato;
+}
+.pass_partt {
+    text-align: center;
+    background: tomato;
+}
+
+
