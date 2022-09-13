@@ -102,7 +102,7 @@
                 <td><strong><h3 id="saisir_prix_t_brq">0.00</h3></strong></td>
             </tr>
         </table>
-        <div id="table_resultat_calcul">
+        <!-- <div id="table_resultat_calcul">
             <table>
                 <tr>
                     <td colspan="5"><p class="sms_dosage">Agglos et Hourdis</p></td>
@@ -169,7 +169,7 @@
                     <td><strong><h3 id="debour_ht_aggol_hourdi">0.00</h3></strong></td>
                 </tr>
             </table>
-        </div>
+        </div> -->
     </div>
     <div id="table_resultat_calcul">
         <p class="sms_dosage">Peinture</p>
@@ -199,7 +199,7 @@
                 <th>V_Rendement(m²)</th>
                 <th>Nbre de couche</th>
                 <th>Prix_U</th>
-                <th>Peinture Nécessaire(L)</th>
+                <th>Peinture Nécessaire</th>
                 <th>Prix_T</th>
             </tr>
             <tr>
@@ -221,7 +221,7 @@
                 <th>V_Rendement(m²)</th>
                 <th>Nbre de couche</th>
                 <th>Prix_U</th>
-                <th>Peinture Nécessaire(L)</th>
+                <th>Peinture Nécessaire</th>
                 <th>Prix_T</th>
             </tr>
             <tr>
@@ -237,6 +237,6 @@
     
 
 
-    <script src="feuille_call.js"></script>
+    <script src="feuille_call00.js"></script>
 </body>
 </html>

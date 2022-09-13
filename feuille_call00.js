@@ -82,8 +82,8 @@ function cal(val) {
 
     var surfax_brq_1 = 0.0924;
     var surfax_brq_2 = 0.1144;
-    var nbre_brq_opt1 = ((surface_mur / surfax_brq_1) * (1.07));
-    var nbre_brq_opt2 = ((surface_mur / surfax_brq_2) * (1.07));
+    var nbre_brq_opt1 = ((surface_mur / surfax_brq_1) * (1.2));
+    var nbre_brq_opt2 = ((surface_mur / surfax_brq_2) * (1.2));
 
     if(selection_ == "type_1"){
         var som_ = prix_u_brq * nbre_brq_opt1;
@@ -102,7 +102,7 @@ function cal2() {
     var larg_brq = Number(document.getElementById("larg_brq").value);
     var joint = 0.02;
     var surfaxx_brq = ((parseFloat(long_brq)+joint)*(parseFloat(larg_brq)+joint));
-    var nbr_brq = (parseFloat(surface_mur)/surfaxx_brq)*(1.07);
+    var nbr_brq = (parseFloat(surface_mur)/surfaxx_brq)*(1.2);
     var prix_u_brq = Number(document.getElementById("prix_u_brq2").value);
     var som_ = parseFloat(prix_u_brq) * nbr_brq;
 
@@ -117,119 +117,119 @@ document.getElementById('saisi_nbre_brq').style.backgroundColor= "tomato";
 document.getElementById('saisir_prix_t_brq').style.backgroundColor= "tomato";
  
 // _____________css tt , agglos et hourdis__________
-document.getElementById('debour_ht_aggol_hourdi').style.backgroundColor= "tomato";
+// document.getElementById('debour_ht_aggol_hourdi').style.backgroundColor= "tomato";
 
-$(".qt_pu_agglos_hourdis_1").keyup(function(){
-    var agglo_10_qt = Number($("#agglo_10_qt").val());
-    var agglo_10_pu = Number($("#agglo_10_pu").val());
-    $("#tt_agglo_10").val(agglo_10_pu * agglo_10_qt);
+// $(".qt_pu_agglos_hourdis_1").keyup(function(){
+//     var agglo_10_qt = Number($("#agglo_10_qt").val());
+//     var agglo_10_pu = Number($("#agglo_10_pu").val());
+//     $("#tt_agglo_10").val(agglo_10_pu * agglo_10_qt);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_2").keyup(function(){
-    var agglo_15_creux_qt = Number($("#agglo_15_creux_qt").val());
-    var agglo_15_creux_pu = Number($("#agglo_15_creux_pu").val());
-    $("#tt_agglo_15_creux").val(agglo_15_creux_qt * agglo_15_creux_pu);
+// $(".qt_pu_agglos_hourdis_2").keyup(function(){
+//     var agglo_15_creux_qt = Number($("#agglo_15_creux_qt").val());
+//     var agglo_15_creux_pu = Number($("#agglo_15_creux_pu").val());
+//     $("#tt_agglo_15_creux").val(agglo_15_creux_qt * agglo_15_creux_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_3").keyup(function(){
-    var agglo_15_plein_qt = Number($("#agglo_15_plein_qt").val());
-    var agglo_15_plein_pu = Number($("#agglo_15_plein_pu").val());
-    $("#tt_agglo_15_plein").val(agglo_15_plein_qt * agglo_15_plein_pu);
+// $(".qt_pu_agglos_hourdis_3").keyup(function(){
+//     var agglo_15_plein_qt = Number($("#agglo_15_plein_qt").val());
+//     var agglo_15_plein_pu = Number($("#agglo_15_plein_pu").val());
+//     $("#tt_agglo_15_plein").val(agglo_15_plein_qt * agglo_15_plein_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_4").keyup(function(){
-    var agglo_20_creux_qt = Number($("#agglo_20_creux_qt").val());
-    var agglo_20_creux_pu = Number($("#agglo_20_creux_pu").val());
-    $("#tt_agglo_20_creux").val(agglo_20_creux_qt * agglo_20_creux_pu);
+// $(".qt_pu_agglos_hourdis_4").keyup(function(){
+//     var agglo_20_creux_qt = Number($("#agglo_20_creux_qt").val());
+//     var agglo_20_creux_pu = Number($("#agglo_20_creux_pu").val());
+//     $("#tt_agglo_20_creux").val(agglo_20_creux_qt * agglo_20_creux_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_5").keyup(function(){
-    var agglo_20_plein_qt = Number($("#agglo_20_plein_qt").val());
-    var agglo_20_plein_pu = Number($("#agglo_20_plein_pu").val());
-    $("#tt_agglo_20_plein").val(agglo_20_plein_qt * agglo_20_plein_pu);
+// $(".qt_pu_agglos_hourdis_5").keyup(function(){
+//     var agglo_20_plein_qt = Number($("#agglo_20_plein_qt").val());
+//     var agglo_20_plein_pu = Number($("#agglo_20_plein_pu").val());
+//     $("#tt_agglo_20_plein").val(agglo_20_plein_qt * agglo_20_plein_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_6").keyup(function(){
-    var hourdi_16_qt = Number($("#hourdis_16_qt").val());
-    var hourdi_16_pu = Number($("#hourdis_16_pu").val());
-    $("#tt_hourdi_16").val(hourdi_16_qt * hourdi_16_pu);
+// $(".qt_pu_agglos_hourdis_6").keyup(function(){
+//     var hourdi_16_qt = Number($("#hourdis_16_qt").val());
+//     var hourdi_16_pu = Number($("#hourdis_16_pu").val());
+//     $("#tt_hourdi_16").val(hourdi_16_qt * hourdi_16_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
-$(".qt_pu_agglos_hourdis_7").keyup(function(){
-    var hourdi_20_qt = Number($("#hourdis_20_qt").val());
-    var hourdi_20_pu = Number($("#hourdis_20_pu").val());
-    $("#tt_hourdi_20").val(hourdi_20_qt * hourdi_20_pu);
+// $(".qt_pu_agglos_hourdis_7").keyup(function(){
+//     var hourdi_20_qt = Number($("#hourdis_20_qt").val());
+//     var hourdi_20_pu = Number($("#hourdis_20_pu").val());
+//     $("#tt_hourdi_20").val(hourdi_20_qt * hourdi_20_pu);
 
-    var tt1 = Number($("#tt_agglo_10").val());
-    var tt2 = Number($("#tt_agglo_15_creux").val());
-    var tt3 = Number($("#tt_agglo_15_plein").val());
-    var tt4 = Number($("#tt_agglo_20_creux").val());
-    var tt5 = Number($("#tt_agglo_20_plein").val());
-    var tt6 = Number($("#tt_hourdi_16").val());
-    var tt7 = Number($("#tt_hourdi_20").val());
-    var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-    document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-});
+//     var tt1 = Number($("#tt_agglo_10").val());
+//     var tt2 = Number($("#tt_agglo_15_creux").val());
+//     var tt3 = Number($("#tt_agglo_15_plein").val());
+//     var tt4 = Number($("#tt_agglo_20_creux").val());
+//     var tt5 = Number($("#tt_agglo_20_plein").val());
+//     var tt6 = Number($("#tt_hourdi_16").val());
+//     var tt7 = Number($("#tt_hourdi_20").val());
+//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
+//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
+// });
 
 // __________peinture________
 // ______determination de la surface du mur______

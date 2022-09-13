@@ -58,7 +58,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form_travaux000.css">
-    <link rel="stylesheet" href="factures__p.css">
+    <link rel="stylesheet" href="factures.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Formulaire travaux</title>
 </head>
@@ -495,7 +495,7 @@
                                         </tr>
                                         <tr>
                                             <!-- <td><input class="itemRoww" type="checkbox" name="" id=""></td> -->
-                                            <td><input class="titre_defo_calcull" value="Béton dosé à 350kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
+                                            <td><input class="titre_defo_calcull" value="350kg/m3" id="desii" type="text" name="designation[]" autocomplete="off"></td>
                                             <td><input value="m³" class="unii" type="text" name="unite[]" autocomplete="off" ></td>
                                             <td><input class="lign_c" id="quantity__4" type="number" name="quantite_[]" autocomplete="off" ></td>
                                             <td><input class="lign_" id="ciment_4" type="number" name="prix_u[]" autocomplete="off"></td>
