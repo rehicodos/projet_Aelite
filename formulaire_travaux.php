@@ -293,7 +293,7 @@
     <!-- ____________calcul des details du devis____________  -->
     <div id="parti_calcul_devis">
         <div class="saisi_direct">
-            <h2 id="sms_feuille_calcul">Feuille de calcul</h2>
+            <h2 id="sms_feuille_calcul">Feuille de calcul (DQE)</h2>
             <div id="m2_m3">
                 <div class="m2">
                     <div class="text">
