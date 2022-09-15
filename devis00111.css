@@ -29,6 +29,10 @@ h1 {
     font-size: 2.5em;
     background: red;
 }
+.travaux_devis {
+    display: none;
+    /* border: 2px solid red; */
+}
 .f_dos {
     /* height: 20px; */
     border: 7px solid white;
@@ -37,7 +41,7 @@ h1 {
     margin: 5px auto;
     padding: 10px;
     background: rgb(7, 214, 152);
-    /* display: none; */
+    display: none;
     /* display: flex; */
     justify-content: space-between;
 }
@@ -412,6 +416,27 @@ h1 {
 .date_devis p {
     text-align: left;
 }
-
+/* ______gros oeuvre et second oeuvre____ */
+.gros_oeuvre {
+    width: 45%;
+    height: 20%;
+    /* border: red solid 2px; */
+}
+.gros_oeuvre img {
+    width: 98%;
+    border-radius: 10px;
+    /* height: 20%; */
+}
+#second_oeuvre {
+    width: 45%;
+    height: 20%;
+    /* border: red solid 2px; */
+}
+#second_oeuvre #imag {
+    width: 85%;
+    border-radius: 10px;
+    /* height: 10%; */
+    
+}
 
 

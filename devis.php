@@ -88,8 +88,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="deviss__pp.css">
-    <link rel="stylesheet" href="f_deviss.css">
+    <link rel="stylesheet" href="devis00111.css">
+    <link rel="stylesheet" href="f_devis__.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
 </head>
@@ -147,7 +147,7 @@
         });
         $(document).ready(function(){
             $(".formul").click(function(){
-                $(".f_devi").toggle(slow="3000");
+                $(".travaux_devis").toggle(slow="3000");
             });
         });
         $(document).ready(function(){
@@ -213,13 +213,11 @@
                 </form>
 
             </table>
-        </div>
+    </div>
         <!-- <div class="f_dos"> -->
     <form action="#" method="post" >
             <div class="f_dos">
                 <div class="les_champ">
-                    
-
                     <div class="d2">
                         <h3>Coordonnées de l'entreprise</h3>
                         <div class="info_entrepise">
@@ -330,7 +328,7 @@
                         <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
                         <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
                     </table>
-                    </div>
+                </div>
                     <div class="d1">
                         <table>
                             <tr>
@@ -353,8 +351,8 @@
                     </div>
                 </div>
                 <div class="bt_f">
-                <input class="eff" type="reset" value="Annuler">
-                <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
+                    <input class="eff" type="reset" value="Annuler">
+                    <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
                 </div>
             </div> 
              
@@ -392,206 +390,22 @@
                 </table>
             </form>
         </div>
-        
-        <div class="f_devi">
-            <!-- remplacement f_devis -->
-            <!-- ____________________Somme total ou encore Sous-total_________________ -->
-    <script>
-        // BLOC_1
-        $(function(){
-            var somme_v = 0;
-            $("[id*=chat_1]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=chat_]").html(somme_v);
-
-        });
-        // BLOC_2
-        $(function(){
-            var somme_v = 0;
-            $("[id*=voll_2]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=vol_]").html(somme_v);
-
-        });
-        // BLOC_3
-        $(function(){
-            var somme_v = 0;
-            $("[id*=cttt_3]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=cat_]").html(somme_v);
-
-        });
-        // BLOC_4
-        $(function(){
-            var somme_v = 0;
-            $("[id*=AA_4]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=A_]").html(somme_v);
-
-        });
-        // BLOC_5
-        $(function(){
-            var somme_v = 0;
-            $("[id*=BB_5]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=B_]").html(somme_v);
-
-        });
-        // BLOC_6
-        $(function(){
-            var somme_v = 0;
-            $("[id*=CC_6]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=C_]").html(somme_v);
-
-        });
-        // BLOC_7
-        $(function(){
-            var somme_v = 0;
-            $("[id*=DD_7]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=D_]").html(somme_v);
-
-        });
-        // BLOC_8
-        $(function(){
-            var somme_v = 0;
-            $("[id*=EE_8]").each(function(){
-                somme_v = somme_v + parseFloat($(this).html());
-            });
-            $("[id*=E_]").html(somme_v);
-
-        });
-
-    </script>
-    <!-- _____________________Calcul HT TVA TTH__________________ -->
-    <script>
-        $(function(){
-            var init_HT = 0;
-            // $("[id*=chat_1]").each(function(){
-                init_HT = parseFloat($("#chat_").html()) + parseFloat($("#vol_").html()) + parseFloat($("#cat_").html()) + parseFloat($("#A_").html()) + parseFloat($("#B_").html()) + parseFloat($("#C_").html()) + parseFloat($("#D_").html()) + parseFloat($("#E_").html());
-            // });
-            $("#HT_").html(init_HT);
-
-        });
-        
-        $(document).ready(function(){
-            $("#tva").keyup(function(){
-                    // alert(compter);
-                    var TTH = 0;
-                    var x = parseFloat($("#HT_").html());
-                    var y = Number($("#tva").val());
-                    var tt_tva = (y/100)*x;
-                    TTC = x + tt_tva;
-                    $("#TTH_").html(TTC);
-            });
-        }); 
-        $(function(){
-            $("#tva").keyup(function(){
-                    // alert(compter);
-                    var TvA = 0;
-                    var x = parseFloat($("#HT_").html());
-                    var y = Number($("#tva").val());
-                    var tt_TvA = (y/100)*x;
-                    TvA = x + tt_tva;
-                    $("#MONTANT_TTC").html(TvA);
-            });
-        });     
-    
-        
-    </script>
-    <div class="global">
-        <!-- <h1>Plan de Devis</h1> -->
-        <div class="entet_ttbt">
-            <div class="conteneur_bt">
-                <ul>
-                    <div class="st">
-                        <li><a href="formulaire_travaux.php"><button class="bt_li_a">BLOC_1</button></a></li>
-                        <div class="sous_t">
-                                <p class="bt_st">Sous total :</p>
-                                <p id="chat_" class="lab_st"></p>
-                        </div>
-                    </div>
-                    <div class="st">
-                        <li><a href="f_t_bloc_2.php"><button class="bt_li_a">BLOC_2</button></a></li>
-                        <div class="sous_t">
-                                <p class="bt_st">Sous total :</p>
-                                <p id="vol_" class="lab_st"></p>
-                        </div>
-                    </div>
-                    <div class="st">
-                        <li><a href="f_t_bloc_3.php"><button class="bt_li_a">BLOC_3</button></a></li>
-                        <div class="sous_t">
-                                <p class="bt_st">Sous total :</p>
-                                <p id="cat_" class="lab_st"></p>
-                        </div>
-                    </div>
-                    <div class="st">
-                        <li><a href="f_t_bloc_4.php"><button class="bt_li_a">BLOC_4</button></a></li> 
-                        <div class="sous_t">
-                                <p class="bt_st">Sous total :</p>
-                                <p id="A_" class="lab_st"></p>
-                        </div>
-                    </div>   
-                </ul>
-                <ul>
-                    <div class="st">
-                    <li><a href="f_t_bloc_5.php"><button class="bt_li_a">BLOC_5</button></a></li>
-                    <div class="sous_t">
-                            <p class="bt_st">Sous total :</p>
-                            <p id="B_" class="lab_st"></p>
-                    </div>
-                    </div>
-                    <div class="st">
-                        <li><a href="f_t_bloc_6.php"><button class="bt_li_a">BLOC_6</button></a></li>
-                        <div class="sous_t">
-                            <p class="bt_st">Sous total :</p>
-                            <p id="C_" class="lab_st"></p>
-                        </div>
-                    </div>
-                    <div class="st">
-                    <li><a href="f_t_bloc_7.php"><button class="bt_li_a">BLOC_7</button></a></li>
-                    <div class="sous_t">
-                            <p class="bt_st">Sous total :</p>
-                            <p id="D_" class="lab_st"></p>
-                    </div>
-                    </div>
-                    <div class="st">
-                        <li><a href="f_t_bloc_8.php"><button class="bt_li_a">BLOC_8</button></a></li>
-                        <div class="sous_t">
-                            <p class="bt_st">Sous total :</p>
-                            <p id="E_" class="lab_st"></p>
-                        </div>
-                    </div>
-                </ul>
-                
+        <div class="travaux_devis">
+            <div class="global">
+                <div class="gros_oeuvre">
+                    <!-- <div class="s_g_o"> -->
+                        <a href="gros_oeuvre.php"><img src="images/g_oeuvre_2.jpg" alt=""></a>
+                        <p>Gros Oeuvre</p>
+                    <!-- </div> -->
+                </div>
+                <div id="second_oeuvre">
+                    <!-- <div class="s_s_o"> -->
+                        <a href="second_oeuvre.php"><img id="imag" src="images/second_oeuvre.jpg" alt=""></a>
+                        <p>Second Oeuvre</p>
+                    <!-- </div> -->
+                </div>
             </div>
         </div>
-        <div class="conteneur_tg">
-            <div class="cont_ht">
-                <a href="#"><button  class="bt_tht">Total HT :</button></a>
-                <p id="HT_"></p>
-            </div>
-            <div class="cont_ht">
-                <label for="tva" class="lab_tva">Taux TVA :</label>
-                <input type="integer" id="tva" value="18">
-            </div>
-            <div class="cont_ht">
-                <a href="#"><button  class="bt_tht">Total TTC :</button></a>
-                <p id="TTH_"></p>
-            </div>
-        </div>
-
-        <button class="bt_act">Actualiser</button>
-
-    </div>
     <!-- Les pages caher pour afficher les resultats sous-total -->
         <div class="bloc1">
         

@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(212, 178, 199);
+}
+h1 {
+    background: red;
+    text-align: center;
+    color: white;
+    margin: 10px 0px;
+}
+p {
+    text-align: center;
+}
+.conteneur {
+    width: 90%;
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 10px;
+}
+.div_1 {
+    width: 45%;
+    /* border: 2px solid red; */
+    /* height: 40%; */
+}
+.div_1 img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
