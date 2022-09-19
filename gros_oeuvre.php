@@ -11,11 +11,11 @@
     <h1>Travaux : Gros Oeuvre </h1>
     <div class="conteneur">
         <div class="div_1">
-            <img src="images/etude_sol.png" alt="">
-            <p>Etude du Sol</p>
+            <a href="travaux_prelimiaire.php"><img src="images/pt.png" alt=""></a>
+            <p>Travaux Préliminaires</p>
         </div>
         <div class="div_1">
-            <img src="images/terrassement.jpg" alt="">
+            <a href="terrassement.php"><img src="images/terrassement.jpg" alt=""></a>
             <p>Terrassement</p>
         </div>
     </div>

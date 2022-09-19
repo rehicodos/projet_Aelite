@@ -5,7 +5,7 @@ $(document).on('click', '#bouton_fouille', function() {
     var htmlRows = '';
     htmlRows += '<tr>';
     // htmlRows += '<td><input class="itemRow" type="checkbox"></td>';          
-    htmlRows += '<td><input class="itemRowww" type="text"  id="designn_'+count+'"  autocomplete="off"></td>';          
+    htmlRows += '<td><select name="" id=""><option value="">Selectionne ...</option><option value="Fouille_rigole">Fouille en Rigole</option><option value="Fouille_trous">Fouille en Trous</option><option value="Fouille_excavation">Fouille en Excavation</option><option value="Fouille_tranchee">Fouille en Tranchée</option></select></td>';          
     htmlRows += '<td><input type="text" value="m³" id="unitt_'+count+'"  autocomplete="off"></td>';          
     htmlRows += '<td><input class="fouille_cal" type="number" id="qtt_'+count+'"  autocomplete="off"></td>';	
     htmlRows += '<td><input class="fouille_cal" type="number" id="puu_'+count+'"  autocomplete="off"></td>';   		
@@ -22,7 +22,7 @@ $(document).on('click', '#bouton_remblais', function() {
     var htmlRows = '';
     htmlRows += '<tr>';
     // htmlRows += '<td><input class="itemRow" type="checkbox"></td>';          
-    htmlRows += '<td><input class="ite" type="text"  id="design2_'+count+'"  autocomplete="off"></td>';          
+    htmlRows += '<td><select name="" id=""><option value="">Selectionne ...</option><option value="">Remblai Fouilles en Rigole</option><option value="">Remblai Fouilles en Trous</option><option value="">Remblai compacté sous dalle</option><option value="">Apport de terre argilo-sableuse</option><option value="">Apport de terre graveleuse</option><option value="">Epandage des terres</option><option value="">Nivellement definitif sous dallage</option><option value="">Exécutiondes de talus droit</option><option value="">Exécutiondes de talus courbe</option><option value="">Exécution des déblais excédentaires</option></select></td>';          
     htmlRows += '<td><input type="text" value="m³" id="unitt_'+count+'"  autocomplete="off"></td>';          
     htmlRows += '<td><input class="fouille_cal" type="number" id="qt2_'+count+'"  autocomplete="off"></td>';	
     htmlRows += '<td><input class="fouille_cal" type="number" id="pu2_'+count+'"  autocomplete="off"></td>';   		
@@ -111,125 +111,10 @@ function cal2() {
 }
 
 // ______css nbre brique et prix total_____
-document.getElementById('nbre_brq').style.backgroundColor= "tomato";
-document.getElementById('prix_t_brq').style.backgroundColor= "tomato";
-document.getElementById('saisi_nbre_brq').style.backgroundColor= "tomato";
-document.getElementById('saisir_prix_t_brq').style.backgroundColor= "tomato";
- 
-// _____________css tt , agglos et hourdis__________
-// document.getElementById('debour_ht_aggol_hourdi').style.backgroundColor= "tomato";
-
-// $(".qt_pu_agglos_hourdis_1").keyup(function(){
-//     var agglo_10_qt = Number($("#agglo_10_qt").val());
-//     var agglo_10_pu = Number($("#agglo_10_pu").val());
-//     $("#tt_agglo_10").val(agglo_10_pu * agglo_10_qt);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_2").keyup(function(){
-//     var agglo_15_creux_qt = Number($("#agglo_15_creux_qt").val());
-//     var agglo_15_creux_pu = Number($("#agglo_15_creux_pu").val());
-//     $("#tt_agglo_15_creux").val(agglo_15_creux_qt * agglo_15_creux_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_3").keyup(function(){
-//     var agglo_15_plein_qt = Number($("#agglo_15_plein_qt").val());
-//     var agglo_15_plein_pu = Number($("#agglo_15_plein_pu").val());
-//     $("#tt_agglo_15_plein").val(agglo_15_plein_qt * agglo_15_plein_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_4").keyup(function(){
-//     var agglo_20_creux_qt = Number($("#agglo_20_creux_qt").val());
-//     var agglo_20_creux_pu = Number($("#agglo_20_creux_pu").val());
-//     $("#tt_agglo_20_creux").val(agglo_20_creux_qt * agglo_20_creux_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_5").keyup(function(){
-//     var agglo_20_plein_qt = Number($("#agglo_20_plein_qt").val());
-//     var agglo_20_plein_pu = Number($("#agglo_20_plein_pu").val());
-//     $("#tt_agglo_20_plein").val(agglo_20_plein_qt * agglo_20_plein_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_6").keyup(function(){
-//     var hourdi_16_qt = Number($("#hourdis_16_qt").val());
-//     var hourdi_16_pu = Number($("#hourdis_16_pu").val());
-//     $("#tt_hourdi_16").val(hourdi_16_qt * hourdi_16_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
-
-// $(".qt_pu_agglos_hourdis_7").keyup(function(){
-//     var hourdi_20_qt = Number($("#hourdis_20_qt").val());
-//     var hourdi_20_pu = Number($("#hourdis_20_pu").val());
-//     $("#tt_hourdi_20").val(hourdi_20_qt * hourdi_20_pu);
-
-//     var tt1 = Number($("#tt_agglo_10").val());
-//     var tt2 = Number($("#tt_agglo_15_creux").val());
-//     var tt3 = Number($("#tt_agglo_15_plein").val());
-//     var tt4 = Number($("#tt_agglo_20_creux").val());
-//     var tt5 = Number($("#tt_agglo_20_plein").val());
-//     var tt6 = Number($("#tt_hourdi_16").val());
-//     var tt7 = Number($("#tt_hourdi_20").val());
-//     var grand_tt = tt1+tt2+tt3+tt4+tt5+tt6+tt7;
-//     document.getElementById('debour_ht_aggol_hourdi').innerHTML = grand_tt;
-// });
+// document.getElementById('nbre_brq').style.backgroundColor= "tomato";
+// document.getElementById('prix_t_brq').style.backgroundColor= "tomato";
+// document.getElementById('saisi_nbre_brq').style.backgroundColor= "tomato";
+// document.getElementById('saisir_prix_t_brq').style.backgroundColor= "tomato";
 
 // __________peinture________
 // ______determination de la surface du mur______
