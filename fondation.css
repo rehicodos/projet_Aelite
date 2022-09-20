@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(212, 178, 199);
+}
+h1{
+    text-align: center;
+    color: white;
+    margin: 20px 0px;
+    background: red;
+}
+p{
+    text-align: center;
+    background: tomato;
+    width: 100%;
+    padding: 4px 0px;
+}
+table{
+    width: 96%;
+    margin: 3px auto;
+}
+th{
+    text-align: center;
+    background: #e668ba;
+    padding: 4px 2px;
+}
+table input{
+    width: 100%;
+    padding: 4px 0px;
+    text-align: center;
+}
+select {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0px;
+}
+.placement_l_L_p {
+    /* border: 2px red solid; */
+    display: flex;
+    width: 70%;
+    margin: 10px auto;
+    /* margin: 10px 0px; */
+    /* text-align: center; */
+}
+.placement_l_L_p input {
+    text-align: center;
+    height: 25px;
+    width: 70px;
+    border-radius: 5px;
+}
+#inp1 {
+    margin-left: 10px;
+}
+#inp2 {
+    margin-left: 87px;
+}
+#inp3 {
+    margin-left: 100px;
+}
+
+#inp1_ {
+    margin-left: 17px;
+}
+#inp2_ {
+    margin-left: 31px;
+}
+#inp3_ {
+    margin-left: 12px;
+}
+
+#inp1__ {
+    margin-left: 13px;
+}
+#inp2__ {
+    margin-left: 30px;
+}
+#inp3__ {
+    margin-left: 10px;
+}
+.dim {
+    border: 3px yellowgreen solid;
+    width: 70%;
+    padding: 5px;
+    border-radius: 10px;
+    /* text-align: center; */
+    /* display: flex; */
+}
+#dimen1 {
+    border-radius: 10px;
+}
+#dimen2 {
+    border-radius: 10px;
+}
+.volum_fouill {
+    background: greenyellow;
+    width: 85%;
+    margin: 2px auto;
+    text-align: center;
+    font-size: 1.8em;
+    padding: 5px;
+    /* border-radius: 10px; */
+}
+.volum_fouille {
+    background: greenyellow;
+    width: 85%;
+    margin: 2px auto;
+    text-align: center;
+    font-size: 1.8em;
+    padding: 5px;
+    border-radius: 20px;
+}
+#detail {
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 2px;
+}
+#image {
+    height: 225px;
+    width: 25%;
+    /* border-radius: 10px; */
+}
+#image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+#text_beton {
+    background: deeppink;
+    width: 35%;
+    padding: 4px 0px;
+    text-align: center;
+    margin-left: 7%;
+    border-radius: 0px 0px 25px 25px;
+}
+.toto {
+    margin-left: 10%;
+}
+.s_t_calcul {
+    text-align: center;
+    background: #B8B8B8;
+    padding: 4px 0px;
+}
