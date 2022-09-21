@@ -5,12 +5,25 @@
 }
 body {
     background: rgb(212, 178, 199);
+    /* min-width: 600px; */
 }
 h1{
     text-align: center;
     color: white;
     margin: 20px 0px;
     background: red;
+}
+button {
+    padding: 2px 3px;
+    font-size: 1.3em;
+}
+.spandecor {
+    background: #FFBFCA;
+    padding: 1px 3px;
+    border-radius: 5px;
+}
+hr {
+    margin: 10px 0px;
 }
 p{
     text-align: center;
@@ -45,7 +58,21 @@ select {
     /* margin: 10px 0px; */
     /* text-align: center; */
 }
+.placement_l_L_p_ {
+    /* border: 2px red solid; */
+    display: flex;
+    /* width: 70%; */
+    margin: 10px 0px;
+    /* margin: 10px 0px; */
+    /* text-align: center; */
+}
 .placement_l_L_p input {
+    text-align: center;
+    height: 25px;
+    width: 70px;
+    border-radius: 5px;
+}
+.placement_l_L_p_ input {
     text-align: center;
     height: 25px;
     width: 70px;
@@ -79,6 +106,12 @@ select {
 }
 #inp3__ {
     margin-left: 10px;
+}
+#inp10_ {
+    margin-left: 33px;
+}
+#inp11_ {
+    margin-left: 5px;
 }
 .dim {
     border: 3px yellowgreen solid;
@@ -143,4 +176,18 @@ select {
     text-align: center;
     background: #B8B8B8;
     padding: 4px 0px;
+}
+
+#beton_arme_caher {
+    /* border: 2px black solid; */
+    padding: 3px 0px;
+}
+.avance_texte {
+    margin-left: 15%;
+}
+#tb {
+    width: 60%;
+    margin: 8px auto;
+    /* border: 2px solid red; */
+    text-align: center;
 }
