@@ -72,6 +72,13 @@ select {
     width: 70px;
     border-radius: 5px;
 }
+/* #prix_tt {
+    text-align: center;
+    height: 35px;
+    width: 70px;
+    border-radius: 5px;
+    border: none;
+} */
 .placement_l_L_p_ input {
     text-align: center;
     height: 25px;
@@ -82,10 +89,10 @@ select {
     margin-left: 10px;
 }
 #inp2 {
-    margin-left: 87px;
+    margin-left: 19px;
 }
 #inp3 {
-    margin-left: 100px;
+    margin-left: 31px;
 }
 
 #inp1_ {
@@ -115,7 +122,7 @@ select {
 }
 .dim {
     border: 3px yellowgreen solid;
-    width: 70%;
+    width: 90%;
     padding: 5px;
     border-radius: 10px;
     /* text-align: center; */
@@ -190,4 +197,19 @@ select {
     margin: 8px auto;
     /* border: 2px solid red; */
     text-align: center;
+}
+/* #beton_arme_caher {
+    display: none;
+} */
+#qt_aciers {
+    margin-left: 33px;
+}
+#qt_fil {
+    margin-left: 5px;
+}
+#pu_aciers {
+    margin-left: 5px;
+}
+#pu_fil {
+    margin-left: 5px;
 }

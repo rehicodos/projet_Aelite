@@ -12,6 +12,27 @@ h1 {
     color: white;
     margin: 10px 0px;
 }
+#text_resul {
+    background: red;
+    text-align: center;
+    font-size: 2.2em;
+    padding: 5px 0px;
+    color: white;
+    margin: 10px 0px;
+    /* cursor: pointer; */
+}
+#affich_gros_oeuvre {
+    cursor: pointer;
+}
+#tb_retou {
+    /* border: 2px red solid; */
+    width: 15%;
+}
+#tb_retou #bt_retour_gros_oeuvre {
+    padding: 5px;
+    /* font-weight: bolder; */
+    margin-left: 0px;
+}
 p {
     text-align: center;
 }

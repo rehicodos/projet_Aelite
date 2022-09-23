@@ -23,6 +23,28 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
+.text_gros_second_oeuvre {
+    font-size: 1.5em;
+    color: white;
+    background: black;
+    padding: 3px 2px;
+    margin: 0px auto;
+    width: 65%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px white solid;
+}
+.text_gros_second_oeuvr {
+    font-size: 1.5em;
+    color: white;
+    background: black;
+    padding: 3px 2px;
+    margin: 0px auto;
+    width: 65%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px white solid;
+}
 h1 {
     text-align: center;
     color: white;

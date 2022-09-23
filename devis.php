@@ -88,7 +88,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis00111.css">
+    <link rel="stylesheet" href="devis00__.css">
     <link rel="stylesheet" href="f_devis__.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -139,7 +139,34 @@
  
     <!-- ________affichage rapide de doc_client et travaux________________  -->
     <script>
-        //  alert("Bonjour");
+        //  ____affichage gros oeuvre_______
+        $(document).ready(function(){
+            $("#affich_gros_oeuvre").click(function(){
+                $("#gros_oeuvre").show();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $(".resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+            });
+            $(".text_gros_second_oeuvre").click(function(){
+                $("#gros_oeuvre").show();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $(".resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+            });
+            $("#bt_retour_gros_oeuvre").click(function(){
+                $("#gros_oeuvre").hide();
+                $(".doc_devis").show();
+                $("#text_resul").show();
+                $(".resultat").show();
+                $(".travaux_devis").show();
+                $("#les_bt_pdf_excel").show();
+            });
+        });
+
         $(document).ready(function(){
             $(".bt_doc_cl").click(function(){
                 $(".f_dos").toggle(slow="3000");
@@ -390,474 +417,25 @@
                 </table>
             </form>
         </div>
-        <div class="travaux_devis">
-            <div class="global">
-                <div class="gros_oeuvre">
-                    <!-- <div class="s_g_o"> -->
-                        <a href="gros_oeuvre.php"><img src="images/g_oeuvre_2.jpg" alt=""></a>
-                        <p>Gros Oeuvre</p>
-                    <!-- </div> -->
-                </div>
-                <div id="second_oeuvre">
-                    <!-- <div class="s_s_o"> -->
-                        <a href="second_oeuvre.php"><img id="imag" src="images/second_oeuvre.jpg" alt=""></a>
-                        <p>Second Oeuvre</p>
-                    <!-- </div> -->
-                </div>
+    <div class="travaux_devis">
+        <div class="global">
+            <div class="gros_oeuvre">
+                <!-- <div class="s_g_o"> -->
+                <img id="affich_gros_oeuvre" src="images/g_oeuvre_2.jpg" alt="">
+                <button type="button" class="text_gros_second_oeuvre">Gros Oeuvre</button>
+                <!-- </div> -->
+            </div>
+            <div id="second_oeuvre">
+                <!-- <div class="s_s_o"> -->
+                <a href="second_oeuvre.php"><img id="imag" src="images/second_oeuvre.jpg" alt=""></a>
+                <button type="button" class="text_gros_second_oeuvr">Second Oeuvre</button>
+                <!-- </div> -->
             </div>
         </div>
-    <!-- Les pages caher pour afficher les resultats sous-total -->
-        <div class="bloc1">
-        
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_1";
-                            $resultat = mysqli_query($bdd,$reqselect);
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_1";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
+    </div>
+    <div id="gros_oeuvre"><?php include('gros_oeuvre.php'); ?></div>
     
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="chat_1"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="chat_" ></td>
-                                </tr>
-                    </table>
-                                
-
-                            
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_2";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_2";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="voll_2"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="vol_" ></td>
-                                </tr>
-
-
-                    </table>
-                                
-
-                        
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_3";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_3";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="cttt_3"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="cat_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_4";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_4";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="AA_4"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="A_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_5";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_5";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="BB_5"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="B_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_6";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_6";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="CC_6"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="C_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_7";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_7";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="DD_7"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="D_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        <div class="bloc1">
-            <?php
-                                //  include('tb_DB.php');
-                            $reqselect = "select * from bloc_8";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            // $nbr = mysqli_num_rows($resultat);
-                            // echo "<h4> Total :<b> ".$nbr."</b> element(s) present.</h4>";
-                                
-            ?> 
-                            <table id="table_resultatt_">
-                                <tr>
-                                    <!-- <th>Cocher</th> -->
-                                    <th class="un">Désignation</th>
-                                    <th class="deux">Unité</th>
-                                    <th class="trois">Quantité</th>
-                                    <th class="qatre">Prix d'achat</th>
-                                    <th class="cinq">Prix de vente</th>
-                                    <!-- <th>Modifier</th> -->
-                                </tr>
-                                <?php
-                                $reql = "select * from titr_bloc_8";
-                                $resul = mysqli_query($bdd,$reql);
-                                $lig = mysqli_fetch_assoc($resul);
-                                ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h4 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h4></strong></td>
-                                </tr>
-                                
-                                <?php
-    
-                                while($ligne = mysqli_fetch_assoc($resultat))
-                                {
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $ligne['design'];?></td>
-                                        <td><?php echo $ligne['unite'];?></td>
-                                        <td><?php echo $ligne['quantite'];?></td>
-                                        <td><?php echo $ligne['prix_u'];?></td>
-                                        <td id="EE_8"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                    </tr>
-                                    
-                                    <?php
-                                }
-                                ?>
-                                <tr >
-                                    <td  colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                                    <td id="E_" ></td>
-                                </tr>
-                                
-
-                            </table>
-                            
-                    
-        </div>
-        </div>
-    <h1>Resultat Devis</h1>
+    <h2 id="text_resul">Resultat Devis</h2>
     <!-- _____________affichage total tout bloc devis____________ -->
     <div class="resultat">
         <!-- Info_aelite et client affiche -->
@@ -903,418 +481,18 @@
                 <p >Abidjan le,<?php echo "  ",utf8_encode(@$ligner['date_devis']);?></p>
                 <p>Edition du <?php echo "  ",utf8_encode(@$ligner['edition_']);?></p>  
             </div>
+        </div> 
+    </div>
+    <div id="les_bt_pdf_excel">
+        <div class="div_val">
+        <button class="bouton_val">Valider</button>
         </div>
-        <?php
-        
-            $reqselect = "select * from bloc_1";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC1 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_2";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC2 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_3";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC3 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_4";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC4 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_5";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC5 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_6";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC6 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_7";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC7 = mysqli_num_rows($resultat);
-
-            $reqselect = "select * from bloc_8";
-            $resultat = mysqli_query($bdd,$reqselect);    
-            $BLOC8 = mysqli_num_rows($resultat);
-
-            if($BLOC1 > 0 or $BLOC2 > 0 or $BLOC3 > 0 or $BLOC4 > 0 or $BLOC5 > 0 or $BLOC6 > 0 or $BLOC7 > 0 or $BLOC8 > 0){
-        ?>
-            <table>
-                    <tr>
-                        <th class="un">Désignation</th>
-                        <th class="deux">Unité</th>
-                        <th class="trois">Quantité</th>
-                        <th class="qatre">Prix d'achat</th>
-                        <th class="cinq">Prix de vente</th>
-                    </tr>
-                        <!-- bloc1 -->
-                        <?php
-                            $reqselect = "select * from bloc_1";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_1";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="chat_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-    
-                        <!-- bloc2 -->
-                        <?php
-                            $reqselect = "select * from bloc_2";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_2";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="vol_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                        <!-- bloc3 -->
-                        <?php
-                            $reqselect = "select * from bloc_3";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_3";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="cat_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <!-- bloc4 -->
-                            <?php
-                            $reqselect = "select * from bloc_4";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_4";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="A_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <!-- bloc5 -->
-                            <?php
-                            $reqselect = "select * from bloc_5";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_5";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="B_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <!-- bloc6 -->
-                            <?php
-                            $reqselect = "select * from bloc_6";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_6";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="C_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <!-- bloc7 -->
-                            <?php
-                            $reqselect = "select * from bloc_7";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_7";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="D_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <!-- bloc8 -->
-                            <?php
-                            $reqselect = "select * from bloc_8";
-                            $resultat = mysqli_query($bdd,$reqselect);
-
-                            $reql = "select * from titr_bloc_8";
-                            $resul = mysqli_query($bdd,$reql);
-                            $lig = mysqli_fetch_assoc($resul);
-                
-                            $nbr = mysqli_num_rows($resultat);
-                            // echo "<p> Total :<b> ".$nbr."</b> elements present.</p>";
-                            if($nbr > 0){
-                        ?>
-                                <tr class="tire">
-                                    <td colspan="5"><strong><h3 id="p_tr"><?php echo utf8_encode(@$lig['titre']); ;?></h3></strong></td>
-                                </tr>
-                                
-                        <?php
-    
-                            while($ligne = mysqli_fetch_assoc($resultat))
-                            {
-                        ?>
-                                <tr>
-                                    <td class="td_design"><?php echo $ligne['design'];?></td>
-                                    <td><?php echo $ligne['unite'];?></td>
-                                    <td><?php echo $ligne['quantite'];?></td>
-                                    <td><?php echo $ligne['prix_u'];?></td>
-                                    <td id="tt_prix_"><?php echo $ligne['prix_t'];?></td>
-                                    
-                                </tr>
-                                    
-                            <?php
-                                }
-                            ?>
-                        <tr >
-                            <td class="font_sous_total" colspan="4"><h4 class="p_tr">Sous-total :</h4></td>
-                            <td class="font_sous_total" id="E_" ></td>
-                        </tr>
-                        <?php
-
-                            }
-                        ?>
-                            <tr>
-                                <td></td>
-                                <td class="la_grosseur_th_tva_ttc" colspan="3">MONTANT TOTAL HT :</td>
-                                <td class="HT_"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="la_grosseur_th_tva_ttc" colspan="3">TVA <strong id="val_tva">18</strong>%</td>
-                                <td id="TTvAA"></td>
-                            </tr>
-                            <tr >
-                                <td></td>
-                                <td class="la_grosseur_th_tva_ttc" colspan="3">MONTANT TOTAL TTC :</td>
-                                <td id="MONTANT_TTC"></td>
-                            </tr>
-            </table>
-        <?php
-          }
-        ?>
-        
-    </div>
-
-    <div class="div_val">
-       <button class="bouton_val">Valider</button>
-    </div>
-    <div class="imp_enregistExcel">
+        <div class="imp_enregistExcel">
             <a href="#"><button class="bt_im">PDF</button></a>
             <a href="#"><button class="bt_">Exporter vers Excel</button></a>
-            
+        </div>
     </div>
+
     <script>
         $(document).ready(function(){
             $("#bt_choisir_client").click(function(){
@@ -1339,19 +517,19 @@
             });
         });
         
-    // affichage des informations du client dans les champs input
-	var tabl = document.getElementById("tabl_biblio"), rwIndex;
-	for(var i = 0 ; i < tabl.rows.length ; i++){
-		tabl.rows[i].onclick = function(){
-			rwIndex = this.rowIndex;
-			// alert(rwIndex);
-			document.getElementById("nm_cl").value = this.cells[0].innerHTML;
-			document.getElementById("pm_cl").value = this.cells[1].innerHTML;
-			document.getElementById("n_cl").value = this.cells[2].innerHTML;
-			document.getElementById("adress_cl").value = this.cells[3].innerHTML;
-			document.getElementById("email_cl").value = this.cells[4].innerHTML;
-		};
-	}
+        // affichage des informations du client dans les champs input
+        var tabl = document.getElementById("tabl_biblio"), rwIndex;
+        for(var i = 0 ; i < tabl.rows.length ; i++){
+            tabl.rows[i].onclick = function(){
+                rwIndex = this.rowIndex;
+                // alert(rwIndex);
+                document.getElementById("nm_cl").value = this.cells[0].innerHTML;
+                document.getElementById("pm_cl").value = this.cells[1].innerHTML;
+                document.getElementById("n_cl").value = this.cells[2].innerHTML;
+                document.getElementById("adress_cl").value = this.cells[3].innerHTML;
+                document.getElementById("email_cl").value = this.cells[4].innerHTML;
+            };
+        }
     </script>   
 </body>
 </html>
