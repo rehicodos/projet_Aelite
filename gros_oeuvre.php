@@ -22,8 +22,8 @@
     </div>
     <div class="conteneur">
         <div class="div_1">
-            <a href="fondation.php"><img src="images/fondation_2.jpg" alt=""></a>
-            <p>Fondation</p>
+            <img id="image_affich_fondadtion" src="images/fondation_2.jpg" alt="">
+            <p id="text_affich_fondadtion">Fondation</p>
         </div>
         <div class="div_1">
             <img src="images/assainissement.jpg" alt="">

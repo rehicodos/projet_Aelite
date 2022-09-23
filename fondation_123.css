@@ -27,7 +27,7 @@ hr {
 }
 p{
     text-align: center;
-    background: tomato;
+    /* background: tomato; */
     width: 100%;
     padding: 4px 0px;
 }
@@ -156,7 +156,8 @@ select {
     background: white;
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 2px;
+    padding: 10px 2px 20px 2px;
+    /* height: 800px; */
 }
 #image {
     height: 225px;
@@ -173,7 +174,7 @@ select {
     width: 35%;
     padding: 4px 0px;
     text-align: center;
-    margin-left: 7%;
+    margin: 0px auto;
     border-radius: 0px 0px 25px 25px;
 }
 .toto {
@@ -188,6 +189,7 @@ select {
 #beton_arme_caher {
     /* border: 2px black solid; */
     padding: 3px 0px;
+    display: none;
 }
 .avance_texte {
     margin-left: 15%;
@@ -198,9 +200,9 @@ select {
     /* border: 2px solid red; */
     text-align: center;
 }
-/* #beton_arme_caher {
+#tab_fondat {
     display: none;
-} */
+}
 #qt_aciers {
     margin-left: 33px;
 }

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fondation2_22.css">
+    <link rel="stylesheet" href="fondation_123.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Fondation</title>
 </head>
 <body>
     <h1>Travaux de Béton</h1>
     <div id="beton_d_propete">
+        <div id="tb_retou"><button id="bt_retour_fondation" type="button"><strong><-<-<- Retour</strong></button></div>
         <div id="text_beton">
             <h2>Dosage Béton de Proprété/Armé</h2>
         </div>
@@ -169,35 +170,12 @@
             <td><input type="text" name="" id="tt_fondat"></td>
         </tr>
     </table>
-    <hr/>
-    <table id="exemple_tab">
-        <tr>
-            <th>X</th>
-            <th>Désignaton</th>
-            <th>Unité</th>
-            <th>Quantité</th>
-            <th>Prix_U</th>
-            <th>Prix_T</th>
-        </tr>
-        <tbody></tbody>
-    </table>
-    <hr/>
-    <table id="exemple_tab_2">
-        <tr>
-            <!-- <th>X</th> -->
-            <th>Désignaton</th>
-            <th>Unité</th>
-            <th>Quantité</th>
-            <th>Prix_U</th>
-            <th>Prix_T</th>
-        </tr>
-        <tbody></tbody>
-    </table>
+
 <script>
     // _______copier le mini devis vers le devis principal_____
     $("#valiii").click(function(){
         if($("#descrip_").val() !="" && $("#qt").val() !="" && $("#pu_mini_devi").val() !="" && $("#tt_mini_devi").val() !=""){
-            var copy_ligne = $("#logg").clone().appendTo($("#exemple_tab ").add(copy_ligne));
+            var copy_ligne = $("#logg").clone().appendTo($("#tab_devis ").add(copy_ligne));
 
             $("#descrip_").val("");
             $("#qt").val("");
@@ -212,11 +190,11 @@
     }); 
     function copy_ds(){
         if($("#qt_aciers").val() !="" && $("#qt_fil").val() !="" && $("#pu_aciers").val() !="" && $("#pu_fil").val() !=""){
-            var copy_ligne1 = $("#rang1").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne1));
-            var copy_ligne2 = $("#rang2").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne2));
-            var copy_ligne3 = $("#rang3").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne3));
-            var copy_ligne4 = $("#rang4").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne4));
-            var copy_ligne5 = $("#rang5").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne5));
+            var copy_ligne1 = $("#rang1").clone().appendTo($("#tab_dqe").add(copy_ligne1));
+            var copy_ligne2 = $("#rang2").clone().appendTo($("#tab_dqe").add(copy_ligne2));
+            var copy_ligne3 = $("#rang3").clone().appendTo($("#tab_dqe").add(copy_ligne3));
+            var copy_ligne4 = $("#rang4").clone().appendTo($("#tab_dqe").add(copy_ligne4));
+            var copy_ligne5 = $("#rang5").clone().appendTo($("#tab_dqe").add(copy_ligne5));
             // var copy_ligne5 = $("#rang6").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne5));
 
             $("#c1").val("");
@@ -240,14 +218,14 @@
             $("#tt_fil").val("");
 
             // $("#tt_fondat").val("");
-            var copy_ligne0 = $("#rang6").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne0));
+            var copy_ligne0 = $("#rang6").clone().appendTo($("#tab_dqe ").add(copy_ligne0));
             
         }
         else{
             if($("#qt_aciers").val() =="" && $("#qt_fil").val() =="" && $("#pu_aciers").val() =="" && $("#pu_fil").val() ==""){
-                var copy_ligne1_ = $("#rang1").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne1_));
-                var copy_ligne2_ = $("#rang2").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne2_));
-                var copy_ligne3_ = $("#rang3").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne3_));
+                var copy_ligne1_ = $("#rang1").clone().appendTo($("#tab_dqe").add(copy_ligne1_));
+                var copy_ligne2_ = $("#rang2").clone().appendTo($("#tab_dqe").add(copy_ligne2_));
+                var copy_ligne3_ = $("#rang3").clone().appendTo($("#tab_dqe").add(copy_ligne3_));
                 // var copy_ligne3 = $("#rang6").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne3));
 
                 $("#c1").val("");
@@ -263,7 +241,7 @@
                 $("#tt_g").val("");
 
                 // $("#tt_fondat").val("");
-                var copy_ligne0 = $("#rang6").clone().appendTo($("#exemple_tab_2 ").add(copy_ligne0));
+                var copy_ligne0 = $("#rang6").clone().appendTo($("#tab_dqe ").add(copy_ligne0));
             }
             else{
                 $("#c1").val("");

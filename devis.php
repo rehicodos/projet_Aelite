@@ -88,7 +88,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis00__.css">
+    <link rel="stylesheet" href="devis000.css">
     <link rel="stylesheet" href="f_devis__.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -139,13 +139,14 @@
  
     <!-- ________affichage rapide de doc_client et travaux________________  -->
     <script>
-        //  ____affichage gros oeuvre_______
+        //  ____affichage/appel des page  gros oeuvre_______
         $(document).ready(function(){
+            // ____affichage/appel de la page  gros_oeuvre.php_______
             $("#affich_gros_oeuvre").click(function(){
                 $("#gros_oeuvre").show();
                 $(".doc_devis").hide();
                 $("#text_resul").hide();
-                $(".resultat").hide();
+                $("#conteneur_resultat").hide();
                 $(".travaux_devis").hide();
                 $("#les_bt_pdf_excel").hide();
             });
@@ -153,7 +154,7 @@
                 $("#gros_oeuvre").show();
                 $(".doc_devis").hide();
                 $("#text_resul").hide();
-                $(".resultat").hide();
+                $("#conteneur_resultat").hide();
                 $(".travaux_devis").hide();
                 $("#les_bt_pdf_excel").hide();
             });
@@ -161,11 +162,39 @@
                 $("#gros_oeuvre").hide();
                 $(".doc_devis").show();
                 $("#text_resul").show();
-                $(".resultat").show();
+                $("#conteneur_resultat").show();
+                $(".travaux_devis").show();
+                $("#les_bt_pdf_excel").show();
+            });
+            // ____affichage/appel de la page  fondation.php_______
+            $("#image_affich_fondadtion").click(function(){
+                $("#gros_oeuvre").hide();
+                $("#fondaton").show();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+            });
+            $("#text_affich_fondadtion").click(function(){
+                $("#gros_oeuvre").hide();
+                $("#fondaton").show();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+            });
+            $("#bt_retour_fondation").click(function(){
+                $("#fondaton").hide();
+                $(".doc_devis").show();
+                $("#text_resul").show();
+                $("#conteneur_resultat").show();
                 $(".travaux_devis").show();
                 $("#les_bt_pdf_excel").show();
             });
         });
+
 
         $(document).ready(function(){
             $(".bt_doc_cl").click(function(){
@@ -417,6 +446,7 @@
                 </table>
             </form>
         </div>
+    <!-- __________canvas gros oeuvre et second oeuvre_____ -->
     <div class="travaux_devis">
         <div class="global">
             <div class="gros_oeuvre">
@@ -434,55 +464,84 @@
         </div>
     </div>
     <div id="gros_oeuvre"><?php include('gros_oeuvre.php'); ?></div>
+    <div id="fondaton"><?php include('fondation.php'); ?></div>
     
     <h2 id="text_resul">Resultat Devis</h2>
-    <!-- _____________affichage total tout bloc devis____________ -->
-    <div class="resultat">
-        <!-- Info_aelite et client affiche -->
-        <div class="info_aelite_client">
-            <div class="info-aelite">
-                <?php
-                    $reqselect = "select * from info_aelite";
-                    $resultat = mysqli_query($bdd,$reqselect);
-                    $lig = mysqli_fetch_assoc($resultat);
-                ?>
-                    <p><img src="images/logo_aelite.png" alt="logo-aelite"></p>               
-                    <p class="avance_p"><?php echo utf8_encode(@$lig['nom']);?></p>                
-                    <p class="avance_p"><?php echo utf8_encode(@$lig['position']);?></p>                
-                    <p class="avance_p"><?php echo utf8_encode(@$lig['adress_bp']);?></p>               
-                    <p class="avance_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>                   
-                    <p class="avance_p">Email :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
+
+    <div id="conteneur_resultat">
+        <div class="resultat">
+            <!-- Info_aelite et client affiche -->
+            <div class="info_aelite_client">
+                <div class="info-aelite">
+                    <?php
+                        $reqselect = "select * from info_aelite";
+                        $resultat = mysqli_query($bdd,$reqselect);
+                        $lig = mysqli_fetch_assoc($resultat);
+                    ?>
+                        <p><img src="images/logo_aelite.png" alt="logo-aelite"></p>               
+                        <p class="avance_p"><?php echo utf8_encode(@$lig['nom']);?></p>                
+                        <p class="avance_p"><?php echo utf8_encode(@$lig['position']);?></p>                
+                        <p class="avance_p"><?php echo utf8_encode(@$lig['adress_bp']);?></p>               
+                        <p class="avance_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>                   
+                        <p class="avance_p">Email :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
+                </div>
+                <div class="client">
+                    <?php
+                        $reqselect = "select * from client_copy";
+                        $resultat = mysqli_query($bdd,$reqselect);
+                        $lig = mysqli_fetch_assoc($resultat);
+                    ?>
+                    <p class="avanc_p">Client :<?php echo "  ",utf8_encode(@$lig['nom']);?></p>               
+                    <p class="avanc_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>           
+                    <p class="avanc_p">Fax :<?php echo "  ",utf8_encode(@$lig['fax']);?></p>           
+                    <p class="avanc_p">Adresse :<?php echo "  ",utf8_encode(@$lig['adress_bp']);?></p>                
+                    <p class="avanc_p">E-mail :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
+                    <p class="avanc_p">Site web :<?php echo "  ",utf8_encode(@$lig['site_web']);?></p>
+                </div>
             </div>
-            <div class="client">
+            <div class="date_numero_devis">
                 <?php
-                    $reqselect = "select * from client_copy";
+                    $reqselect = "select * from num_date";
                     $resultat = mysqli_query($bdd,$reqselect);
-                    $lig = mysqli_fetch_assoc($resultat);
+                    $ligner = mysqli_fetch_assoc($resultat);
                 ?>
-                <p class="avanc_p">Client :<?php echo "  ",utf8_encode(@$lig['nom']);?></p>               
-                <p class="avanc_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>           
-                <p class="avanc_p">Fax :<?php echo "  ",utf8_encode(@$lig['fax']);?></p>           
-                <p class="avanc_p">Adresse :<?php echo "  ",utf8_encode(@$lig['adress_bp']);?></p>                
-                <p class="avanc_p">E-mail :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
-                <p class="avanc_p">Site web :<?php echo "  ",utf8_encode(@$lig['site_web']);?></p>
+                <div class="numero_offr">
+                    <p class="avanc_p">NUMERO DEVIS :<?php echo "  ",utf8_encode(@$ligner['num_devis']);?></p>
+                    <p class="avanc_p">OFFRE :<?php echo "  ",utf8_encode(@$ligner['offre']);?></p>  
+                </div>
+                <div class="date_devis">
+                    <p >Abidjan le,<?php echo "  ",utf8_encode(@$ligner['date_devis']);?></p>
+                    <p>Edition du <?php echo "  ",utf8_encode(@$ligner['edition_']);?></p>  
+                </div>
             </div>
+            <table id="tab_devis">
+                <tr>
+                    <th width="5%">X</th>
+                    <th width="30%">Désignation</th>
+                    <th width="10">Unité</th>
+                    <th width="15%">Quantité</th>
+                    <th width="20%">Prix_U</th>
+                    <th width="20%">Prix_T</th>
+                </tr>
+                <tbody></tbody>
+            </table> 
         </div>
-        <div class="date_numero_devis">
-            <?php
-                $reqselect = "select * from num_date";
-                $resultat = mysqli_query($bdd,$reqselect);
-                $ligner = mysqli_fetch_assoc($resultat);
-            ?>
-            <div class="numero_offr">
-                <p class="avanc_p">NUMERO DEVIS :<?php echo "  ",utf8_encode(@$ligner['num_devis']);?></p>
-                <p class="avanc_p">OFFRE :<?php echo "  ",utf8_encode(@$ligner['offre']);?></p>  
-            </div>
-            <div class="date_devis">
-                <p >Abidjan le,<?php echo "  ",utf8_encode(@$ligner['date_devis']);?></p>
-                <p>Edition du <?php echo "  ",utf8_encode(@$ligner['edition_']);?></p>  
-            </div>
-        </div> 
+        <div id="resultat_dqe">
+            <h3 id="dqe_">Devis Quantitatif Estimatif (DQE)</h3>
+            <table id="tab_dqe">
+                <tr>
+                    <!-- <th width="5%">X</th> -->
+                    <th width="30%">Désignation</th>
+                    <th width="10">Unité</th>
+                    <th width="20%">Quantité</th>
+                    <th width="20%">Prix_U</th>
+                    <th width="20%">Prix_T</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>
     </div>
+
     <div id="les_bt_pdf_excel">
         <div class="div_val">
         <button class="bouton_val">Valider</button>
