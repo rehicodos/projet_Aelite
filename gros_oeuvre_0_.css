@@ -6,7 +6,7 @@
 body {
     background: rgb(212, 178, 199);
 }
-h1 {
+h2 {
     background: red;
     text-align: center;
     color: white;
@@ -28,11 +28,7 @@ h1 {
     /* border: 2px red solid; */
     width: 15%;
 }
-#tb_retou #bt_retour_gros_oeuvre {
-    padding: 5px;
-    /* font-weight: bolder; */
-    margin-left: 0px;
-}
+
 p {
     text-align: center;
 }

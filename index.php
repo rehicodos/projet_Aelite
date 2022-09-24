@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principp.css">
+    <link rel="stylesheet" href="principp__0.css">
     <title>Principal -Accueil</title>
 </head>
 <body>
     <div class="ent">
         <div class="bann">
-            <h1>Fast-Devis</h1>
+            <h1 id="nom_logiciel">Fast-Devis</h1>
         </div>
         <div class="nav_bar"></div>
         <div class="bar"></div>
     </div>
-    <div class="conteneur">
+    <div id="conteneur_page_principale">
         <div class="conteneur_icone">
             <div class="cont1">
                 <div class="repertw">
@@ -31,7 +31,7 @@
                     <p>Bibliothèque</p>
                 </div>
                 <div class="repertw">
-                    <a href="devis.php"><img src="images/devis2.jpg" width="100%" height="90%"></a>
+                    <img id="image_devis_page_principale" src="images/devis2.jpg" width="100%" height="90%">
                     <p>Devis</p>
                 </div>
             </div>
@@ -63,6 +63,18 @@
             </ul>
         </div>
     </div>
-    
+    <div id="page_devis"><?php include('devis.php'); ?></div>
+
+    <script>
+        //  ____affichage/appel des pages_______
+        $(document).ready(function(){
+            // ____affichage/appel de la page  gros_oeuvre.php_______
+            $("#image_devis_page_principale").click(function(){
+                $("#page_devis").show();
+                $(".ent").hide();
+                $("#conteneur_page_principale").hide();
+            });
+        });
+    </script>
 </body>
 </html>

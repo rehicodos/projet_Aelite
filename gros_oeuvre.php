@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=p, initial-scale=1.0">
-    <link rel="stylesheet" href="gros_oeuvre__00.css">
+    <link rel="stylesheet" href="gros_oeuvre_0_.css">
     <title>Gros Oeuvre</title>
 </head>
 <body>
-    <h1>Travaux : Gros Oeuvre </h1>
+    <h2>Travaux : Gros Oeuvre </h2>
     <div id="tb_retou"><button id="bt_retour_gros_oeuvre" type="button"><strong><-<-<- Retour</strong></button></div>
     <div class="conteneur">
         <div class="div_1">

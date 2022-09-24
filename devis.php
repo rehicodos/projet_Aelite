@@ -88,7 +88,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis000.css">
+    <link rel="stylesheet" href="devis_1_.css">
     <link rel="stylesheet" href="f_devis__.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -137,10 +137,16 @@
         }); 
     </script>
  
-    <!-- ________affichage rapide de doc_client et travaux________________  -->
+    <!-- ________affichage rapide de doc_client, travaux et les actions gros - second oeunvre________________  -->
     <script>
         //  ____affichage/appel des page  gros oeuvre_______
         $(document).ready(function(){
+            // ____affichage/appel de la page principale_______
+            $("#bt_retour_page_principale").click(function(){
+                $("#page_devis").hide();
+                $(".ent").show();
+                $("#conteneur_page_principale").show();
+            });
             // ____affichage/appel de la page  gros_oeuvre.php_______
             $("#affich_gros_oeuvre").click(function(){
                 $("#gros_oeuvre").show();
@@ -149,6 +155,7 @@
                 $("#conteneur_resultat").hide();
                 $(".travaux_devis").hide();
                 $("#les_bt_pdf_excel").hide();
+                $("#bt_retour_page_principale").hide();
             });
             $(".text_gros_second_oeuvre").click(function(){
                 $("#gros_oeuvre").show();
@@ -165,6 +172,7 @@
                 $("#conteneur_resultat").show();
                 $(".travaux_devis").show();
                 $("#les_bt_pdf_excel").show();
+                $("#bt_retour_page_principale").show();
             });
             // ____affichage/appel de la page  fondation.php_______
             $("#image_affich_fondadtion").click(function(){
@@ -187,11 +195,8 @@
             });
             $("#bt_retour_fondation").click(function(){
                 $("#fondaton").hide();
-                $(".doc_devis").show();
-                $("#text_resul").show();
-                $("#conteneur_resultat").show();
-                $(".travaux_devis").show();
-                $("#les_bt_pdf_excel").show();
+                $("#gros_oeuvre").show();
+                $("#les_bt_pdf_excel").hide();
             });
         });
 
@@ -465,7 +470,8 @@
     </div>
     <div id="gros_oeuvre"><?php include('gros_oeuvre.php'); ?></div>
     <div id="fondaton"><?php include('fondation.php'); ?></div>
-    
+
+    <div id="tb_retou"><button id="bt_retour_page_principale" type="button"><strong><-<-<- Retour</strong></button></div>
     <h2 id="text_resul">Resultat Devis</h2>
 
     <div id="conteneur_resultat">
@@ -530,10 +536,10 @@
             <h3 id="dqe_">Devis Quantitatif Estimatif (DQE)</h3>
             <table id="tab_dqe">
                 <tr>
-                    <!-- <th width="5%">X</th> -->
+                    <th width="5%">X</th>
                     <th width="30%">Désignation</th>
                     <th width="10">Unité</th>
-                    <th width="20%">Quantité</th>
+                    <th width="15%">Quantité</th>
                     <th width="20%">Prix_U</th>
                     <th width="20%">Prix_T</th>
                 </tr>

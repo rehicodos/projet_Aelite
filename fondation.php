@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fondation_123.css">
+    <link rel="stylesheet" href="fondation_3_.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Fondation</title>
 </head>
 <body>
-    <h1>Travaux de Béton</h1>
+    <h2>Travaux de Béton</h2>
     <div id="beton_d_propete">
         <div id="tb_retou"><button id="bt_retour_fondation" type="button"><strong><-<-<- Retour</strong></button></div>
         <div id="text_beton">
-            <h2>Dosage Béton de Proprété/Armé</h2>
+            <h3>Dosage Béton de Proprété/Armé</h3>
         </div>
         <div id="detail">
             <div class="dim">
@@ -120,13 +120,16 @@
     </div>
     <table id="tab_fondat">
         <tr>
+            <th>X</th>
             <th>Désignaton</th>
             <th>Unité</th>
             <th>Quantité</th>
             <th>Prix_U</th>
             <th>Prix_T</th>
         </tr>
+        
         <tr id="rang1">
+            <td><input type="checkbox" name="" id=""></td>
             <td><input value="Ciment" type="text"  name="" id=""></td>
             <td><input value="pqt" type="text"  name="" id=""></td>
             <td><input type="text"  name="" id="c1"></td>
@@ -134,6 +137,7 @@
             <td><input type="text"  name="" id="tt_c"></td>
         </tr>
         <tr id="rang2">
+            <td><input type="checkbox" name="" id=""></td>
             <td><input value="Sable" type="text"  name="" id=""></td>
             <td><input value="m³" type="text"  name="" id=""></td>
             <td><input type="text"  name="" id="s1"></td>
@@ -141,6 +145,7 @@
             <td><input type="text"  name="" id="tt_s"></td>
         </tr>
         <tr id="rang3">
+            <td><input type="checkbox" name="" id=""></td>
             <td><input value="Gravier" type="text"  name="" id=""></td>
             <td><input value="m³" type="text"  name="" id=""></td>
             <td><input type="text"  name="" id="g1"></td>
@@ -148,6 +153,7 @@
             <td><input type="text"  name="" id="tt_g"></td>
         </tr>
         <tr id="rang4">
+            <td><input type="checkbox" name="" id=""></td>
             <td><input value="Aciers" type="text"  name="" id=""></td>
             <td><input value="botte" type="text"  name="" id=""></td>
             <td><input type="text"  name="" id="ac1"></td>
@@ -155,6 +161,7 @@
             <td><input type="text"  name="" id="tt_ac"></td>
         </tr>
         <tr id="rang5">
+            <td><input type="checkbox" name="" id=""></td>
             <td><input value="Fil de Fer" type="text"  name="" id=""></td>
             <td><input value="rlx" type="text"  name="" id=""></td>
             <td><input type="text"  name="" id="fil1"></td>
@@ -163,6 +170,7 @@
         </tr>
         <!-- <tbody></tbody> -->
         <tr id="rang6">
+            <td><input type="checkbox" name="" id=""></td>
             <td></td>
             <td></td>
             <td></td>
