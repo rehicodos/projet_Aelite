@@ -60,5 +60,22 @@
             <p>Menuiserie exterieurs</p>
         </div>
     </div>
+    <div id="travaux_preliminaire"><?php include('travaux_prelimiaire.php'); ?></div>
+
+    <script>
+        //  ____affichage/appel a la page gros oeuvre_______
+        $(document).ready(function(){
+            // ____affichage/appel de la page  gros_oeuvre.php_______
+            $("#image_affich_T").click(function(){
+                $("#gros_oeuvre").hide();
+                $("#fondaton").show();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+            });
+        });
+    </script>
 </body>
 </html>

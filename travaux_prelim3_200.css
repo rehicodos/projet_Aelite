@@ -6,30 +6,44 @@
 body {
     background: rgb(212, 178, 199);
 }
-h1{
+#text_h2 {
     text-align: center;
     color: white;
     margin: 20px 0px;
-    padding: 5px 0px;
     background: red;
+    font-size: 2.2em;
 }
-th{
+.th_{
     padding: 4px 0px;
 }
-select{
+#tab2_prelim_cacher {
+    display: none;
+}
+#sous_tt_vers_dqe {
+    display: none;
+}
+#tab_prelim_cacher_3 {
+    width: 94%;
+    padding: 8px;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin: 3px auto;
+    /* display: none; */
+}
+#tab_generalite select{
     padding: 4px 0px;
 }
-p{
+#tab_generalite p{
     padding: 4px;
     font-size: 1.6em;
 }
-input {
+#tab_generalite input {
     height: 25px;
 }
-button {
+/* button {
     padding: 3px;
     cursor: pointer;
-}
+} */
 select{
     width: 100%;
     text-align: center;
@@ -48,10 +62,11 @@ select{
     /* border: 2px solid red; */
     width: 94%;
     padding: 20px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
-.generalite table {
-    width: 90%;
+#tab_generalite {
+    width: 95%;
+    margin-top: 30px;
     /* margin: auto; */
     border-radius: 5px;
     padding: 3px;
@@ -76,10 +91,10 @@ select{
 }
 .les_bouton {
     width: 70%;
-    margin: 10px;
+    margin: 10px auto;
     /* border: 2px solid red; */
     text-align: center;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
 }
 #tt_travaux_prelim {
     text-align: center;
@@ -93,4 +108,10 @@ select{
 #img_prelim img{
     width: 100%;
     height: 100%;
+}
+#conteneu_double_tab {
+    display: flex;
+}
+#tab_select {
+    width: 20%;
 }

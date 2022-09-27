@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principp__0.css">
+    <link rel="stylesheet" href="principp_0__.css">
     <title>Principal -Accueil</title>
 </head>
 <body>
@@ -72,6 +72,7 @@
             $("#image_devis_page_principale").click(function(){
                 $("#page_devis").show();
                 $(".ent").hide();
+                // $("#travaux_preliminaire").hide();
                 $("#conteneur_page_principale").hide();
             });
         });

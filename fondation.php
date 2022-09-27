@@ -72,10 +72,7 @@
                 <hr/>
                 <!-- <form action="" method="post"> -->
                 <table id="tab_">
-                        <!-- <tr> -->
-                                    <!-- <td></td> -->
-                                    <!-- <td colspan="2"><p><strong>*Remblais</strong></p></td> -->
-                        <!-- </tr> -->
+                       
                         <tr>
                                     <th width="10%">X</th>
                                     <th width="30%">Désignaton</th>
@@ -84,13 +81,7 @@
                                     <th width="15%">Prix_U</th>
                                     <th width="20%">Prix_T</th>
                         </tr>
-                        <!-- <tr>
-                                    <td><input type="text" id="descrip_" name="desc"></td>
-                                    <td><input type="text" value="m³" name="unit" id="unitt_"></td>
-                                    <td><input class="premiere_lign" id="qt" type="number" name="qt" ></td>
-                                    <td><input class="premiere_lign" id="pu_mini_devi" type="number" name="pu"></td>
-                                    <td><input type="number" name="pt" id="tt_mini_devi"></td>
-                        </tr> -->
+
                         <tbody>
                             <tr id="logg">
                                 <td><input type="checkbox" name="" id=""></td>
@@ -101,10 +92,7 @@
                                 <td><input type="text" name="pt" id="tt_mini_devi"></td>
                             </tr>
                         </tbody>
-                        <!-- <tr>
-                            <td colspan="4"><h4  class="s_t_calcul"><strong>Prix Total Dosage Béton</strong></h4></td>
-                            <td><input type="number" name="" id="tt_fondat"></td>
-                        </tr> -->
+                
                 </table>
                 <!-- </form> -->
                 <div id="tb">
@@ -127,7 +115,10 @@
             <th>Prix_U</th>
             <th>Prix_T</th>
         </tr>
-        
+        <tr id="rang0">
+            <td></td>
+            <td colspan="5"><input type="text"  name="" id="desc_selectionner"></td>
+        </tr>
         <tr id="rang1">
             <td><input type="checkbox" name="" id=""></td>
             <td><input value="Ciment" type="text"  name="" id=""></td>
@@ -170,7 +161,7 @@
         </tr>
         <!-- <tbody></tbody> -->
         <tr id="rang6">
-            <td><input type="checkbox" name="" id=""></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -189,15 +180,19 @@
             $("#qt").val("");
             $("#pu_mini_devi").val("");
             $("#tt_mini_devi").val("");
+
+            copy_ds();
+            effacer_tout();
         }
         else{
             alert("Les champs de saisir sont vide !!!");
         }
-        copy_ds();
-        effacer_tout();
+
     }); 
+    // _______copier ou clone DQE devis _____
     function copy_ds(){
         if($("#qt_aciers").val() !="" && $("#qt_fil").val() !="" && $("#pu_aciers").val() !="" && $("#pu_fil").val() !=""){
+            var copy_ligne00 = $("#rang0").clone().appendTo($("#tab_dqe").add(copy_ligne00));
             var copy_ligne1 = $("#rang1").clone().appendTo($("#tab_dqe").add(copy_ligne1));
             var copy_ligne2 = $("#rang2").clone().appendTo($("#tab_dqe").add(copy_ligne2));
             var copy_ligne3 = $("#rang3").clone().appendTo($("#tab_dqe").add(copy_ligne3));
@@ -231,6 +226,7 @@
         }
         else{
             if($("#qt_aciers").val() =="" && $("#qt_fil").val() =="" && $("#pu_aciers").val() =="" && $("#pu_fil").val() ==""){
+                var copy_ligne00 = $("#rang0").clone().appendTo($("#tab_dqe").add(copy_ligne00));
                 var copy_ligne1_ = $("#rang1").clone().appendTo($("#tab_dqe").add(copy_ligne1_));
                 var copy_ligne2_ = $("#rang2").clone().appendTo($("#tab_dqe").add(copy_ligne2_));
                 var copy_ligne3_ = $("#rang3").clone().appendTo($("#tab_dqe").add(copy_ligne3_));
@@ -281,6 +277,8 @@
         $("#tt_fondat").val("");
     }
     function effacer_tout(){
+        $("#desc_selectionner").val("");
+
         $("#inp1").val("");
         $("#inp2").val("");
         $("#inp3").val("");
@@ -423,52 +421,59 @@
 
         if(selection_ == "p1"){
             document.getElementById('ciment__0').value = (surface_b*(0.15)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton de propreté dosé à 150 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton de propreté dosé à 150 kg/m³";
             $("#beton_arme_caher").hide(slow='3000');
         }
         if(selection_ == "p2"){
             document.getElementById('ciment__0').value = (surface_b*(0.20)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton de propreté dosé à 200 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton de propreté dosé à 200 kg/m³";
             $("#beton_arme_caher").hide(slow='3000');
         }
         if(selection_ == "p3"){
             document.getElementById('ciment__0').value = (surface_b*(0.25)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton de propreté dosé à 250 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton de propreté dosé à 250 kg/m³";
             $("#beton_arme_caher").hide(slow='3000');
         }
 
         if(selection_ == "a1"){
             document.getElementById('ciment__0').value = (surface_b*(0.35)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton Armé dosé à 350 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton Armé dosé à 350 kg/m³";
             $("#beton_arme_caher").show(slow="3000");
         }
         if(selection_ == "a2"){
             document.getElementById('ciment__0').value = (surface_b*(0.40)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton Armé dosé à 400 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton Armé dosé à 400 kg/m³";
             $("#beton_arme_caher").show(slow="3000");
         }
         if(selection_ == "a3"){
             document.getElementById('ciment__0').value = (surface_b*(0.45)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton Armé dosé à 450 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton Armé dosé à 450 kg/m³";
             $("#beton_arme_caher").show(slow="3000");
         }
         if(selection_ == "a4"){
             document.getElementById('ciment__0').value = (surface_b*(0.50)).toFixed(2);
-            document.getElementById('sable__0').value = (surface_b*(0.4)).toFixed(2);
+            document.getElementById('sable__0').value = ((surface_b*(0.4)) / 12 ).toFixed(2);
             document.getElementById('gravier__0').value = (surface_b*(0.9)).toFixed(2);
             document.getElementById('descrip_').value = "Béton Armé dosé à 500 kg/m³";
+            document.getElementById('desc_selectionner').value = "Béton Armé dosé à 500 kg/m³";
             $("#beton_arme_caher").show(slow="3000");
         }
         // calcul_prix_u();

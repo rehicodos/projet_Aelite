@@ -88,7 +88,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis_1_.css">
+    <link rel="stylesheet" href="devis_00_.css">
     <link rel="stylesheet" href="f_devis__.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -468,6 +468,7 @@
             </div>
         </div>
     </div>
+    <!-- ______inclusion des pages externe____ -->
     <div id="gros_oeuvre"><?php include('gros_oeuvre.php'); ?></div>
     <div id="fondaton"><?php include('fondation.php'); ?></div>
 
