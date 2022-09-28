@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="travaux_prelim3_200.css">
+    <link rel="stylesheet" href="travaux_prelim00.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Travaux Preliminaire</title>
 </head>
 <body>
     <h2 id="text_h2">Travaux Preliminaires</h2>
-    <div id="tb_retou"><button id="bt_retour_page_gros_oeuvre_" type="button"><strong><-<-<- Retour</strong></button></div>
+    <div id="tb_retou"><button id="bt_tprelim_retour_page_page_devis" type="button"><strong><-<-<- Retour</strong></button></div>
     <div class="generalite">
     <div>
         <table id="tab_generalite">
@@ -96,45 +96,18 @@
             <td colspan="3"><input type="text" value="Généralité"></td>
         </tr> -->
         <tbody></tbody>
-        <tr id="sous_tt_vers_dqe">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <!-- <td><h4 id="s_t_calcu" class="s_t_calc"><strong>Total</strong></h4></td> -->
-            <td><input type="text" id="tt_tra" value="Total"></td>
-            <td><input type="text" class="sous_tt_" id="tt_tra" value="0.00"></td>
-            <!-- <td><strong><h3 id="tt_travaux_prelim">0.00</h3></strong></td> -->
-        </tr>
         <tr id="sous_tt_vers_devis">
             <td></td>
-            <td colspan="4"><h4 id="s_t_calcull" class="s_t_calcul"><strong>Total</strong></h4></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- <td colspan="2"><h4 id="s_t_calcull" class="s_t_calcul"><strong>Total</strong></h4></td> -->
+            <td><input type="text" class="sous_" id="" value="Sous-Total :"></td>
             <td><input type="text" class="sous_tt_" id="tt_travau" value="0.00"></td>
             <!-- <td><strong><h3 id="tt_travaux_prelim">0.00</h3></strong></td> -->
         </tr>
     </table>
-    <table id="tab_prelim_cacher_4">
-        <tr>
-            <th>X</th>
-            <th>Désignation</th>
-            <th>Unité</th>
-            <th>Quantité</th>
-            <th>Prix_U</th>
-            <th>Prix_T</th>
-        </tr>
-        <tbody></tbody>
-    </table>
-    <table id="tab_prelim_cacher_5">
-        <tr>
-            <th>X</th>
-            <th>Désignation</th>
-            <th>Unité</th>
-            <th>Quantité</th>
-            <th>Prix_U</th>
-            <th>Prix_T</th>
-        </tr>
-        <tbody></tbody>
-    </table>
+
   </div>
     <script>
         // _______Ajoute de nouvele ligne ______
@@ -170,15 +143,10 @@
         });
     </script>
     <script>
-        //  ____affichage/appel a la page gros oeuvre_______
-        $(document).ready(function(){
-            // ____affichage/appel de la page  gros_oeuvre.php_______
-            $("#bt_retour_page_gros_oeuvre_").click(function(){
-                $("#gros_oeuvre").show();
-                $("#travaux_preliminaire").hide();
-                // $("#les_bt_pdf_excel").hide();
-            });
-        });
+        
+
+
+
 
         function transfert_donnees(){
 
@@ -231,12 +199,12 @@
 
         $("#bt_prelim_valider").click(function(){
             var tail_tab = $("#tab_prelim_cacher_3 tr").length;
-            if(tail_tab >= 2){
+            if(tail_tab > 3){
                 var copy_ligne_prelim = $("#tab_prelim_cacher_3 .lign_tab2").clone().appendTo($("#tab_devis").add(copy_ligne_prelim));
                 var copy_ligne_pr = $("#tab_prelim_cacher_3 #sous_tt_vers_devis").clone().appendTo($("#tab_devis").add(copy_ligne_pr));
 
                 var copy_ligne_prel = $("#tab_prelim_cacher_3 .lign_tab2").clone().appendTo($("#tab_dqe").add(copy_ligne_prel));
-                var copy_ligne_pre = $("#tab_prelim_cacher_3 #sous_tt_vers_dqe").clone().appendTo($("#tab_dqe").add(copy_ligne_pre));
+                var copy_ligne_pre = $("#tab_prelim_cacher_3 #sous_tt_vers_devis").clone().appendTo($("#tab_dqe").add(copy_ligne_pre));
 
                 
                 $("#tab_prelim_cacher_3 .lign_tab2").remove();

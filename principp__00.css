@@ -7,9 +7,12 @@ body {
     background: rgb(212, 178, 199);
     /* text-align: center; */
 }
+
+/* _____cacher les pages etrangères_____ */
 #page_devis {
     display: none;
 }
+
 .ent {
     width: 90%;
     border: 7px solid white;
@@ -89,6 +92,7 @@ body {
 	transition: .4s ease-in-out;
     margin-bottom: 2px;
     border-radius: 8px;
+    cursor: pointer;
 }
 .repertw img:hover {
     -webkit-transform: scale(1.1);

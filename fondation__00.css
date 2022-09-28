@@ -1,22 +1,14 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    background: rgb(212, 178, 199);
-    /* min-width: 600px; */
-}
+
 h2{
     text-align: center;
     color: white;
     margin: 20px 0px;
     background: red;
 }
-button {
+/* button {
     padding: 2px 3px;
     font-size: 1.3em;
-}
+} */
 .spandecor {
     background: #FFBFCA;
     padding: 1px 3px;
@@ -45,7 +37,14 @@ table input{
     padding: 4px 0px;
     text-align: center;
 }
-select {
+
+/* select {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0px;
+} */
+
+#xxx_ select {
     width: 100%;
     text-align: center;
     padding: 4px 0px;
@@ -85,13 +84,13 @@ select {
     width: 70px;
     border-radius: 5px;
 }
-#inp1 {
+#inp1__01 {
     margin-left: 10px;
 }
-#inp2 {
+#inp2__01 {
     margin-left: 19px;
 }
-#inp3 {
+#inp3__01 {
     margin-left: 31px;
 }
 
@@ -152,11 +151,11 @@ select {
     padding: 5px;
     border-radius: 20px;
 }
-#detail {
+#detail__0 {
     background: white;
     display: flex;
     justify-content: space-evenly;
-    padding: 10px 2px 20px 2px;
+    padding: 10px 2px 20px 2px; 
     /* height: 800px; */
 }
 #image {

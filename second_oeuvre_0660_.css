@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: rgb(212, 178, 199);
+}
+h2 {
+    text-align: center;
+    color: white;
+    margin: 20px 0px;
+    background: red;
+}
+/* p {
+    text-align: center;
+} */
+#conteneur_bt_retour_et_bordereau_T {
+    /* border: 2px solid red; */
+    /* position: relative; */
+    display: flex;
+    padding-right: 4%;
+    align-items: center;
+    justify-content: space-between;
+}
+#conteneur_bt_retour_et_bordereau_T #tb__retou {
+    width: 15%;
+    margin-left: 2%;
+}
+#conteneur_bt_retour_et_bordereau_T select {
+    text-align: center;
+}
+#conteneur_bt_retour_et_bordereau_T h3 {
+    margin-right: 8px;
+    background: #757474;
+    color: white;
+    padding: 3px 8px;
+}
+#conteneur_bt_retour_et_bordereau_T button {
+    padding: 2px 3px;
+    font-size: 1.3em;
+}
+#conteneur_bt_retour_et_bordereau_T .borderau {
+    display: flex;
+    float: right;
+}
+#conteneur_second_oeuvre {
+    border: 10px ridge blue;
+    width: 94%;
+    height: 420px;
+    margin: 40px auto;
+    background: #A6A6A6;
+    /* display: flex; */
+}
+#conteneur_second_oeuvre #conteneu_bt_img {
+    background: #C4C4C4;
+    width: 93%;
+    height: 340px;
+    margin: 20px auto;
+    border: inset;
+    padding: 15px;
+    border-radius: 5px;
+    /* display: flex; */
+}
+#conteneu_bt_img hr{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+#conteneur_second_oeuvre #conteneu_bt_img .conteneu_bt_img_1 {
+    width: 70%;
+    /* border: 2px solid red; */
+    /* margin-top: 15px; */
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+#conteneur_second_oeuvre #conteneu_bt_img .conteneu_bt_img_2 {
+    width: 70%;
+    /* border: 2px solid red; */
+    /* margin-top: 15px; */
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+#conteneur_second_oeuvre .cont_travaux_prelim {
+    width: 25%;
+    height: 110px;
+    /* display: flex; */
+    margin: 0px 10px;
+}
+#conteneur_second_oeuvre .cont_travaux_prelim img {
+    margin-bottom: 2px;
+    border-radius: 8px;
+}
+#conteneur_second_oeuvre .cont_travaux_prelim button {
+    font-size: 1.1em;
+    color: white;
+    background: black;
+    padding: 3px 4px;
+    margin: 0px auto;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px white solid;
+}
+.conteneur {
+    width: 90%;
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 10px;
+}
+.div_1 {
+    width: 45%;
+    /* border: 2px solid red; */
+    /* height: 40%; */
+}
+.div_1 img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+

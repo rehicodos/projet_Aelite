@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principp_0__.css">
+    <link rel="stylesheet" href="principp__00.css">
     <title>Principal -Accueil</title>
 </head>
 <body>
@@ -63,18 +63,20 @@
             </ul>
         </div>
     </div>
+    
+    <!-- ______inclusion des pages externe____ -->
     <div id="page_devis"><?php include('devis.php'); ?></div>
 
     <script>
         //  ____affichage/appel des pages_______
         $(document).ready(function(){
-            // ____affichage/appel de la page  gros_oeuvre.php_______
+            // ____affichage/appel de la page devis.php(page_devis)_______
             $("#image_devis_page_principale").click(function(){
                 $("#page_devis").show();
                 $(".ent").hide();
-                // $("#travaux_preliminaire").hide();
                 $("#conteneur_page_principale").hide();
             });
+            
         });
     </script>
 </body>

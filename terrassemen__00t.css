@@ -1,23 +1,20 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    background: rgb(212, 178, 199);
-}
-h1{
-    text-align: center;
-    color: white;
-    margin: 20px 0px;
-    background: red;
-}
-select {
+
+#tab_fouille select {
     width: 100%;
     text-align: center;
     padding: 4px 0px;
 }
-p {
+#tab_fouille p {
+    background: #FFBFCA;
+    padding: 4px 0px;
+    font-size: 1.5em;
+}
+#tab_remblais select {
+    width: 100%;
+    text-align: center;
+    padding: 4px 0px;
+}
+#tab_remblais p {
     background: #FFBFCA;
     padding: 4px 0px;
     font-size: 1.5em;
@@ -30,10 +27,10 @@ table th {
 }
 
 .vrai_feuill_calcu {
-    width: 92%;
+    width: 96%;
     border: 1px black solid;
     border-radius: 5px;
-    padding: 4px;
+    padding: 7px 12px;
     margin: 15px auto;
     background: white;
 
@@ -71,7 +68,7 @@ table th {
     justify-content: space-evenly;
     padding: 3px 0px;
 }
-.dim {
+.dim_ {
     border: 3px yellowgreen solid;
     width: 55%;
     padding: 5px;
@@ -109,7 +106,7 @@ table th {
     width: 100%;
     border-radius: 10px;
 }
-.volum_fouill {
+.volum_fouill_0 {
     background: greenyellow;
     width: 85%;
     margin: 2px auto;
@@ -118,7 +115,7 @@ table th {
     padding: 5px;
     /* border-radius: 10px; */
 }
-.volum_fouille {
+.volum_fouill_1 {
     background: greenyellow;
     width: 85%;
     margin: 2px auto;
@@ -135,6 +132,11 @@ table th {
 }
 #inp3 {
     margin-left: 10px;
+}
+#bt_retour_terrassement {
+    padding: 2px 3px;
+    font-size: 1.3em;
+    margin-left: 4px;
 }
 
 

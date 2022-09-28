@@ -88,8 +88,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis_00_.css">
-    <link rel="stylesheet" href="f_devis__.css">
+    <link rel="stylesheet" href="devis.css">
+    <link rel="stylesheet" href="f_devis.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
 </head>
@@ -147,24 +147,33 @@
                 $(".ent").show();
                 $("#conteneur_page_principale").show();
             });
-            // ____affichage/appel de la page  gros_oeuvre.php_______
-            $("#affich_gros_oeuvre").click(function(){
-                $("#gros_oeuvre").show();
-                $(".doc_devis").hide();
-                $("#text_resul").hide();
-                $("#conteneur_resultat").hide();
-                $(".travaux_devis").hide();
-                $("#les_bt_pdf_excel").hide();
-                $("#bt_retour_page_principale").hide();
+            
+            // ____affichage/appel de la page  devis.php(page_devis)_______
+            $("#bt_tprelim_retour_page_page_devis").click(function(){
+                $("#travaux_preliminaiire").hide();
+                $(".doc_devis").show();
+                $("#conteneur_bt_retour_et_bordereau_T").show();
+                $("#text_resul").show();
+                $("#conteneur_resultat").show();
+                $("#les_bt_pdf_excel").show();
             });
-            $(".text_gros_second_oeuvre").click(function(){
-                $("#gros_oeuvre").show();
-                $(".doc_devis").hide();
-                $("#text_resul").hide();
-                $("#conteneur_resultat").hide();
-                $(".travaux_devis").hide();
-                $("#les_bt_pdf_excel").hide();
+            $("#bt_retour_terrassement").click(function(){
+                $("#terressement").hide();
+                $(".doc_devis").show();
+                $("#conteneur_bt_retour_et_bordereau_T").show();
+                $("#text_resul").show();
+                $("#conteneur_resultat").show();
+                $("#les_bt_pdf_excel").show();
             });
+            $("#bt_retour_fondation").click(function(){
+                $("#fondaton").hide();
+                $(".doc_devis").show();
+                $("#conteneur_bt_retour_et_bordereau_T").show();
+                $("#text_resul").show();
+                $("#conteneur_resultat").show();
+                $("#les_bt_pdf_excel").show();
+            });
+            
             $("#bt_retour_gros_oeuvre").click(function(){
                 $("#gros_oeuvre").hide();
                 $(".doc_devis").show();
@@ -174,30 +183,7 @@
                 $("#les_bt_pdf_excel").show();
                 $("#bt_retour_page_principale").show();
             });
-            // ____affichage/appel de la page  fondation.php_______
-            $("#image_affich_fondadtion").click(function(){
-                $("#gros_oeuvre").hide();
-                $("#fondaton").show();
-                $(".doc_devis").hide();
-                $("#text_resul").hide();
-                $("#conteneur_resultat").hide();
-                $(".travaux_devis").hide();
-                $("#les_bt_pdf_excel").hide();
-            });
-            $("#text_affich_fondadtion").click(function(){
-                $("#gros_oeuvre").hide();
-                $("#fondaton").show();
-                $(".doc_devis").hide();
-                $("#text_resul").hide();
-                $("#conteneur_resultat").hide();
-                $(".travaux_devis").hide();
-                $("#les_bt_pdf_excel").hide();
-            });
-            $("#bt_retour_fondation").click(function(){
-                $("#fondaton").hide();
-                $("#gros_oeuvre").show();
-                $("#les_bt_pdf_excel").hide();
-            });
+
         });
 
 
@@ -208,7 +194,8 @@
         });
         $(document).ready(function(){
             $(".formul").click(function(){
-                $(".travaux_devis").toggle(slow="3000");
+                // $(".travaux_devis").toggle(slow="3000");
+                $("#pere_borderau").toggle(slow="3000");
             });
         });
         $(document).ready(function(){
@@ -226,6 +213,44 @@
             <button class="formul">Etude (Travaux)</button>
         </div>
     </div>
+
+    <!-- ______bt_retour et borderau travaux_____ -->
+    <div id="conteneur_bt_retour_et_bordereau_T" >
+        <div id="tb_retou"><button id="bt_retour_page_principale" type="button"><strong><-<-<- Retour</strong></button></div>
+        <div id="pere_borderau">
+            <div class="borderau">
+                <h3>Borderau Travaux</h3>
+                <select id="borderau_select_travaux_0" name="" onclick="select_borderau();">
+                    <option value="">Selectionne ...</option>
+                    <option value="1">T.Préliminaires</option>
+                    <option value="2">Terrassement</option>
+                    <option value="3">Fondation</option>
+                    <option value="4">Assainissement</option>
+                    <option value="5">Soubassement</option>
+                    <option value="6">Elevation</option>
+                    <option value="7">Charpente</option>
+                    <option value="8">Toiture</option>
+                    <option value="9">Menuiserie</option>
+                    <option value="10">Cloisons</option>
+                    <option value="11">Isolation Thermique</option>
+                    <option value="12">Electricité</option>
+                    <option value="13">Plomberie</option>
+                    <option value="14">Peinture</option>
+                    <option value="15">Platerie</option>
+                    <option value="16">Revêtement Mur</option>
+                    <option value="17">Maçonnerie</option>
+                    <option value="18">Funeraire</option>
+                    <option value="19">Dallage</option>
+                    <option value="20">Pavage</option>
+                    <option value="21">Carrelage</option>
+                    <option value="22">Zinguerie</option>
+                    <option value="23">Etancheité</option>
+                    <option value="24">Cheminée</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
     <!-- la fenetre contenant les clients  -->
     <div class="renseignement_inf_client">
             <table id="tabl_biblio">
@@ -456,8 +481,8 @@
         <div class="global">
             <div class="gros_oeuvre">
                 <!-- <div class="s_g_o"> -->
-                <img id="affich_gros_oeuvre" src="images/g_oeuvre_2.jpg" alt="">
-                <button type="button" class="text_gros_second_oeuvre">Gros Oeuvre</button>
+                <img src="images/g_oeuvre_2.jpg" alt="">
+                <button type="button" id="affich_gros_oeuvre" class="text_gros_second_oeuvre">Gros Oeuvre</button>
                 <!-- </div> -->
             </div>
             <div id="second_oeuvre">
@@ -468,11 +493,7 @@
             </div>
         </div>
     </div>
-    <!-- ______inclusion des pages externe____ -->
-    <div id="gros_oeuvre"><?php include('gros_oeuvre.php'); ?></div>
-    <div id="fondaton"><?php include('fondation.php'); ?></div>
 
-    <div id="tb_retou"><button id="bt_retour_page_principale" type="button"><strong><-<-<- Retour</strong></button></div>
     <h2 id="text_resul">Resultat Devis</h2>
 
     <div id="conteneur_resultat">
@@ -559,7 +580,53 @@
         </div>
     </div>
 
+    <!-- ______inclusion des pages externe____ -->
+    <div id="travaux_preliminaiire"><?php include('travaux_preliminaire.php'); ?></div>
+    <div id="terressement"><?php include('terrassement.php'); ?></div>
+    <div id="fondaton"><?php include('fondation.php'); ?></div>
+
     <script>
+        // ______selection type de travail dans borderau_____
+        function select_borderau() {
+            var selection_B = document.getElementById("borderau_select_travaux_0").value;
+
+            if(selection_B == "1"){
+                $("#travaux_preliminaiire").show();
+                $("#conteneur_bt_retour_et_bordereau_T").hide();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+
+                $("#borderau_select_travaux_0").val("");
+            }
+            if(selection_B == "2"){
+                $("#terressement").show();
+                $("#conteneur_bt_retour_et_bordereau_T").hide();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+
+                $("#borderau_select_travaux_0").val("");
+            }
+            if(selection_B == "3"){
+                $("#fondaton").show();
+                $("#conteneur_bt_retour_et_bordereau_T").hide();
+                $(".doc_devis").hide();
+                $("#text_resul").hide();
+                $("#conteneur_resultat").hide();
+                $(".travaux_devis").hide();
+                $("#les_bt_pdf_excel").hide();
+
+                $("#borderau_select_travaux_0").val("");
+            }
+
+        }
+
+
         $(document).ready(function(){
             $("#bt_choisir_client").click(function(){
                 $(".renseignement_inf_client").toggle(slow="3000");

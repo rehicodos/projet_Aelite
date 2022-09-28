@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="terrassement.css">
+    <link rel="stylesheet" href="terrassemen__00t.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Terrassement</title>
 </head>
 <body>
-    <h1>Travaux de terrassement</h1>
+    <h2>Travaux de terrassement</h2>
+    <div id="tb_retou"><button id="bt_retour_terrassement" type="button"><strong><-<-<- Retour</strong></button></div>
     <div class="vrai_feuill_calcu">
         <div class="fouille_dim">
-            <div class="dim">
-                 <div class="volum_fouill">
+            <div class="dim_">
+                 <div class="volum_fouill_0">
                     <h5>Dimensions Fouille en Mètre (m)</h5>
                 </div>
                 <div class="placement_l_L_p"><h3>Longueur Fouille :</h3><input id="inp1" type="text" placeholder="0.00"></div>
@@ -22,7 +23,7 @@
                 <!-- <h3>Longueur Fouille :</h3><input type="text">
                 <h3>Largeur Fouille :</h3><input type="text">
                 <h3>Profondeur Fouille :</h3><input type="text"> -->
-                <div class="volum_fouille">
+                <div class="volum_fouill_1">
                     <h5>Volume Fouille est : <strong>0.00</strong> m³</h5>
                 </div>
             </div>
@@ -74,7 +75,7 @@
         </table>
         <div class="separateur"></div>
         <div class="fouille_dim">
-            <div class="dim">
+            <div class="dim_">
                  <div class="volum_fouill">
                     <h5>Dimensions Remblais en Mètre (m)</h5>
                 </div>
