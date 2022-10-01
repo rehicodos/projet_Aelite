@@ -31,11 +31,11 @@
 #tab_generalite input {
     height: 25px;
 }
-button {
+/* button {
     padding: 2px 3px;
     font-size: 1.3em;
     margin-left: 4px;
-}
+} */
 #tab_generalite select{
     width: 100%;
     text-align: center;

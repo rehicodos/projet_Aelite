@@ -1,84 +1,35 @@
 <?php
- include_once('connexion.php');
+    include_once('connexion.php');
 
-    if(isset($_POST['bt_modifi_info_aelite'])){
-    
+    if(isset($_POST['nom']) or isset($_POST['position']) or isset($_POST['adress_bp']) or isset($_POST['tel']) or isset($_POST['email'])){
+        if(!empty($_POST['nom']) or !empty($_POST['position']) or !empty($_POST['adress_bp']) or !empty($_POST['tel']) or !empty($_POST['email'])){
                 
-        $nom=$_POST['nomm'];             
-        $position=$_POST['posit']; 
-        $adress=$_POST['adress'];            
-        $tel=$_POST['tell'];            
-        $email=$_POST['maill'];            
-        // $logo=$_POST['logoo'];            
-
-        $quer = "UPDATE info_aelite SET nom='".$_POST['nomm']."',position='".$_POST['posit']."',adress_bp='".$_POST['adress']."',tel='".$_POST['tell']."',email='".$_POST['maill']."' WHERE id='1'";
-        $result = mysqli_query($bdd,$quer);
-        
+            // if(isset($_POST['bt_modifi_info_aelite'])){
+                // $bdd_ = new PDO("mysql:host=localhost;dbname=dbaelite;charset=utf8","root",""); 
     
-    }
-
-    if(isset($_POST['bt_valider_entete_devis'])){
-        if(!empty($_POST['nom1']) and !empty($_POST['tel1']) and !empty($_POST['adress1'])){
-                    
-            $nom=$_POST['nom1'];             
-            $tel=$_POST['tel1']; 
-            $fax=$_POST['fax1'];            
-            $adress=$_POST['adress1'];            
-            $mail=$_POST['mail1'];            
-            $web=$_POST['web1'];            
- 
-            $quer = "INSERT INTO client_copy(nom,tel,fax,adress_bp,email,site_web) VALUES('$nom', '$tel', '$fax', '$adress', '$mail', '$web')";
-            $result = mysqli_query($bdd,$quer);
-        }
+                $nom=htmlspecialchars($_POST['nom']);             
+                $position=htmlspecialchars($_POST['position']); 
+                $adress_bp=htmlspecialchars($_POST['adress_bp']);
+                $tel=htmlspecialchars($_POST['tel']); 
+                $email=htmlspecialchars(@$_POST['email']);           
         
+                $requ = "UPDATE info_aelite SET nom='$nom' , position='$position' , adress_bp='$adress_bp' , tel='$tel' , email='$email' ";
+                $resul = $bdd->prepare($requ);
+                $resul->execute();
         
-    }
-    if(isset($_POST['bt_valider_entete_devis'])){
-        if(!empty($_POST['nom_']) and !empty($_POST['tel_']) and !empty($_POST['adress_'])){
-                    
-            $nom_=$_POST['nom_'];             
-            $tel_=$_POST['tel_']; 
-            $fax_=$_POST['fax_'];            
-            $adress_=$_POST['adress_'];            
-            $mail_=$_POST['mail_'];            
-            $web_=$_POST['web_'];            
- 
-            $quer = "INSERT INTO client_copy(nom,tel,fax,adress_bp,email,site_web) VALUES('$nom_', '$tel_', '$fax_', '$adress_', '$mail_', '$web_')";
-            $result = mysqli_query($bdd,$quer);
-        }
-        
-        
-    }
-    if(isset($_POST['bt_valider_entete_devis'])){
-        if(!empty($_POST['num']) and !empty($_POST['offr']) and !empty($_POST['dat'])){
-                    
-            $num__=$_POST['num'];             
-            $offr__=$_POST['offr']; 
-            $dat__=$_POST['dat'];            
-            $edit__=$_POST['edit'];                       
- 
-            $quer = "INSERT INTO num_date(num_devis,offre,date_devis,edition_) VALUES('$num__', '$offr__', '$dat__', '$edit__')";
-            $result = mysqli_query($bdd,$quer);
-        }
-        
-        
-    }
-    if(isset($_POST['bt_valider_entete_devis'])){
-        if(!empty($_POST['nom_']) and !empty($_POST['tel_']) and !empty($_POST['adress_'])){
-                    
-            $nom__=$_POST['nom_'];             
-            $tel__=$_POST['tel_']; 
-            $fax__=$_POST['fax_'];            
-            $adress__=$_POST['adress_'];            
-            $mail__=$_POST['mail_'];            
-            // $web__=$_POST['web_'];            
- 
-            $quer = "INSERT INTO client(nom,tel,fax,adress_bp,email) VALUES('$nom__', '$tel__', '$fax__', '$adress__', '$mail__')";
-            $result = mysqli_query($bdd,$quer);
-        }
-        
-        
-    }
+                //  if($requ){
+                //     header('location:client.php');
+                //   }
+            // }
+    
+        //   else{
+        //      header('location:mod_echec.php');
+        //    }
+    
+          }
+    
+          $bdd = null; 
+    } 
     
  ?>
 
@@ -88,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis__11.css">
+    <link rel="stylesheet" href="devis.css">
     <link rel="stylesheet" href="f_devis.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -254,7 +205,7 @@
     <!-- la fenetre contenant les clients  -->
     <div class="renseignement_inf_client">
             <table id="tabl_biblio">
-                <form action="" method="post">
+                <!-- <form action="" method="post"> -->
                     <?php
                                 //  include('tb_DB.php');
                         $reqselect = "select * from client";
@@ -279,7 +230,7 @@
                         <!-- <th>Site Web</th> -->
                     </tr>
                     <?php
-                        $re = "SELECT * FROM client";
+                        $re = "SELECT * FROM client ORDER BY id DESC";
                         $rows = mysqli_query($bdd,$re);
                         // $i = 1;
                     foreach($rows as $row) :
@@ -296,7 +247,7 @@
 
                     <?php endforeach; ?>
                                     
-                </form>
+                <!-- </form> -->
 
             </table>
     </div>
@@ -444,7 +395,7 @@
              
         </form>
         <div class="mise_ajour_info_aelite">
-            <form action="#" method="">
+            <form action="#" method="post">
                 <table>
                     <tr>
                         <th id="info_n">Nom entreprise </th>
@@ -455,25 +406,26 @@
                         <!-- <th id="info_l">Logo</th> -->
                     </tr>
                     <?php
-                        $reqselect = "select * from info_aelite";
-                        $resultat = mysqli_query($bdd,$reqselect);
-                        $ligggne = mysqli_fetch_assoc($resultat);
+                        $bdd_0 = new PDO("mysql:host=localhost;dbname=dbaelite;charset=utf8","root","");
+
+                        $query = $bdd_0->prepare('SELECT * FROM  info_aelite');
+                        // $query->bindValue(':modifier',$_GET['modifier'],PDO::FETCH_ASSOC);
+                        $query->execute();
+                        $data = $query->fetch();
                     ?>
                     <tr>
-                        <td><input name="nomm" type="text" value="<?php echo utf8_encode(@$ligggne['nom']);?>"></td>
-                        <td><input name="posit" type="text" value="<?php echo utf8_encode(@$ligggne['position']);?>"></td>
-                        <td><input name="adress" type="text" value="<?php echo utf8_encode(@$ligggne['adress_bp']);?>"></td>
-                        <td><input name="tell" type="text" value="<?php echo utf8_encode(@$ligggne['tel']);?>"></td>
-                        <td><input name="maill" type="text" value="<?php echo utf8_encode(@$ligggne['email']);?>"></td>
-                        <!-- <td><input name="logoo" type="file" value="<?php echo utf8_encode(@$ligggne['logo']);?>"></td> -->
+                        <td><input name="nom" type="text" value="<?php echo utf8_encode(@$data['nom']);?>"></td>
+                        <td><input name="position" type="text" value="<?php echo utf8_encode(@$data['position']);?>"></td>
+                        <td><input name="adress_bp" type="text" value="<?php echo utf8_encode(@$data['adress_bp']);?>"></td>
+                        <td><input name="tel" type="text" value="<?php echo utf8_encode(@$data['tel']);?>"></td>
+                        <td><input name="email" type="text" value="<?php echo utf8_encode(@$data['email']);?>"></td>
                         
                     </tr>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td colspan="2"><button name="bt_modifi_info_aelite" id="bt_valider_la_modification_info_aelite" type="submit">Valider</button></td>
-                        <td colspan="2"></td>
-                    </tr>
                 </table>
+                <hr/>
+                <div id="bt_mod_aelite_">
+                    <td colspan="2"><button name="bt_modifi_info_aelite" id="bt_valider_la_modification_info_aelite" type="submit">Valider</button></td>
+                </div>
             </form>
         </div>
     <!-- __________canvas gros oeuvre et second oeuvre_____ -->
@@ -501,46 +453,16 @@
             <!-- Info_aelite et client affiche -->
             <div class="info_aelite_client">
                 <div class="info-aelite">
-                    <?php
-                        $reqselect = "select * from info_aelite";
-                        $resultat = mysqli_query($bdd,$reqselect);
-                        $lig = mysqli_fetch_assoc($resultat);
-                    ?>
+                    
                         <p><img src="images/logo_aelite.png" alt="logo-aelite"></p>               
-                        <p class="avance_p"><?php echo utf8_encode(@$lig['nom']);?></p>                
-                        <p class="avance_p"><?php echo utf8_encode(@$lig['position']);?></p>                
-                        <p class="avance_p"><?php echo utf8_encode(@$lig['adress_bp']);?></p>               
-                        <p class="avance_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>                   
-                        <p class="avance_p">Email :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
+                        
                 </div>
                 <div class="client">
-                    <?php
-                        $reqselect = "select * from client_copy";
-                        $resultat = mysqli_query($bdd,$reqselect);
-                        $lig = mysqli_fetch_assoc($resultat);
-                    ?>
-                    <p class="avanc_p">Client :<?php echo "  ",utf8_encode(@$lig['nom']);?></p>               
-                    <p class="avanc_p">Tel :<?php echo "  ",utf8_encode(@$lig['tel']);?></p>           
-                    <p class="avanc_p">Fax :<?php echo "  ",utf8_encode(@$lig['fax']);?></p>           
-                    <p class="avanc_p">Adresse :<?php echo "  ",utf8_encode(@$lig['adress_bp']);?></p>                
-                    <p class="avanc_p">E-mail :<?php echo "  ",utf8_encode(@$lig['email']);?></p>
-                    <p class="avanc_p">Site web :<?php echo "  ",utf8_encode(@$lig['site_web']);?></p>
+                    
                 </div>
             </div>
             <div class="date_numero_devis">
-                <?php
-                    $reqselect = "select * from num_date";
-                    $resultat = mysqli_query($bdd,$reqselect);
-                    $ligner = mysqli_fetch_assoc($resultat);
-                ?>
-                <div class="numero_offr">
-                    <p class="avanc_p">NUMERO DEVIS :<?php echo "  ",utf8_encode(@$ligner['num_devis']);?></p>
-                    <p class="avanc_p">OFFRE :<?php echo "  ",utf8_encode(@$ligner['offre']);?></p>  
-                </div>
-                <div class="date_devis">
-                    <p >Abidjan le,<?php echo "  ",utf8_encode(@$ligner['date_devis']);?></p>
-                    <p>Edition du <?php echo "  ",utf8_encode(@$ligner['edition_']);?></p>  
-                </div>
+                
             </div>
             <table id="tab_devis">
                 <tr>

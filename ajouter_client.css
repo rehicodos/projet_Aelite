@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: #57e6df;
+    /* text-align: center; */
+}
+#h2_0_ {
+    background: tomato;
+    color: white;
+    padding: 4px 0px;
+    text-align: center;
+    /* margin: 0px; */
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+#bt_retour_ajout_client {
+    padding: 2px 3px;
+    font-size: 1.3em;
+    margin-left: 4px;
+    margin-top: 20px;
+}
+#caneva_ {
+    width: 90%;
+    /* height: 300px; */
+    margin: 30px auto;
+    background: white;
+    padding: 20px 10px;
+    /* text-align: center; */
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 20%), 0 15px 15px 0 rgb(0 0 0 / 35%);
+}
+#sous_caneva {
+    width: 60%;
+    /* height: 200px; */
+    margin: 0px auto;
+    /* background: white; */
+    border: 5px solid yellowgreen;
+    border-radius: 10px;
+    padding: 10px;
+    /* display: flex; */
+}
+#sous_caneva h3 {
+    text-align: center;
+}
+#sous_caneva hr {
+    margin: 5px 0px;
+}
+#sous_caneva .cont_nom_ {
+    display: flex;
+    width: 350px;
+    margin: 10px auto;
+    /* margin-left: 50%; */
+    /* border: 2px solid red; */
+    text-align: center;
+
+}
+#sous_caneva .cont_nom_ label {
+    margin-left: 30px;
+
+}
+#sous_caneva .cont_nom_ input {
+    text-align: center;
+    height: 20px;
+    width: 150px;
+    border-radius: 5px;
+}
+#nom_cl {
+    margin-left: 31px;
+}
+#tel_cl {
+    margin-left: 42px;
+}
+#fax_cl {
+    margin-left: 38px;
+}
+#adresse_cl {
+    margin-left: 11px;
+}
+#email_cl {
+    margin-left: 18px;
+}
+#les_bt_clent {
+    /* border: 2px solid red; */
+    padding: 7px 0px;
+    /* justify-content: space-evenly; */
+    text-align: center;
+}
+#les_bt_clent button {
+    padding: 2px 3px;
+    font-size: 1.3em;
+    /* margin-left: 4px; */
+}

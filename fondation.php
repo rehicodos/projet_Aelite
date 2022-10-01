@@ -13,7 +13,7 @@
     <div id="beton_d_propete">
         <div id="tb_retou"><button id="bt_retour_fondation" type="button"><strong><-<-<- Retour</strong></button></div>
         <div id="text_beton">
-            <h3>Dosage Béton de Proprété/Armé</h3>
+            <h3>Dosage Béton</h3>
         </div>
         <div id="detail__0">
             <div class="dim">
@@ -36,14 +36,14 @@
                         <div class="placement_l_L_p_"><h3 class="avance_texte">Qt Fil de Fer :</h3><input class="arme_b" id="qt_fil" type="number" placeholder="Qt"><h3 class="toto">Prix_U :</h3><input class="arme_b" type="number" id="pu_fil" placeholder="0.00"></div>
                     </div>
                     <div id="beton_propr_">
-                        <h3 class="">Ciment :</h3><input class="" id="" type="text" placeholder="Prix_U">
-                        <h3 class="">Sable :</h3><input class="" id="" type="text" placeholder="Prix_U">
-                        <h3 class="">Gravier :</h3><input class="" id="" type="text" placeholder="Prix_U">
+                        <h3 class="">Ciment :</h3><input class="les_prix_u" id="pu_0_1" type="text" placeholder="Prix_U">
+                        <h3 class="">Sable :</h3><input class="les_prix_u" id="pu_0_2" type="text" placeholder="Prix_U">
+                        <h3 class="">Gravier :</h3><input class="les_prix_u" id="pu_0_3" type="text" placeholder="Prix_U">
                     </div>
                 </div>
-                <div class="volum_fouille">
+                <!-- <div class="volum_fouille">
                     <h5>Total HT Béton : <strong><span class="spandecor" id="prix_tt">0.00</span></strong> m³</h5>
-                </div>
+                </div> -->
                 <hr/>
 
                 <table id="xxx_">
@@ -104,7 +104,7 @@
                 <!-- </form> -->
                 <div id="tb">
                     <div><button type="button" id="valiii">Valider</button></div>
-                    <div><img id="reprendre_action_fondation" src="images/replay_2.png" alt="" width="50px" height="32px"></div>
+                    <!-- <div><img id="reprendre_action_fondation" src="images/replay_2.png" alt="" width="50px" height="32px"></div> -->
                 </div>
             </div>
             <!-- <div id="image">
@@ -179,7 +179,7 @@
     <script>
         // _______copier le mini devis vers le devis principal_____
         $("#valiii").click(function(){
-            if($("#descrip_").val() !="" && $("#qt").val() !="" && $("#pu_mini_devi").val() !="" && $("#tt_mini_devi").val() !=""){
+            if($("#descrip_").val() !="" && $("#qt").val() !=""){
                 var copy_ligne = $(".ligne_acopier").clone().appendTo($("#tab_devis ").add(copy_ligne));
 
                 $("#tab_ #descrip_").val("");
@@ -280,30 +280,30 @@
         function effacer_tout(){
             // $("#desc_selectionner").val("");
 
-            $("#inp1__01").val("");
-            $("#inp2__01").val("");
-            $("#inp3__01").val("");
+            // $("#inp1__01").val("");
+            // $("#inp2__01").val("");
+            // $("#inp3__01").val("");
 
-            document.getElementById('volum_b').innerHTML = "0.00";
-            document.getElementById('prix_tt').innerHTML = "0.00";
+            // document.getElementById('volum_b').innerHTML = "0.00";
+            // document.getElementById('prix_tt').innerHTML = "0.00";
 
             $("#la_selection").val("");
             $("#surfax_f_b").val("");
-            $("#ciment__0").val("");
-            $("#sable__0").val("");
-            $("#gravier__0").val("");
+            $("#pu_general").val("");
+            $("#grand_tt00").val("");
+            // $("#gravier__0").val("");
 
             $("#qt_aciers").val("");
             $("#qt_fil").val("");
             $("#pu_aciers").val("");
             $("#pu_fil").val("");
 
-            $("#inp1_").val("");
-            $("#inp2_").val("");
-            $("#inp3_").val("");
-            $("#inp1__").val("");
-            $("#inp2__").val("");
-            $("#inp3__").val("");
+            // $("#inp1_").val("");
+            // $("#inp2_").val("");
+            // $("#inp3_").val("");
+            // $("#inp1__").val("");
+            // $("#inp2__").val("");
+            // $("#inp3__").val("");
             
         }
         
@@ -332,8 +332,10 @@
         });
         // __________ calcul a partir de select les dosages_______
         $("#surfax_f_b").keyup(function(){
+            
             var surface_beton = Number($('#surfax_f_b').val());
             $("#qt").val(surface_beton);
+            
             // calcul_select();
             calcul_sel();
             // calcul_prix_u();
@@ -348,13 +350,22 @@
 
             $("#grand_tt00").val(pt_g.toFixed(2));
 
+            $("#pu_mini_devi").val(pu_general.toFixed(2));
+            $("#tt_mini_devi").val(pt_g.toFixed(2));
+
             calcul_tab_cacher();
         });
         $(".les_prix_u").keyup(function(){
-            calcul_prix_u();
-            var tt_fondat00 = Number($("#tt_fondat").val());
-            var surface_beton = Number($('#surfax_f_b').val());
-            var pu_general = tt_fondat00 / surface_beton;
+            // calcul_prix_u();
+            var p_1 = Number($("#pu_0_1").val());
+            var p_2 = Number($("#pu_0_2").val());
+            var p_3 = Number($("#pu_0_3").val());
+
+            $("#pu_c").val(p_1);
+            $("#pu_s").val(p_2);
+            $("#pu_g").val(p_3);
+            // var surface_beton = Number($('#surfax_f_b').val());
+            // var pu_general = tt_fondat00 / surface_beton;
             
             // $("#pu_general").val(pu_general.toFixed(2));
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="principp__00.css">
+    <link rel="stylesheet" href="principp.css">
     <title>Principal -Accueil</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
                     <p>Répertoire</p>
                 </div>
                 <div class="repertw">
-                    <a href="#"><img src="images/client2.jpg" width="100%" height="90%"></a>
+                    <a href="client.php"><img src="images/client2.jpg" width="100%" height="90%"></a>
                     <p>Clients</p>
                 </div>
                 <div class="repertw">
