@@ -23,12 +23,12 @@ h2{
 hr {
     margin: 10px 0px;
 }
-p{
+/* p{
     text-align: center;
-    /* background: tomato; */
+    background: tomato;
     width: 100%;
     padding: 4px 0px;
-}
+} */
 table{
     width: 96%;
     margin: 3px auto;

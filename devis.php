@@ -31,7 +31,7 @@
           $bdd = null; 
     } 
     
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis.css">
+    <link rel="stylesheet" href="devis_.css">
     <link rel="stylesheet" href="f_devis.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -239,9 +239,9 @@
                         <!-- <td><input id="clic_radio" type="radio" name="check[]" value="<?php echo $row['id'] ; ?>"></td> -->
                         <td><?php echo utf8_encode($row['nom']);?></td>
                         <td><?php echo utf8_encode($row['tel']);?></td>
-                        <td><?php echo $row['fax'];?></td>
-                        <td><?php echo $row['adress_bp'];?></td>
-                        <td><?php echo $row['email'];?></td>
+                        <td><?php echo utf8_encode($row['fax']);?></td>
+                        <td><?php echo utf8_encode($row['adress_bp']);?></td>
+                        <td><?php echo utf8_encode($row['email']);?></td>
                         <!-- <td><?php echo $row['site_web'];?></td> -->
                     </tr>
 
@@ -251,8 +251,7 @@
 
             </table>
     </div>
-        <!-- <div class="f_dos"> -->
-    <form action="#" method="post" >
+            <!-- =========entete devis cacher============== -->
             <div class="f_dos">
                 <div class="les_champ">
                     <div class="d2">
@@ -262,110 +261,69 @@
                             <button type="button" class="bt_info_aelite" id="bt_info_aelite_nouvelle">Modifier information de l'entreprise</button>
                         </div>
                     </div>
+
                     <div class="d1">
-                    <h3>L'identité du client</h3>
-                    <table >
-                        <!-- <div class="trr3"> -->
-                            <tr class="trr3">
-                                <td><label class="nm_cl" for="nm_cl">Nom :</label></td>
-                                <td><input name="nom_" id="nm_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr3">
-                                <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
-                                <td><input name="tel_" id="pm_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr3">
-                                <td><label class="n_cl" for="n_cl">Fax :</label></td>
-                                <td><input name="fax_" id="n_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr3">
-                                <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
-                                <td><input name="adress_" id="adress_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr3">
-                                <td><label class="email_cl" for="email_cl">E-mail :</label></td>
-                                <td><input name="mail_" id="email_cl"  type="mail"></td>
-                            </tr>
-                            <!-- <tr class="trr3">
-                                <td><label class="site_web_cl" for="logo_cl">Logo :</label></td>
-                                <td><input name="logo_" id="logo_cl" type="file"></td>
-                            </tr> -->
-
-                            <tr class="trr2">
-                                <td><label class="nm_cl" for="nm_cl">Nom :</label></td>
-                                <td><input name="nom_" id="nm_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr2">
-                                <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
-                                <td><input name="tel_" id="pm_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr2">
-                                <td><label class="n_cl" for="n_cl">Fax :</label></td>
-                                <td><input name="fax_" id="n_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr2">
-                                <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
-                                <td><input name="adress_" id="adress_cl" type="text"></td>
-                            </tr>
-                            <tr class="trr2">
-                                <td><label class="email_cl" for="email_cl">E-mail :</label></td>
-                                <td><input name="mail_" id="email_cl"  type="mail"></td>
-                            </tr>
-                            <!-- <tr class="trr2">
-                                <td><label class="site_web_cl" for="logo_cl">Logo :</label></td>
-                                <td><input name="logo_" id="logo_cl" type="file"></td>
-                            </tr> -->
-                            <!-- <tr class="trr3">
-                                <td><label class="site_web_cl" for="site_web_cl">Site web :</label></td>
-                                <td><input name="web_" id="site_web_cl" type="text"></td>
-                            </tr> -->
-                            
-                        <!-- </div> -->
-                        <?php
-                            if(isset($_POST['ok']) and isset($_POST['check'])){
-                                // $idd = $_POST['check']
-                                foreach($_POST['check'] as $iddId){
-                                    $re = "SELECT * FROM client WHERE id='$iddId'";
-                                    $resultaux = mysqli_query($bdd,$re);
-
-                                    if ($resultaux->num_rows > 0) {
-                                        while($row = $resultaux->fetch_assoc()) {
-                                            ?>
-                                            
-                                            <tr>
-                                                <td><label class="nm_cl" for="nm_cl">Nom Client :</label></td>
-                                                <td><input id="nm_cl" name="nom1" value="<?php echo utf8_encode($row['nom']); ?>" type="text"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
-                                                <td><input id="pm_cl" name="tel1" value="<?php echo utf8_encode($row['tel']); ?>" type="text"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="n_cl" for="n_cl">Fax :</label></td>
-                                                <td><input id="n_cl" name="fax1" value="<?php echo utf8_encode($row['fax']); ?>" type="text"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
-                                                <td><input id="adress_cl" name="adress1" value="<?php echo utf8_encode($row['adress_bp']); ?>" type="text"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="email_cl" for="email_cl">E-mail :</label></td>
-                                                <td><input id="email_cl" name="mail1" value="<?php echo utf8_encode($row['email']); ?>" type="mail"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><label class="site_web_cl" for="site_web_cl">Site web :</label></td>
-                                                <td><input id="site_web_cl" name="web1" value="<?php echo utf8_encode($row['site_web']); ?>" type="text"></td>
-                                            </tr>
-                                            <?php
-                                        }
-                                    } 
-                                }
-                            }
-                        ?>
-                        <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
-                        <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
-                    </table>
-                </div>
+                        <h3>L'identité du client</h3>
+                        <table >
+                            <!-- <div class="trr3"> -->
+                                <tr class="trr3">
+                                    <td><label class="nm_cl" for="nm_cl">Nom :</label></td>
+                                    <td><input name="nom_" id="nm_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
+                                    <td><input name="tel_" id="pm_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="n_cl" for="n_cl">Fax :</label></td>
+                                    <td><input name="fax_" id="n_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
+                                    <td><input name="adress_" id="adress_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="email_cl" for="email_cl">E-mail :</label></td>
+                                    <td><input name="mail_" id="email_cl"  type="mail"></td>
+                                </tr>
+                                
+                                <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
+                                <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
+                        </table>
+                        <div id="champ_ajout_client_cacher">
+                            <hr/>
+                            <form action="ajout_cl_sur_form_devi.php" method="post" class="form_nouvo_client">
+                                <table>
+                                    <tr class="trr2">
+                                        <td><label class="nm_cl" for="nom_cl">Nom :</label></td>
+                                        <td><input name="nom_cl" id="nom_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
+                                        <td><input name="tel_cl" id="tel_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="n_cl" for="n_cl">Fax :</label></td>
+                                        <td><input name="fax_cl" id="fax_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
+                                        <td><input name="adresse_cl" id="adresse_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="email_cl" for="email_cl">E-mail :</label></td>
+                                        <td><input name="email_cl" id="email_cl_0"  type="mail"></td>
+                                    </tr>
+                                </table>
+                                <hr/>
+                                <div id="cont_bt_val_nouvo_client"><button id="bt_val_nouvo_client" type="submit">Valider</button></div>
+                                
+                            </form>
+                        </div>
+                        
+                        
+                    </div>
+                
                     <div class="d1">
                         <table>
                             <tr>
@@ -387,15 +345,15 @@
                         </table>
                     </div>
                 </div>
+
                 <div class="bt_f">
                     <input class="eff" type="reset" value="Annuler">
                     <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
                 </div>
             </div> 
              
-        </form>
         <div class="mise_ajour_info_aelite">
-            <form action="#" method="post">
+            <form action="mod_info_aelite.php" method="post" class="form_mod_info_aelite">
                 <table>
                     <tr>
                         <th id="info_n">Nom entreprise </th>
@@ -414,11 +372,11 @@
                         $data = $query->fetch();
                     ?>
                     <tr>
-                        <td><input name="nom" type="text" value="<?php echo utf8_encode(@$data['nom']);?>"></td>
-                        <td><input name="position" type="text" value="<?php echo utf8_encode(@$data['position']);?>"></td>
-                        <td><input name="adress_bp" type="text" value="<?php echo utf8_encode(@$data['adress_bp']);?>"></td>
-                        <td><input name="tel" type="text" value="<?php echo utf8_encode(@$data['tel']);?>"></td>
-                        <td><input name="email" type="text" value="<?php echo utf8_encode(@$data['email']);?>"></td>
+                        <td><input class="nom_aelite" name="nom" type="text" value="<?php echo utf8_encode($data['nom']);?>"></td>
+                        <td><input class="position" name="position" type="text" value="<?php echo utf8_encode($data['position']);?>"></td>
+                        <td><input class="adresse" name="adress_bp" type="text" value="<?php echo utf8_encode($data['adress_bp']);?>"></td>
+                        <td><input class="tel" name="tel" type="text" value="<?php echo utf8_encode($data['tel']);?>"></td>
+                        <td><input class="email" name="email" type="text" value="<?php echo utf8_encode($data['email']);?>"></td>
                         
                     </tr>
                 </table>
@@ -453,12 +411,28 @@
             <!-- Info_aelite et client affiche -->
             <div class="info_aelite_client">
                 <div class="info-aelite">
+                    <?php
+                        $query = $bdd_0->prepare('SELECT * FROM  info_aelite');
+                        // $query->bindValue(':modifier',$_GET['modifier'],PDO::FETCH_ASSOC);
+                        $query->execute();
+                        $data = $query->fetch();
+                    ?>
                     
-                        <p><img src="images/logo_aelite.png" alt="logo-aelite"></p>               
+                        <p id=""><img src="images/logo_aelite.png" alt="logo-aelite"></p>
+                        <p>Entrepise : <span id="aff_info_entreprise_"><?php echo utf8_encode(@$data['nom']);?></span></p>               
+                        <p> Adresse : <span id="aff_info_entreprise_2"><?php echo utf8_encode(@$data['position']);?></span></p>               
+                        <p>Boite postale : <span id="aff_info_entreprise_3"><?php echo utf8_encode(@$data['adress_bp']);?></span></p>               
+                        <p>Tel : <span id="aff_info_entreprise_4"><?php echo utf8_encode(@$data['tel']);?></span></p>               
+                        <p>E-mail : <span id="aff_info_entreprise_5"><?php echo utf8_encode(@$data['email']);?></span></p>               
+                                     
                         
                 </div>
                 <div class="client">
-                    
+                    <p>Nom client : <span id="aff_info_client_"></span></p>               
+                    <p> Tel : <span id="aff_info_client_2"></span></p>               
+                    <p>Fax : <span id="aff_info_client_3"></span></p>               
+                    <p>Adresse : <span id="aff_info_client_4"></span></p>               
+                    <p>E-mail : <span id="aff_info_client_5"></span></p> 
                 </div>
             </div>
             <div class="date_numero_devis">
@@ -476,7 +450,7 @@
                 <tbody></tbody>
             </table> 
         </div>
-        <div id="resultat_dqe">
+        <!-- <div id="resultat_dqe">
             <h3 id="dqe_">Devis Quantitatif Estimatif (DQE)</h3>
             <table id="tab_dqe">
                 <tr>
@@ -489,7 +463,7 @@
                 </tr>
                 <tbody></tbody>
             </table>
-        </div>
+        </div> -->
     </div>
 
     <div id="les_bt_pdf_excel">
@@ -508,6 +482,60 @@
     <div id="fondaton"><?php include('fondation.php'); ?></div>
 
     <script>
+        // ==========modification info aelite sans recharger la page=====
+        $(document).ready(function(){
+            $('.form_mod_info_aelite').on('submit', function(e){
+                e.preventDefault();
+
+                var nom_aelite = $('.nom_aelite').val();
+                var position = $('.position').val();
+                var adresse = $('.adresse').val();
+                var tel = $('.tel').val();
+                var email = $('.email').val();
+
+                var url_ = 'mod_info_aelite.php';
+                var data_ = $(this).serialize(); 
+
+                $.post(url_, data_, function(){
+                    $(".f_dos").toggle(slow="3000");
+                    $(".mise_ajour_info_aelite").toggle(slow="3000");
+
+                    $('#aff_info_entreprise_').text(nom_aelite);
+                    $('#aff_info_entreprise_2').text(position);
+                    $('#aff_info_entreprise_3').text(adresse);
+                    $('#aff_info_entreprise_4').text(tel);
+                    $('#aff_info_entreprise_5').text(email);
+                });
+                
+            });
+        });
+        // ==========ajoute de nouveau client sans recharger la page=====
+        $(document).ready(function(){
+            $('.form_nouvo_client').on('submit', function(e){
+                e.preventDefault();
+
+                var nom_cl = $('#nom_cl').val();
+                var tel_cl = $('#tel_cl').val();
+                var fax_cl = $('#fax_cl').val();
+                var adress_cl = $('#adresse_cl').val();
+                var email_cl = $('#email_cl_0').val();
+
+                var url_ = 'ajout_cl_sur_form_devi.php';
+                var data_ = $(this).serialize(); 
+
+                $.post(url_, data_, function(){
+                    $(".renseignement_inf_client").toggle(slow="3000");
+                    $("#champ_ajout_client_cacher").toggle(slow="3000");
+
+                    $('#aff_info_client_').text(nom_cl);
+                    $('#aff_info_client_2').text(tel_cl);
+                    $('#aff_info_client_3').text(fax_cl);
+                    $('#aff_info_client_4').text(adress_cl);
+                    $('#aff_info_client_5').text(email_cl);
+                });
+                
+            });
+        });
         // ______selection type de travail dans borderau_____
         function select_borderau() {
             var selection_B = document.getElementById("borderau_select_travaux_0").value;
@@ -556,14 +584,14 @@
         });
         $(document).ready(function(){
             $("#tabl_biblio td").click(function(){
-                $(".trr3").show(slow="3000");
+                // $(".trr3").show(slow="3000");
                 $(".renseignement_inf_client").hide();
             });
         });
         $(document).ready(function(){
             $("#bt_nouveau_client").click(function(){
                 $(".trr3").hide();
-                $(".trr2").toggle(slow="3000");
+                $("#champ_ajout_client_cacher").toggle(slow="3000");
             });
         });
         $(document).ready(function(){
@@ -583,6 +611,12 @@
                 document.getElementById("n_cl").value = this.cells[2].innerHTML;
                 document.getElementById("adress_cl").value = this.cells[3].innerHTML;
                 document.getElementById("email_cl").value = this.cells[4].innerHTML;
+
+                document.getElementById("aff_info_client_").textContent = this.cells[0].innerHTML;
+                document.getElementById("aff_info_client_2").textContent = this.cells[1].innerHTML;
+                document.getElementById("aff_info_client_3").textContent = this.cells[2].innerHTML;
+                document.getElementById("aff_info_client_4").textContent = this.cells[3].innerHTML;
+                document.getElementById("aff_info_client_5").textContent = this.cells[4].innerHTML;
             };
         }
     </script>   
