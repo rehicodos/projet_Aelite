@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis_.css">
+    <link rel="stylesheet" href="devis.css">
     <link rel="stylesheet" href="f_devis.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -198,64 +198,66 @@
                     <option value="23">Etancheité</option>
                     <option value="24">Cheminée</option>
                 </select>
+                <button type="button" id="ds_">DS</button>
             </div>
         </div>
     </div>
     
-    <!-- la fenetre contenant les clients  -->
+    <!-- ==========la fenetre contenant les clients========  -->
     <div class="renseignement_inf_client">
-            <table id="tabl_biblio">
-                <!-- <form action="" method="post"> -->
-                    <?php
-                                //  include('tb_DB.php');
-                        $reqselect = "select * from client";
-                        $resultat = mysqli_query($bdd,$reqselect);
+        <table id="tabl_biblio">
+                    <!-- <form action="" method="post"> -->
+                        <?php
+                            $reqselect = "select * from client";
+                            $resultat = mysqli_query($bdd,$reqselect);
 
-                        $nbr = mysqli_num_rows($resultat);
-                                // echo "<h4> Total :<b> ".$nbr."</b> elements present.</h4>";
-                    ?>
-                    <tr class="tr_biblio_entete">
-                        <td colspan="2"><?php echo "<h4> Nombre de client :<b> ".$nbr."</b></h4>"; ?></td>
-                        <!-- <td colspan="2"></td> -->
-                        <!-- <td colspan="2"><button name="ok" type="submit" class="coch_ok">OK</button></td> -->
-                    </tr>
-                                    
-                    <tr>
-                        <!-- <th>Cocher</th> -->
-                        <th>Nom</th>
-                        <th>Tel</th>
-                        <th>Fax</th>
-                        <th>Adresse</th>
-                        <th>Email</th>
-                        <!-- <th>Site Web</th> -->
-                    </tr>
-                    <?php
-                        $re = "SELECT * FROM client ORDER BY id DESC";
-                        $rows = mysqli_query($bdd,$re);
-                        // $i = 1;
-                    foreach($rows as $row) :
-                    ?>
-                    <tr class="tr_survol">
-                        <!-- <td><input id="clic_radio" type="radio" name="check[]" value="<?php echo $row['id'] ; ?>"></td> -->
-                        <td><?php echo utf8_encode($row['nom']);?></td>
-                        <td><?php echo utf8_encode($row['tel']);?></td>
-                        <td><?php echo utf8_encode($row['fax']);?></td>
-                        <td><?php echo utf8_encode($row['adress_bp']);?></td>
-                        <td><?php echo utf8_encode($row['email']);?></td>
-                        <!-- <td><?php echo $row['site_web'];?></td> -->
-                    </tr>
+                            $nbr = mysqli_num_rows($resultat);
+                                    // echo "<h4> Total :<b> ".$nbr."</b> elements present.</h4>";
+                        ?>
+                        <tr class="tr_biblio_entete">
+                            <td colspan="2"><?php echo "<h4> Nombre de client :<b> ".$nbr."</b></h4>"; ?></td>
+                            <!-- <td colspan="2"></td> -->
+                            <!-- <td colspan="2"><button name="ok" type="submit" class="coch_ok">OK</button></td> -->
+                        </tr>
+                                        
+                        <tr>
+                            <!-- <th>Cocher</th> -->
+                            <th>Nom</th>
+                            <th>Tel</th>
+                            <th>Fax</th>
+                            <th>Adresse</th>
+                            <th>Email</th>
+                            <!-- <th>Site Web</th> -->
+                        </tr>
+                        <?php
+                            $re = "SELECT * FROM client ORDER BY id DESC";
+                            $rows = mysqli_query($bdd,$re);
+                            // $i = 1;
+                            foreach($rows as $row) :
+                        ?>
+                            <tr class="tr_survol">
+                                <!-- <td><input id="clic_radio" type="radio" name="check[]" value="<?php echo $row['id'] ; ?>"></td> -->
+                                <td><?php echo utf8_encode($row['nom']);?></td>
+                                <td><?php echo utf8_encode($row['tel']);?></td>
+                                <td><?php echo utf8_encode($row['fax']);?></td>
+                                <td><?php echo utf8_encode($row['adress_bp']);?></td>
+                                <td><?php echo utf8_encode($row['email']);?></td>
+                                <!-- <td><?php echo $row['site_web'];?></td> -->
+                            </tr>
 
-                    <?php endforeach; ?>
-                                    
-                <!-- </form> -->
+                            <?php endforeach; ?>
+                                        
+                    <!-- </form> -->
 
-            </table>
+                </table>
     </div>
+
             <!-- =========entete devis cacher============== -->
             <div class="f_dos">
                 <div class="les_champ">
                     <div class="d2">
                         <h3>Coordonnées de l'entreprise</h3>
+                        <hr/>
                         <div class="info_entrepise">
                             <!-- <button type="button" class="bt_info_aelite" id="bt_info_aelite_ancien">Information existante</button> -->
                             <button type="button" class="bt_info_aelite" id="bt_info_aelite_nouvelle">Modifier information de l'entreprise</button>
@@ -264,6 +266,10 @@
 
                     <div class="d1">
                         <h3>L'identité du client</h3>
+                        <hr/>
+                        <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
+                        <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
+
                         <table >
                             <!-- <div class="trr3"> -->
                                 <tr class="trr3">
@@ -287,9 +293,8 @@
                                     <td><input name="mail_" id="email_cl"  type="mail"></td>
                                 </tr>
                                 
-                                <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
-                                <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
-                        </table>
+                            </table>
+
                         <div id="champ_ajout_client_cacher">
                             <hr/>
                             <form action="ajout_cl_sur_form_devi.php" method="post" class="form_nouvo_client">
@@ -327,29 +332,33 @@
                     <div class="d1">
                         <table>
                             <tr>
-                                <td><label class="d_d" for="d_d">Numéro devis :</label></td>
-                                <td><input name="num" type="text" id="d_d"><br></td>
+                                <td><label  for="num_devis">Numéro devis :</label></td>
+                                <td><input class="commande_" name="num" type="text" id="num_devis"><br></td>
                             </tr>
                             <tr>
-                                <td><label class="d_v_d" for="d_v_d">L'offre :</label></td>
-                                <td><input name="offr" type="text" id="d_v_d"><br></td>
+                                <td><label  for="offre_devis">L'offre :</label></td>
+                                <td><input class="commande_" name="offr" type="text" id="offre_devis"><br></td>
                             </tr>
-                            <tr>
-                                <td><label class="d_t" for="d_t">Date de demande :</label></td>
-                                <td><input name="dat" type="date" id="d_t"><br></td>
+                            <tr class="date_bt_cacher">
+                                <td><label class="d_t" for="date_demande">Date de demande :</label></td>
+                                <td><input name="dat" type="date" id="date_demande"><br></td>
                             </tr>
-                            <tr>
-                                <td><label class="d_s_t" for="d_s_t">Date d'edition :</label></td>
-                                <td><input name="edit" type="date" id="d_s_t"></td>
+                            <tr class="date_bt_cacher">
+                                <td><label class="d_s_t" for="date_edition">Date d'edition :</label></td>
+                                <td><input name="edit" type="date" id="date_edition"></td>
                             </tr>
                         </table>
+                        <hr class="date_bt_cacher" id="hr_"/>
+                        <div class="date_bt_cacher" id="cont_num_off_date">
+                            <button type="button" id="bt_num_off_date">Okay</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bt_f">
+                <!-- <div class="bt_f">
                     <input class="eff" type="reset" value="Annuler">
                     <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
-                </div>
+                </div> -->
             </div> 
              
         <div class="mise_ajour_info_aelite">
@@ -405,7 +414,21 @@
     </div>
 
     <h2 id="text_resul">Resultat Devis</h2>
-
+    
+    <div id="resultat_dqe">
+            <h3 id="dqe_">DEBOURSER SEC (DS)</h3>
+            <table id="tab_dqe">
+                <tr>
+                    <th width="5%">X</th>
+                    <th width="30%">Désignation</th>
+                    <th width="10">Unité</th>
+                    <th width="15%">Quantité</th>
+                    <th width="20%">Prix_U</th>
+                    <th width="20%">Prix_T</th>
+                </tr>
+                <tbody></tbody>
+            </table>
+    </div>
     <div id="conteneur_resultat">
         <div class="resultat">
             <!-- Info_aelite et client affiche -->
@@ -436,7 +459,14 @@
                 </div>
             </div>
             <div class="date_numero_devis">
-                
+                <div id="num_off">
+                    <p>N°_Devis : <span id="num_d"></span></p>
+                    <p>Offre : <span id="off_d"></span></p>
+                </div>
+                <div id="les_dates">
+                    <p>Date de demande : <span id="date_d"></span></p>
+                    <p>Date d'Edition : <span id="date_e"></span></p>
+                </div>
             </div>
             <table id="tab_devis">
                 <tr>
@@ -448,23 +478,54 @@
                     <th width="20%">Prix_T</th>
                 </tr>
                 <tbody></tbody>
-            </table> 
-        </div>
-        <!-- <div id="resultat_dqe">
-            <h3 id="dqe_">Devis Quantitatif Estimatif (DQE)</h3>
-            <table id="tab_dqe">
                 <tr>
-                    <th width="5%">X</th>
-                    <th width="30%">Désignation</th>
-                    <th width="10">Unité</th>
-                    <th width="15%">Quantité</th>
-                    <th width="20%">Prix_U</th>
-                    <th width="20%">Prix_T</th>
+                    <td ></td>
+                    <td rowspan="3">
+                        <p>CONDITION DE PAIEMENT :</p>
+                        <p>50% à la commande</p>
+                        <p>Solde à l'avancementsur situation mensuelle</p>
+                    </td>
+                    <!-- <td ></td> -->
+                    <!-- <td ></td> -->
+                    <td ></td>
+                    <td colspan="2"><input type="text" value="MONTANT TOTAL NET HT : "></input></td>
+                    <td ><input type="text" value="0.00"></input></td>
                 </tr>
-                <tbody></tbody>
+                <tr>
+                    <td ></td>
+                    <!-- <td ></td> -->
+                    <!-- <td ></td> -->
+                    <td ></td>
+                    <td colspan="2"><input type="text" value="TVA 18% : "></input></td>
+                    <td ><input type="text" value="0.00"></input></td>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <!-- <td ></td> -->
+                    <!-- <td ></td> -->
+                    <td ></td>
+                    <td colspan="2"><input type="text" value="MONTANT TOTAL TTC : "></input></td>
+                    <td ><input type="text" value="0.00"></input></td>
+                </tr>
+                <!-- <tr> -->
+                    <!-- <td ><p>aaa</p></td>
+                    <td ><p>bbb</p></td>
+                    <td ><p>ccc</p></td> -->
+                    <!-- <td><p>d</p></td> -->
+                <!-- </tr> -->
+                <!-- <tr>
+                    <td rowspan="2"><p>a</p></td>
+                    <td colspan="2"><p>b</p></td>
+                    <td colspan="2"><p>c</p></td>
+                    <td><p>d</p></td>
+                </tr> -->
             </table>
-        </div> -->
+            <div id="signature_directeur">
+                <p><strong>La Direction Générale</strong></p>
+            </div> 
+        </div>
     </div>
+    
 
     <div id="les_bt_pdf_excel">
         <div class="div_val">
@@ -511,6 +572,7 @@
         });
         // ==========ajoute de nouveau client sans recharger la page=====
         $(document).ready(function(){
+            
             $('.form_nouvo_client').on('submit', function(e){
                 e.preventDefault();
 
@@ -524,17 +586,36 @@
                 var data_ = $(this).serialize(); 
 
                 $.post(url_, data_, function(){
-                    $(".renseignement_inf_client").toggle(slow="3000");
-                    $("#champ_ajout_client_cacher").toggle(slow="3000");
 
                     $('#aff_info_client_').text(nom_cl);
                     $('#aff_info_client_2').text(tel_cl);
                     $('#aff_info_client_3').text(fax_cl);
                     $('#aff_info_client_4').text(adress_cl);
                     $('#aff_info_client_5').text(email_cl);
+
+                    $('#nm_cl').val(nom_cl);
+                    $('#pm_cl').val(tel_cl);
+                    $('#n_cl').val(fax_cl);
+                    $('#adress_cl').val(adress_cl);
+                    $('#email_cl').val(email_cl);
+
+                    $('#nom_cl').val('');
+                    $('#tel_cl').val('');
+                    $('#fax_cl').val('');
+                    $('#adresse_cl').val('');
+                    $('#email_cl_0').val('');
+
+                    // $(".renseignement_inf_client").toggle(slow="3000");
+                    $("#champ_ajout_client_cacher").toggle(slow="3000");
+
+                    recharg_page_auto();
                 });
                 
             });
+            function recharg_page_auto() {
+                $("#tabl_biblio").load(" #tabl_biblio");
+            }
+            // setInterval(recharg_page_auto,1000);
         });
         // ______selection type de travail dans borderau_____
         function select_borderau() {
@@ -580,23 +661,60 @@
         $(document).ready(function(){
             $("#bt_choisir_client").click(function(){
                 $(".renseignement_inf_client").toggle(slow="3000");
+                $("#champ_ajout_client_cacher").hide(slow="3000");
+                // $(".trr3").show(slow="3000")
             });
         });
         $(document).ready(function(){
-            $("#tabl_biblio td").click(function(){
+            $("#bt_num_off_date").click(function(){
+                var num_devis = $("#num_devis").val();
+                var offre_devis = $("#offre_devis").val();
+                var date_demande = $("#date_demande").val();
+                var date_edition = $("#date_edition").val();
+
+                $("#num_d").text(num_devis);
+                $("#off_d").text(offre_devis);
+                $("#date_d").text(date_demande);
+                $("#date_e").text(date_edition);
+
+                $(".f_dos").hide(slow="3000");
+            });
+            $(".commande_").keyup(function(){
+                $(".date_bt_cacher").show(slow="3000");
+                $("#hr_").show(slow="3000");
+            });
+        });
+        $(document).ready(function(){
+            $("#tabl_biblio tr").click(function(){
                 // $(".trr3").show(slow="3000");
-                $(".renseignement_inf_client").hide();
+                $(".renseignement_inf_client").hide(slow="3000");
             });
         });
         $(document).ready(function(){
             $("#bt_nouveau_client").click(function(){
-                $(".trr3").hide();
+                // $(".trr3").toggle();
                 $("#champ_ajout_client_cacher").toggle(slow="3000");
+                $(".renseignement_inf_client").hide(slow="3000");
+
+                $('#nm_cl').val('');
+                $('#pm_cl').val('');
+                $('#n_cl').val('');
+                $('#adress_cl').val('');
+                $('#email_cl').val('');
+
+                document.getElementById("aff_info_client_").textContent = '';
+                document.getElementById("aff_info_client_2").textContent = '';
+                document.getElementById("aff_info_client_3").textContent = '';
+                document.getElementById("aff_info_client_4").textContent = '';
+                document.getElementById("aff_info_client_5").textContent = '';
             });
         });
         $(document).ready(function(){
             $("#bt_info_aelite_nouvelle").click(function(){
                 $(".mise_ajour_info_aelite").toggle(slow="3000");
+            });
+            $("#ds_").click(function(){
+                $("#resultat_dqe").toggle(slow="3000");
             });
         });
         

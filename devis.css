@@ -17,6 +17,9 @@ body {
 #fondaton {
     display: none;
 }
+#resultat_dqe {
+    display: none;
+}
 
 #pere_borderau  {
     display: none;
@@ -48,7 +51,7 @@ body {
     padding: 3px 8px;
 }
 #conteneur_bt_retour_et_bordereau_T button {
-    padding: 2px 3px;
+    /* padding: 2px 3px; */
     font-size: 1.3em;
     margin-left: 4px;
 }
@@ -114,6 +117,12 @@ h2 {
     /* display: flex; */
     justify-content: space-between;
 }
+.f_dos h3 {
+    text-align: center;
+}
+.date_bt_cacher {
+    display: none;
+}
 
 .la_grosseur_th_tva_ttc {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -131,7 +140,7 @@ h2 {
 }
 .resultat {
     width: 95%;
-    height: 480px;
+    /* height: 480px; */
     background: white;
     margin: 5px auto;
     padding: 10px;
@@ -467,26 +476,26 @@ h2 {
 .date_numero_devis {
     width: 98%;
     margin-top: 20px;
+    margin-bottom: 10px;
     /* height: 200px; */
     /* border: 2px red solid; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-evenly; */
 
 }
-.numero_offr {
+#num_off {
     /* border: 2px red solid; */
-    width: 40%;
-}
-.numero_offr p {
-    text-align: left;
-    margin-left: 30px;
-}
-.date_devis {
-    /* border: 2px red solid; */
+    margin-left: 49px;
     width: 30%;
 }
-.date_devis p {
-    text-align: left;
+#les_dates {
+    /* border: 2px red solid; */
+    margin-left: 34%;
+    width: 30%;
+
+}
+#cont_num_off_date {
+    text-align: center;
 }
 /* ______gros oeuvre et second oeuvre____ */
 .gros_oeuvre {
@@ -513,22 +522,24 @@ h2 {
 /* _______resultat devis et DQE____ */
 #conteneur_resultat {
     /* background: rgb(113, 113, 252); */
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 20%), 0 15px 15px 0 rgb(0 0 0 / 35%);
     padding: 6px 0px;
     /* border: 2px white solid; */
     /* border-radius: 8px; */
-    width: 80%;
+    width: 90%;
     /* display: flex; */
     margin: 15px auto;
     /* justify-content: space-evenly; */
 }
 #resultat_dqe {
     background: white;
-    width: 40%;
+    width: 90%;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 20%), 0 15px 15px 0 rgb(0 0 0 / 35%);
     /* height: 480px; */
-    margin: 5px auto;
+    margin: 25px auto;
     padding: 7px;
-    overflow: hidden;
-    overflow-y: scroll;
+    /* overflow: hidden; */
+    /* overflow-y: scroll; */
     /* overflow-x: scroll; */
 
 }
@@ -578,6 +589,15 @@ h2 {
 }
 #cont_bt_val_nouvo_client {
     text-align: center;
+}
+#signature_directeur {
+    /* border: 2px red solid; */
+    margin-top: 30px;
+    /* position: relative; */
+}
+#signature_directeur p {
+    margin-left: 70%;
+
 }
 
 
