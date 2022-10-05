@@ -31,7 +31,7 @@
                     <p>Bibliothèque</p>
                 </div>
                 <div class="repertw">
-                    <img id="image_devis_page_principale" src="images/devis2.jpg" width="100%" height="90%">
+                    <a href="archive_nouvo_devis.php"><img id="" src="images/devis2.jpg" width="100%" height="90%"></a>
                     <p>Devis</p>
                 </div>
             </div>
@@ -65,7 +65,8 @@
     </div>
     
     <!-- ______inclusion des pages externe____ -->
-    <div id="page_devis"><?php include('devis.php'); ?></div>
+    
+    
 
     <script>
         //  ____affichage/appel des pages_______

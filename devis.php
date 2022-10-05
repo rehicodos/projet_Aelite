@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="devis.css">
+    <link rel="stylesheet" href="devis__.css">
     <link rel="stylesheet" href="f_devis.css">
     <script src="jquery-3.6.0.js"></script>
     <title>Devis</title>
@@ -141,12 +141,18 @@
         $(document).ready(function(){
             $(".bt_doc_cl").click(function(){
                 $(".f_dos").toggle(slow="3000");
+                $(".info-aelite").show(slow="3000");
+                $(".client").show(slow="3000");
+                $("#num_off").show(slow="3000");
+                $("#les_dates").show(slow="3000");
             });
         });
         $(document).ready(function(){
             $(".formul").click(function(){
                 // $(".travaux_devis").toggle(slow="3000");
                 $("#pere_borderau").toggle(slow="3000");
+                $("#tab_devis").show(slow="3000");
+                $("#signature_directeur").show(slow="3000");
             });
         });
         $(document).ready(function(){
@@ -167,7 +173,7 @@
 
     <!-- ______bt_retour et borderau travaux_____ -->
     <div id="conteneur_bt_retour_et_bordereau_T" >
-        <div id="tb_retou"><button id="bt_retour_page_principale" type="button"><strong><-<-<- Retour</strong></button></div>
+        <div id=""><a href="archive_nouvo_devis.php"><button id="" type="button"><strong><-<-<- Retour</strong></button></a></div>
         <div id="pere_borderau">
             <div class="borderau">
                 <h3>Borderau Travaux</h3>
@@ -558,7 +564,7 @@
                 var data_ = $(this).serialize(); 
 
                 $.post(url_, data_, function(){
-                    $(".f_dos").toggle(slow="3000");
+                    // $(".f_dos").toggle(slow="3000");
                     $(".mise_ajour_info_aelite").toggle(slow="3000");
 
                     $('#aff_info_entreprise_').text(nom_aelite);
