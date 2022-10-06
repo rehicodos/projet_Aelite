@@ -31,6 +31,33 @@
           $bdd = null; 
     } 
     
+
+    if(isset($_POST['valider_devis_general'])){
+
+        // if(@$_POST['designation'] > 1){
+        if(isset($_POST['designation']) or isset($_POST['unite'])){
+
+            $reqselect = "select * from details_devis";
+            $resultat = mysqli_query($bdd,$reqselect);
+            $nbr = mysqli_num_rows($resultat);
+
+            $lastInsertId = $nbr + 1;
+            for ($i = 0; $i < count($_POST['designation']); $i++) {
+                $sqlInsertItem = "
+                INSERT INTO details_devis(ord_id, designation, unite, quantite_, prix_u, prix_t) 
+                VALUES ('".$lastInsertId."', '".$_POST['designation'][$i]."', '".$_POST['unite'][$i]."', '".$_POST['quantite'][$i]."', '".$_POST['prix_u'][$i]."', '".$_POST['prix_t'][$i]."')";			
+                mysqli_query($bdd, $sqlInsertItem);
+            }
+            
+            $Date = date("d/M/Y, H:i:s");
+            $sqlInsert_archive = "
+            INSERT INTO archive_devis(n_devis, date_creation, nom_cl, montant_ttc) 
+            VALUES ('".$_POST['num_devis']."','".$Date."',  '".$_POST['nom_client']."' ,  '".$_POST['offr']."')";			
+            mysqli_query($bdd, $sqlInsert_archive);
+
+            header("Location:archive_nouvo_devis.php");
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -258,116 +285,7 @@
                 </table>
     </div>
 
-            <!-- =========entete devis cacher============== -->
-            <div class="f_dos">
-                <div class="les_champ">
-                    <div class="d2">
-                        <h3>Coordonnées de l'entreprise</h3>
-                        <hr/>
-                        <div class="info_entrepise">
-                            <!-- <button type="button" class="bt_info_aelite" id="bt_info_aelite_ancien">Information existante</button> -->
-                            <button type="button" class="bt_info_aelite" id="bt_info_aelite_nouvelle">Modifier information de l'entreprise</button>
-                        </div>
-                    </div>
-
-                    <div class="d1">
-                        <h3>L'identité du client</h3>
-                        <hr/>
-                        <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
-                        <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
-
-                        <table >
-                            <!-- <div class="trr3"> -->
-                                <tr class="trr3">
-                                    <td><label class="nm_cl" for="nm_cl">Nom :</label></td>
-                                    <td><input name="nom_" id="nm_cl" type="text"></td>
-                                </tr>
-                                <tr class="trr3">
-                                    <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
-                                    <td><input name="tel_" id="pm_cl" type="text"></td>
-                                </tr>
-                                <tr class="trr3">
-                                    <td><label class="n_cl" for="n_cl">Fax :</label></td>
-                                    <td><input name="fax_" id="n_cl" type="text"></td>
-                                </tr>
-                                <tr class="trr3">
-                                    <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
-                                    <td><input name="adress_" id="adress_cl" type="text"></td>
-                                </tr>
-                                <tr class="trr3">
-                                    <td><label class="email_cl" for="email_cl">E-mail :</label></td>
-                                    <td><input name="mail_" id="email_cl"  type="mail"></td>
-                                </tr>
-                                
-                            </table>
-
-                        <div id="champ_ajout_client_cacher">
-                            <hr/>
-                            <form action="ajout_cl_sur_form_devi.php" method="post" class="form_nouvo_client">
-                                <table>
-                                    <tr class="trr2">
-                                        <td><label class="nm_cl" for="nom_cl">Nom :</label></td>
-                                        <td><input name="nom_cl" id="nom_cl" type="text"></td>
-                                    </tr>
-                                    <tr class="trr2">
-                                        <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
-                                        <td><input name="tel_cl" id="tel_cl" type="text"></td>
-                                    </tr>
-                                    <tr class="trr2">
-                                        <td><label class="n_cl" for="n_cl">Fax :</label></td>
-                                        <td><input name="fax_cl" id="fax_cl" type="text"></td>
-                                    </tr>
-                                    <tr class="trr2">
-                                        <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
-                                        <td><input name="adresse_cl" id="adresse_cl" type="text"></td>
-                                    </tr>
-                                    <tr class="trr2">
-                                        <td><label class="email_cl" for="email_cl">E-mail :</label></td>
-                                        <td><input name="email_cl" id="email_cl_0"  type="mail"></td>
-                                    </tr>
-                                </table>
-                                <hr/>
-                                <div id="cont_bt_val_nouvo_client"><button id="bt_val_nouvo_client" type="submit">Valider</button></div>
-                                
-                            </form>
-                        </div>
-                        
-                        
-                    </div>
-                
-                    <div class="d1">
-                        <table>
-                            <tr>
-                                <td><label  for="num_devis">Numéro devis :</label></td>
-                                <td><input class="commande_" name="num" type="text" id="num_devis"><br></td>
-                            </tr>
-                            <tr>
-                                <td><label  for="offre_devis">L'offre :</label></td>
-                                <td><input class="commande_" name="offr" type="text" id="offre_devis"><br></td>
-                            </tr>
-                            <tr class="date_bt_cacher">
-                                <td><label class="d_t" for="date_demande">Date de demande :</label></td>
-                                <td><input name="dat" type="date" id="date_demande"><br></td>
-                            </tr>
-                            <tr class="date_bt_cacher">
-                                <td><label class="d_s_t" for="date_edition">Date d'edition :</label></td>
-                                <td><input name="edit" type="date" id="date_edition"></td>
-                            </tr>
-                        </table>
-                        <hr class="date_bt_cacher" id="hr_"/>
-                        <div class="date_bt_cacher" id="cont_num_off_date">
-                            <button type="button" id="bt_num_off_date">Okay</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="bt_f">
-                    <input class="eff" type="reset" value="Annuler">
-                    <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
-                </div> -->
-            </div> 
-             
-        <div class="mise_ajour_info_aelite">
+    <div class="mise_ajour_info_aelite">
             <form action="mod_info_aelite.php" method="post" class="form_mod_info_aelite">
                 <table>
                     <tr>
@@ -400,28 +318,143 @@
                     <td colspan="2"><button name="bt_modifi_info_aelite" id="bt_valider_la_modification_info_aelite" type="submit">Valider</button></td>
                 </div>
             </form>
-        </div>
-    <!-- __________canvas gros oeuvre et second oeuvre_____ -->
-    <div class="travaux_devis">
-        <div class="global">
-            <div class="gros_oeuvre">
-                <!-- <div class="s_g_o"> -->
-                <img src="images/g_oeuvre_2.jpg" alt="">
-                <button type="button" id="affich_gros_oeuvre" class="text_gros_second_oeuvre">Gros Oeuvre</button>
-                <!-- </div> -->
-            </div>
-            <div id="second_oeuvre">
-                <!-- <div class="s_s_o"> -->
-                <a href="second_oeuvre.php"><img id="imag" src="images/second_oeuvre.jpg" alt=""></a>
-                <button type="button" class="text_gros_second_oeuvr">Second Oeuvre</button>
-                <!-- </div> -->
-            </div>
-        </div>
     </div>
-
-    <h2 id="text_resul">Resultat Devis</h2>
     
-    <div id="resultat_dqe">
+    
+    <div id="champ_ajout_client_cacher">
+                            <hr/>
+                            <form action="ajout_cl_sur_form_devi.php" method="post" class="form_nouvo_client">
+                                <table>
+                                    <tr class="trr2">
+                                        <td><label class="nm_cl" for="nom_cl">Nom :</label></td>
+                                        <td><input name="nom_cl" id="nom_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
+                                        <td><input name="tel_cl" id="tel_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="n_cl" for="n_cl">Fax :</label></td>
+                                        <td><input name="fax_cl" id="fax_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
+                                        <td><input name="adresse_cl" id="adresse_cl" type="text"></td>
+                                    </tr>
+                                    <tr class="trr2">
+                                        <td><label class="email_cl" for="email_cl">E-mail :</label></td>
+                                        <td><input name="email_cl" id="email_cl_0"  type="mail"></td>
+                                    </tr>
+                                </table>
+                                <hr/>
+                                <div id="cont_bt_val_nouvo_client"><button id="bt_val_nouvo_client" type="submit">Valider</button></div>
+                                
+                            </form>
+                        </div>
+
+    <!-- =========entete devis cacher============== -->
+    <form method="post" action="">
+       <div class="f_dos">
+                <div class="les_champ">
+                    <div class="d2">
+                        <h3>Coordonnées de l'entreprise</h3>
+                        <hr/>
+                        <div class="info_entrepise">
+                            <!-- <button type="button" class="bt_info_aelite" id="bt_info_aelite_ancien">Information existante</button> -->
+                            <button type="button" class="bt_info_aelite" id="bt_info_aelite_nouvelle">Modifier information de l'entreprise</button>
+                        </div>
+                    </div>
+
+                    <div class="d1">
+                        <h3>L'identité du client</h3>
+                        <hr/>
+                        <button type="button" class="bt_info_aelite" id="bt_choisir_client">Selectionner un client </button>
+                        <button type="button" class="bt_info_aelite" id="bt_nouveau_client">Nouveau client </button>
+
+                        <table >
+                            <!-- <div class="trr3"> -->
+                                <tr class="trr3">
+                                    <td><label class="nm_cl" for="nm_cl">Nom :</label></td>
+                                    <td><input name="nom_client" id="nm_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="pm_cl" for="pm_cl">Tel :</label></td>
+                                    <td><input name="tel_" id="pm_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="n_cl" for="n_cl">Fax :</label></td>
+                                    <td><input name="fax_" id="n_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="adress_cl" for="adress_cl">Adresse :</label></td>
+                                    <td><input name="adress_" id="adress_cl" type="text"></td>
+                                </tr>
+                                <tr class="trr3">
+                                    <td><label class="email_cl" for="email_cl">E-mail :</label></td>
+                                    <td><input name="mail_" id="email_cl"  type="mail"></td>
+                                </tr>
+                                
+                            </table>
+                    </div>
+                
+                    <div class="d1">
+                        <table>
+                            <tr>
+                                <td><label  for="num_devis">Numéro devis :</label></td>
+                                <td><input name="num_devis" class="commande_" type="text" id="num_devis"><br></td>
+                            </tr>
+                            <tr>
+                                <td><label  for="offre_devis">L'offre :</label></td>
+                                <td><input name="offr" class="commande_" type="text" id="offre_devis"><br></td>
+                            </tr>
+                            <tr class="date_bt_cacher">
+                                <td><label class="d_t" for="date_demande">Date de demande :</label></td>
+                                <td><input name="date_demande" type="date" id="date_demande"><br></td>
+                            </tr>
+                            <tr class="date_bt_cacher">
+                                <td><label class="d_s_t" for="date_edition">Date d'edition :</label></td>
+                                <td><input name="date_edition" type="date" id="date_edition"></td>
+                            </tr>
+                        </table>
+                        <hr class="date_bt_cacher" id="hr_"/>
+                        <div class="date_bt_cacher" id="cont_num_off_date">
+                            <button type="button" id="bt_num_off_date">Okay</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="bt_f">
+                    <input class="eff" type="reset" value="Annuler">
+                    <input name="bt_valider_entete_devis" class="vali" type="submit" value="Valider">
+                </div> -->
+        </div> 
+
+    
+
+        
+             
+        
+        <!-- __________canvas gros oeuvre et second oeuvre_____ -->
+        <!-- <div class="travaux_devis"> -->
+        <!-- <div class="global"> -->
+            <!-- <div class="gros_oeuvre"> -->
+                <!-- <div class="s_g_o"> -->
+                <!-- <img src="images/g_oeuvre_2.jpg" alt=""> -->
+                <!-- <button type="button" id="affich_gros_oeuvre" class="text_gros_second_oeuvre">Gros Oeuvre</button> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div id="second_oeuvre"> -->
+                <!-- <div class="s_s_o"> -->
+                <!-- <a href="second_oeuvre.php"><img id="imag" src="images/second_oeuvre.jpg" alt=""></a> -->
+                <!-- <button type="button" class="text_gros_second_oeuvr">Second Oeuvre</button> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+        <h2 id="text_resul">Resultat Devis</h2>
+    
+        <div id="resultat_dqe">
             <h3 id="dqe_">DEBOURSER SEC (DS)</h3>
             <table id="tab_dqe">
                 <tr>
@@ -434,114 +467,114 @@
                 </tr>
                 <tbody></tbody>
             </table>
-    </div>
-    <div id="conteneur_resultat">
-        <div class="resultat">
-            <!-- Info_aelite et client affiche -->
-            <div class="info_aelite_client">
-                <div class="info-aelite">
-                    <?php
-                        $query = $bdd_0->prepare('SELECT * FROM  info_aelite');
-                        // $query->bindValue(':modifier',$_GET['modifier'],PDO::FETCH_ASSOC);
-                        $query->execute();
-                        $data = $query->fetch();
-                    ?>
-                    
-                        <p id=""><img src="images/logo_aelite.png" alt="logo-aelite"></p>
-                        <p>Entrepise : <span id="aff_info_entreprise_"><?php echo utf8_encode(@$data['nom']);?></span></p>               
-                        <p> Adresse : <span id="aff_info_entreprise_2"><?php echo utf8_encode(@$data['position']);?></span></p>               
-                        <p>Boite postale : <span id="aff_info_entreprise_3"><?php echo utf8_encode(@$data['adress_bp']);?></span></p>               
-                        <p>Tel : <span id="aff_info_entreprise_4"><?php echo utf8_encode(@$data['tel']);?></span></p>               
-                        <p>E-mail : <span id="aff_info_entreprise_5"><?php echo utf8_encode(@$data['email']);?></span></p>               
-                                     
-                        
-                </div>
-                <div class="client">
-                    <p>Nom client : <span id="aff_info_client_"></span></p>               
-                    <p> Tel : <span id="aff_info_client_2"></span></p>               
-                    <p>Fax : <span id="aff_info_client_3"></span></p>               
-                    <p>Adresse : <span id="aff_info_client_4"></span></p>               
-                    <p>E-mail : <span id="aff_info_client_5"></span></p> 
-                </div>
-            </div>
-            <div class="date_numero_devis">
-                <div id="num_off">
-                    <p>N°_Devis : <span id="num_d"></span></p>
-                    <p>Offre : <span id="off_d"></span></p>
-                </div>
-                <div id="les_dates">
-                    <p>Date de demande : <span id="date_d"></span></p>
-                    <p>Date d'Edition : <span id="date_e"></span></p>
-                </div>
-            </div>
-            <table id="tab_devis">
-                <tr>
-                    <th width="5%">X</th>
-                    <th width="30%">Désignation</th>
-                    <th width="10">Unité</th>
-                    <th width="15%">Quantité</th>
-                    <th width="20%">Prix_U</th>
-                    <th width="20%">Prix_T</th>
-                </tr>
-                <tbody></tbody>
-                <tr>
-                    <td ></td>
-                    <td rowspan="3">
-                        <p>CONDITION DE PAIEMENT :</p>
-                        <p>50% à la commande</p>
-                        <p>Solde à l'avancementsur situation mensuelle</p>
-                    </td>
-                    <!-- <td ></td> -->
-                    <!-- <td ></td> -->
-                    <td ></td>
-                    <td colspan="2"><input type="text" value="MONTANT TOTAL NET HT : "></input></td>
-                    <td ><input type="text" value="0.00"></input></td>
-                </tr>
-                <tr>
-                    <td ></td>
-                    <!-- <td ></td> -->
-                    <!-- <td ></td> -->
-                    <td ></td>
-                    <td colspan="2"><input type="text" value="TVA 18% : "></input></td>
-                    <td ><input type="text" value="0.00"></input></td>
-                </tr>
-                <tr>
-                    <td ></td>
-                    <!-- <td ></td> -->
-                    <!-- <td ></td> -->
-                    <td ></td>
-                    <td colspan="2"><input type="text" value="MONTANT TOTAL TTC : "></input></td>
-                    <td ><input type="text" value="0.00"></input></td>
-                </tr>
-                <!-- <tr> -->
-                    <!-- <td ><p>aaa</p></td>
-                    <td ><p>bbb</p></td>
-                    <td ><p>ccc</p></td> -->
-                    <!-- <td><p>d</p></td> -->
-                <!-- </tr> -->
-                <!-- <tr>
-                    <td rowspan="2"><p>a</p></td>
-                    <td colspan="2"><p>b</p></td>
-                    <td colspan="2"><p>c</p></td>
-                    <td><p>d</p></td>
-                </tr> -->
-            </table>
-            <div id="signature_directeur">
-                <p><strong>La Direction Générale</strong></p>
-            </div> 
         </div>
-    </div>
     
-
-    <div id="les_bt_pdf_excel">
-        <div class="div_val">
-        <button class="bouton_val">Valider</button>
+        <div id="conteneur_resultat">
+            <div class="resultat">
+                <!-- Info_aelite et client affiche -->
+                <div class="info_aelite_client">
+                    <div class="info-aelite">
+                        <?php
+                            $query = $bdd_0->prepare('SELECT * FROM  info_aelite');
+                            // $query->bindValue(':modifier',$_GET['modifier'],PDO::FETCH_ASSOC);
+                            $query->execute();
+                            $data = $query->fetch();
+                        ?>
+                        
+                            <p id=""><img src="images/logo_aelite.png" alt="logo-aelite"></p>
+                            <p>Entrepise : <span id="aff_info_entreprise_"><?php echo utf8_encode(@$data['nom']);?></span></p>               
+                            <p> Adresse : <span id="aff_info_entreprise_2"><?php echo utf8_encode(@$data['position']);?></span></p>               
+                            <p>Boite postale : <span id="aff_info_entreprise_3"><?php echo utf8_encode(@$data['adress_bp']);?></span></p>               
+                            <p>Tel : <span id="aff_info_entreprise_4"><?php echo utf8_encode(@$data['tel']);?></span></p>               
+                            <p>E-mail : <span id="aff_info_entreprise_5"><?php echo utf8_encode(@$data['email']);?></span></p>               
+                                        
+                            
+                    </div>
+                    <div class="client">
+                        <p>Nom client : <span id="aff_info_client_"></span></p>               
+                        <p> Tel : <span id="aff_info_client_2"></span></p>               
+                        <p>Fax : <span id="aff_info_client_3"></span></p>               
+                        <p>Adresse : <span id="aff_info_client_4"></span></p>               
+                        <p>E-mail : <span id="aff_info_client_5"></span></p> 
+                    </div>
+                </div>
+                <div class="date_numero_devis">
+                    <div id="num_off">
+                        <p>N°_Devis : <span id="num_d"></span></p>
+                        <p>Offre : <span id="off_d"></span></p>
+                    </div>
+                    <div id="les_dates">
+                        <p>Date de demande : <span id="date_d"></span></p>
+                        <p>Date d'Edition : <span id="date_e"></span></p>
+                    </div>
+                </div>
+                <table id="tab_devis">
+                    <tr>
+                        <th width="5%">X</th>
+                        <th width="30%">Désignation</th>
+                        <th width="10">Unité</th>
+                        <th width="15%">Quantité</th>
+                        <th width="20%">Prix_U</th>
+                        <th width="20%">Prix_T</th>
+                    </tr>
+                    <tbody></tbody>
+                    <tr>
+                        <td ></td>
+                        <td rowspan="3">
+                            <p>CONDITION DE PAIEMENT :</p>
+                            <p>50% à la commande</p>
+                            <p>Solde à l'avancementsur situation mensuelle</p>
+                        </td>
+                        <!-- <td ></td> -->
+                        <!-- <td ></td> -->
+                        <td ></td>
+                        <td colspan="2"><input type="text" value="MONTANT TOTAL NET HT : "></input></td>
+                        <td ><input type="text" value="0.00"></input></td>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                        <!-- <td ></td> -->
+                        <!-- <td ></td> -->
+                        <td ></td>
+                        <td colspan="2"><input type="text" value="TVA 18% : "></input></td>
+                        <td ><input type="text" value="0.00"></input></td>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                        <!-- <td ></td> -->
+                        <!-- <td ></td> -->
+                        <td ></td>
+                        <td colspan="2"><input type="text" value="MONTANT TOTAL TTC : "></input></td>
+                        <td ><input type="text" value="0.00"></input></td>
+                    </tr>
+                    <!-- <tr> -->
+                        <!-- <td ><p>aaa</p></td>
+                        <td ><p>bbb</p></td>
+                        <td ><p>ccc</p></td> -->
+                        <!-- <td><p>d</p></td> -->
+                    <!-- </tr> -->
+                    <!-- <tr>
+                        <td rowspan="2"><p>a</p></td>
+                        <td colspan="2"><p>b</p></td>
+                        <td colspan="2"><p>c</p></td>
+                        <td><p>d</p></td>
+                    </tr> -->
+                </table>
+                <div id="signature_directeur">
+                    <p><strong>La Direction Générale</strong></p>
+                </div> 
+            </div>
         </div>
-        <div class="imp_enregistExcel">
-            <a href="#"><button class="bt_im">PDF</button></a>
-            <a href="#"><button class="bt_">Exporter vers Excel</button></a>
+        <div id="les_bt_pdf_excel">
+            <div class="div_val">
+                <button name="valider_devis_general" type="submit" class="bouton_val">Valider</button>
+            </div>
+            <!-- <div class="imp_enregistExcel">
+                <a href="#"><button class="bt_im">PDF</button></a>
+                <a href="#"><button class="bt_">Exporter vers Excel</button></a>
+            </div> -->
         </div>
-    </div>
+    </form>
 
     <!-- ______inclusion des pages externe____ -->
     <div id="travaux_preliminaiire"><?php include('travaux_preliminaire.php'); ?></div>

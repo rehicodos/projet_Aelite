@@ -74,11 +74,11 @@
         </tr>
         <tr class="lign_tab2">
             <td><input type="checkbox" id=""></td>
-            <td><input type="text" id="tab2_desc1"></td>
-            <td><input type="text" id="tab2_unit1"></td>
-            <td><input type="text" id="tab2_qt1"></td>
-            <td><input type="text" id="tab2_pu1"></td>
-            <td><input class="s_t_01" type="text" id="tab2_pt1"></td>
+            <td><input name="designation[]" type="text" id="tab2_desc1"></td>
+            <td><input name="unite[]" type="text" id="tab2_unit1"></td>
+            <td><input name="quantite[]" type="text" id="tab2_qt1"></td>
+            <td><input name="prix_u[]" type="text" id="tab2_pu1"></td>
+            <td><input name="prix_t[]" class="s_t_01" type="text" id="tab2_pt1"></td>
         </tr>
         <tbody></tbody>
     </table>
