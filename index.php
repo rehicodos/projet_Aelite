@@ -63,22 +63,5 @@
             </ul>
         </div>
     </div>
-    
-    <!-- ______inclusion des pages externe____ -->
-    
-    
-
-    <script>
-        //  ____affichage/appel des pages_______
-        $(document).ready(function(){
-            // ____affichage/appel de la page devis.php(page_devis)_______
-            $("#image_devis_page_principale").click(function(){
-                $("#page_devis").show();
-                $(".ent").hide();
-                $("#conteneur_page_principale").hide();
-            });
-            
-        });
-    </script>
 </body>
 </html>

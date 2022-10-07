@@ -14,10 +14,56 @@ h2 {
     background: red;
     font-size: 2.5em;
 }
+#rech_devis {
+    position: relative;
+    width: 40%;
+    /* display: flex; */
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    margin: 3px auto;
+    padding: 7px 10px;
+    /* text-align: center; */
+    background: rgba(174, 174, 177, 0.589);
+}
+#sous_rech_devis {
+    text-align: center;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: 0px auto;
+
+}
+#sous_rech_devis p {
+    font-size: 1.2em;
+    /* background: red; */
+}
+#sous_rech_devis input {
+    height: 25px;
+    width: 65%;
+    border: none;
+    text-align: center;
+    /* align-items: center; */
+    margin-left: 3px;
+    scroll-padding-left: 2px;
+
+}
+/* #rech_devis {
+    position: relative;
+    border: 1px solid whitesmoke;
+    border-left: none;
+    border-right: none;
+    background-color: rgba(000, 000,000, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    min-height: 3%;
+    text-align: center;
+    padding: 2%;
+} */
 #cont_archive {
     width: 98%;
     height: 400px;
-    margin: 20px auto;
+    margin: 10px auto;
     background: #cacaca;
     border-radius: 10px;
     border: 2px solid black;
